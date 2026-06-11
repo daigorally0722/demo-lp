@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lulia hair design 表参道｜初回限定クーポン【デモサンプル】</title>
+<meta name="description" content="表参道駅徒歩3分のプライベートヘアサロン。カウンセリング重視のマンツーマン施術で、あなたに似合う透明感カラーを。初回限定WEBクーポン配布中。※LP制作サービスのデモ用サンプルページです。">
+<meta name="robots" content="noindex">
+<style>
+/* ============================================================
+   Lulia hair design - デモLP
+   配色: ピンクベージュ×ローズ×ゴールド / 明朝体エレガント
+   ============================================================ */
+:root{
+  --bg:#FBF4F1;
+  --bg-deep:#F4E5DF;
+  --rose:#B76E79;
+  --rose-deep:#9D5560;
+  --rose-pale:#F7E8E5;
+  --gold:#C9A24B;
+  --ink:#54453F;
+  --ink-soft:#8A776F;
+  --line:#EBDCD6;
+  --white:#FFFFFF;
+  --radius:18px;
+  --shadow:0 10px 32px rgba(84,69,63,.10);
+  --serif:"Hiragino Mincho ProN","Hiragino Mincho Pro","Yu Mincho","YuMincho","HGS明朝E",serif;
+  --sans:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic Medium",-apple-system,BlinkMacSystemFont,"Segoe UI",Meiryo,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{
+  font-family:var(--sans);
+  color:var(--ink);background:var(--bg);
+  line-height:1.9;font-size:15.5px;overflow-x:hidden;
+}
+img,svg{display:block;max-width:100%;}
+a{text-decoration:none;color:inherit;}
+ul{list-style:none;}
+.wrap{width:100%;max-width:560px;margin:0 auto;padding:0 22px;}
+@media(min-width:900px){.wrap{max-width:1024px;}}
+
+/* ---------- 共通 ---------- */
+.eyebrow{
+  text-align:center;font-family:var(--serif);font-style:italic;
+  font-size:13px;letter-spacing:.34em;color:var(--rose);
+  text-transform:uppercase;margin-bottom:12px;
+}
+.sec-title{
+  font-family:var(--serif);font-size:clamp(21px,5.6vw,30px);font-weight:600;
+  line-height:1.7;text-align:center;letter-spacing:.1em;margin-bottom:14px;
+}
+.sec-lead{text-align:center;font-size:13.5px;color:var(--ink-soft);margin-bottom:38px;letter-spacing:.05em;}
+section{padding:76px 0;}
+.fade{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease;}
+.fade.in{opacity:1;transform:none;}
+
+/* CTAボタン */
+.btn-cta{
+  position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  width:100%;max-width:420px;margin:0 auto;padding:17px 46px 16px 24px;
+  background:linear-gradient(135deg,var(--rose) 0%,var(--rose-deep) 100%);
+  color:#fff;border-radius:999px;border:none;cursor:pointer;text-align:center;
+  box-shadow:0 10px 26px rgba(183,110,121,.40);
+  transition:transform .2s,box-shadow .2s;
+}
+.btn-cta:active{transform:scale(.97);}
+@media(hover:hover){.btn-cta:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(183,110,121,.5);}}
+.btn-cta .b-small{font-size:11.5px;font-weight:700;letter-spacing:.14em;opacity:.95;}
+.btn-cta .b-main{font-size:18px;font-weight:800;letter-spacing:.12em;line-height:1.5;}
+.btn-cta::after{
+  content:"";position:absolute;right:22px;top:50%;width:8px;height:8px;
+  border-top:2px solid #fff;border-right:2px solid #fff;
+  transform:translateY(-50%) rotate(45deg);
+}
+.cta-note{display:flex;justify-content:center;gap:14px;margin-top:14px;font-size:11.5px;color:var(--ink-soft);flex-wrap:wrap;letter-spacing:.04em;}
+.cta-note span::before{content:"◇ ";color:var(--gold);}
+
+/* ---------- ヘッダー ---------- */
+.site-header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(251,244,241,.92);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;height:58px;}
+.logo{font-family:var(--serif);font-size:19px;letter-spacing:.14em;font-weight:600;}
+.logo small{display:block;font-size:8.5px;letter-spacing:.3em;color:var(--rose);font-style:italic;line-height:1.1;}
+.header-btn{
+  font-size:12px;font-weight:800;color:#fff;background:var(--rose);
+  padding:9px 18px;border-radius:999px;letter-spacing:.1em;
+  box-shadow:0 4px 12px rgba(183,110,121,.35);
+}
+
+/* ---------- ヒーロー ---------- */
+.hero{padding:0 0 60px;background:var(--bg);}
+.hero-photo{
+  position:relative;height:62vh;min-height:430px;max-height:560px;overflow:hidden;
+}
+/* 写真プレースホルダ(差し替え時はimg/背景画像をこのdivに) */
+.hero-photo-ph{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 78% 30%,#F2D7CE 0%,transparent 55%),
+    radial-gradient(circle at 25% 80%,#F8EAE2 0%,transparent 50%),
+    linear-gradient(160deg,#FBF1EC 0%,#F3DCD4 55%,#EBCCC2 100%);
+}
+.hero-photo-ph svg{position:absolute;right:-26%;bottom:0;height:96%;width:auto;opacity:.9;}
+@media(min-width:900px){.hero-photo-ph svg{right:6%;}}
+.hero-photo::after{ /* 下端をbgへ溶かす */
+  content:"";position:absolute;left:0;right:0;bottom:0;height:90px;
+  background:linear-gradient(180deg,transparent,var(--bg));
+}
+.hero-copy{position:relative;margin-top:-120px;z-index:2;}
+.hero-copy .h-eyebrow{
+  font-family:var(--serif);font-style:italic;font-size:12.5px;
+  letter-spacing:.3em;color:var(--rose);margin-bottom:12px;
+}
+.hero-copy h1{
+  font-family:var(--serif);font-weight:600;
+  font-size:clamp(27px,7.4vw,46px);line-height:1.65;letter-spacing:.12em;
+  margin-bottom:16px;
+}
+.hero-copy h1 .accent{color:var(--rose);}
+.hero-sub{font-size:13.5px;color:var(--ink-soft);letter-spacing:.08em;margin-bottom:22px;}
+.hero-badges{display:flex;gap:8px;margin-bottom:26px;flex-wrap:wrap;}
+.hero-badges li{
+  font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--rose-deep);
+  background:var(--white);border:1px solid var(--rose);
+  padding:5px 13px;border-radius:999px;
+}
+@media(min-width:900px){
+  .hero{padding:0 0 80px;}
+  .hero-photo{height:560px;max-height:none;}
+  .hero-copy{margin-top:-360px;max-width:520px;}
+  .hero-copy .btn-cta,.hero-copy .coupon-mini{margin-left:0;}
+  .hero-copy .cta-note{justify-content:flex-start;}
+}
+
+/* 初回クーポンミニカード */
+.coupon-mini{
+  display:flex;align-items:center;gap:16px;max-width:420px;margin:0 auto 22px;
+  background:var(--white);border:1.5px solid var(--rose);border-radius:var(--radius);
+  padding:14px 18px;box-shadow:var(--shadow);
+}
+.coupon-mini .c-label{
+  flex-shrink:0;font-size:11px;font-weight:800;color:#fff;background:var(--rose);
+  padding:7px 10px;border-radius:10px;line-height:1.5;text-align:center;letter-spacing:.06em;
+}
+.coupon-mini .c-name{font-size:11.5px;color:var(--ink-soft);letter-spacing:.02em;line-height:1.5;}
+.coupon-mini .c-price{display:flex;align-items:baseline;gap:7px;}
+.coupon-mini .c-old{font-size:12.5px;color:var(--ink-soft);text-decoration:line-through;}
+.coupon-mini .c-now{font-family:var(--serif);font-size:30px;font-weight:700;color:var(--rose-deep);line-height:1.2;}
+.coupon-mini .c-now small{font-size:13px;}
+
+/* ---------- 実績バー ---------- */
+.trust-bar{background:linear-gradient(135deg,var(--rose) 0%,var(--rose-deep) 100%);padding:20px 0 14px;}
+.trust-row{display:flex;justify-content:center;}
+.trust-item{flex:1;max-width:175px;text-align:center;color:#fff;padding:2px 8px;}
+.trust-item+.trust-item{border-left:1px solid rgba(255,255,255,.3);}
+.trust-item .t-label{font-size:10px;letter-spacing:.1em;opacity:.9;display:block;}
+.trust-item .t-value{font-family:var(--serif);font-size:21px;font-weight:700;letter-spacing:.04em;}
+.trust-item .t-value small{font-size:11px;}
+.trust-foot{text-align:center;color:rgba(255,255,255,.75);font-size:9.5px;margin-top:8px;letter-spacing:.05em;}
+
+/* ---------- 悩み共感 ---------- */
+.nayami{background:var(--white);}
+.nayami-list{display:grid;gap:12px;max-width:520px;margin:0 auto;}
+@media(min-width:900px){.nayami-list{max-width:780px;grid-template-columns:1fr 1fr;}}
+.nayami-list li{
+  display:flex;gap:12px;align-items:flex-start;
+  background:var(--bg);border-radius:14px;padding:16px 18px;
+  font-size:14px;font-weight:600;line-height:1.75;
+}
+.nayami-list li::before{
+  content:"";flex-shrink:0;width:20px;height:20px;margin-top:4px;border-radius:50%;
+  background:var(--rose) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="white" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></svg>') center/12px no-repeat;
+}
+.nayami-close{
+  text-align:center;margin-top:40px;font-family:var(--serif);
+  font-size:clamp(17px,4.8vw,23px);font-weight:600;line-height:2;letter-spacing:.08em;
+}
+.nayami-close .big{color:var(--rose-deep);font-size:1.15em;}
+.down-arrow{width:0;height:0;margin:30px auto 0;border-left:24px solid transparent;border-right:24px solid transparent;border-top:18px solid var(--rose-pale);}
+
+/* ---------- 選ばれる理由 ---------- */
+.reasons{background:var(--bg);}
+.reason-list{display:grid;gap:18px;}
+@media(min-width:900px){.reason-list{grid-template-columns:1fr 1fr;gap:24px;}}
+.reason-card{
+  display:flex;gap:18px;background:var(--white);border-radius:var(--radius);
+  padding:26px 24px;box-shadow:var(--shadow);align-items:flex-start;
+}
+.reason-icon{flex-shrink:0;width:64px;height:64px;}
+.reason-card .r-num{
+  font-family:var(--serif);font-style:italic;font-size:12px;color:var(--gold);
+  letter-spacing:.2em;display:block;margin-bottom:2px;
+}
+.reason-card h3{font-family:var(--serif);font-size:17.5px;font-weight:600;letter-spacing:.06em;line-height:1.6;margin-bottom:6px;}
+.reason-card p{font-size:13px;color:var(--ink-soft);line-height:1.85;}
+
+/* ---------- メニュー ---------- */
+.menu{background:var(--white);}
+.menu-table{max-width:560px;margin:0 auto;}
+.menu-row{
+  display:flex;justify-content:space-between;align-items:baseline;gap:14px;
+  padding:17px 6px;border-bottom:1px dashed var(--line);
+}
+.menu-row .m-name{font-size:14.5px;font-weight:700;letter-spacing:.04em;}
+.menu-row .m-name small{display:block;font-size:11px;color:var(--ink-soft);font-weight:500;}
+.menu-row .m-price{font-family:var(--serif);font-size:17px;font-weight:600;white-space:nowrap;}
+.menu-row.is-pickup{
+  background:var(--rose-pale);border:1.5px solid var(--rose);border-radius:14px;
+  padding:17px 16px;margin:10px 0;
+}
+.menu-row.is-pickup .m-name{color:var(--rose-deep);}
+.menu-row.is-pickup .m-price{color:var(--rose-deep);}
+.menu-row .m-badge{
+  display:inline-block;font-size:10px;font-weight:800;color:#fff;background:var(--rose);
+  border-radius:6px;padding:1px 8px;margin-right:6px;vertical-align:2px;letter-spacing:.06em;
+}
+.menu-note{text-align:center;font-size:11px;color:var(--ink-soft);margin-top:16px;}
+
+/* ---------- お客様の声 ---------- */
+.voice{background:var(--bg);}
+.voice-grid{display:grid;gap:18px;}
+@media(min-width:900px){.voice-grid{grid-template-columns:repeat(3,1fr);}}
+.voice-card{background:var(--white);border-radius:var(--radius);padding:26px 24px;box-shadow:var(--shadow);}
+.voice-head{display:flex;align-items:center;gap:14px;margin-bottom:12px;}
+.voice-avatar{width:54px;height:54px;flex-shrink:0;border-radius:50%;overflow:hidden;background:var(--rose-pale);}
+.voice-meta .v-name{font-size:13px;font-weight:800;letter-spacing:.04em;}
+.voice-meta .v-attr{font-size:11px;color:var(--ink-soft);}
+.voice-stars{color:var(--gold);font-size:13.5px;letter-spacing:2.5px;margin-bottom:8px;}
+.voice-card h3{font-family:var(--serif);font-size:15.5px;font-weight:600;line-height:1.7;margin-bottom:8px;color:var(--rose-deep);letter-spacing:.04em;}
+.voice-card p{font-size:13px;color:var(--ink-soft);line-height:1.85;}
+.voice-note{text-align:center;font-size:11px;color:var(--ink-soft);margin-top:24px;opacity:.85;}
+
+/* ---------- スタイリスト ---------- */
+.stylist{background:var(--white);}
+.stylist-grid{display:grid;gap:20px;max-width:560px;margin:0 auto;}
+@media(min-width:900px){.stylist-grid{max-width:820px;grid-template-columns:1fr 1fr;}}
+.stylist-card{
+  display:flex;gap:20px;align-items:flex-start;
+  background:var(--bg);border-radius:var(--radius);padding:26px 24px;
+}
+.stylist-photo{width:92px;height:92px;flex-shrink:0;border-radius:50%;overflow:hidden;background:var(--bg-deep);border:3px solid var(--white);box-shadow:var(--shadow);}
+.stylist-card .s-role{font-size:10.5px;font-weight:700;letter-spacing:.18em;color:var(--rose);display:block;}
+.stylist-card h3{font-family:var(--serif);font-size:19px;font-weight:600;letter-spacing:.14em;margin-bottom:6px;}
+.stylist-card h3 small{font-size:11px;color:var(--ink-soft);letter-spacing:.06em;margin-left:8px;}
+.stylist-card p{font-size:12.5px;color:var(--ink-soft);line-height:1.85;}
+
+/* ---------- 料金・オファー ---------- */
+.offer{background:linear-gradient(170deg,#A8606C 0%,var(--rose-deep) 100%);color:#fff;}
+.offer .eyebrow{color:#F0CDB9;}
+.offer .sec-lead{color:rgba(255,255,255,.85);}
+.offer-card{
+  background:var(--white);color:var(--ink);border-radius:24px;
+  max-width:480px;margin:0 auto;overflow:hidden;
+  box-shadow:0 22px 56px rgba(0,0,0,.28);
+}
+.offer-card-head{
+  position:relative;background:var(--rose-pale);text-align:center;padding:22px 20px 18px;
+  border-bottom:1.5px dashed var(--rose);
+}
+.offer-card-head .o-label{
+  font-family:var(--serif);font-style:italic;font-size:12px;letter-spacing:.26em;color:var(--rose);margin-bottom:4px;
+}
+.offer-card-head .o-title{font-family:var(--serif);font-size:20px;font-weight:600;letter-spacing:.08em;line-height:1.6;}
+.offer-card-head::before,.offer-card-head::after{
+  content:"";position:absolute;bottom:-11px;width:22px;height:22px;border-radius:50%;
+  background:#A8606C;
+}
+.offer-card-head::before{left:-11px;}
+.offer-card-head::after{right:-11px;}
+.offer-card-body{padding:30px 26px 34px;}
+.offer-menu{text-align:center;font-size:13.5px;font-weight:700;letter-spacing:.04em;margin-bottom:14px;}
+.offer-menu .plus{color:var(--rose);margin:0 6px;font-weight:800;}
+.offer-price-line{text-align:center;margin-bottom:4px;}
+.offer-price-line .p-old{font-size:15px;color:var(--ink-soft);text-decoration:line-through;}
+.offer-price-line .p-off{
+  display:inline-block;font-size:12px;font-weight:900;color:#fff;background:var(--rose);
+  border-radius:8px;padding:3px 10px;margin-left:8px;vertical-align:2px;
+}
+.offer-price{text-align:center;line-height:1.15;margin-bottom:6px;font-family:var(--serif);}
+.offer-price .p-num{font-size:58px;font-weight:700;color:var(--rose-deep);}
+.offer-price .p-yen{font-size:24px;font-weight:700;color:var(--rose-deep);}
+.offer-price .p-tax{font-size:12px;color:var(--ink-soft);font-family:var(--sans);margin-left:6px;}
+.offer-sub{text-align:center;font-size:12px;color:var(--ink-soft);margin-bottom:20px;}
+.offer-perks{display:grid;gap:9px;margin-bottom:26px;}
+.offer-perks li{
+  display:flex;align-items:flex-start;gap:10px;font-size:13px;font-weight:700;
+  background:var(--bg);border-radius:10px;padding:11px 14px;line-height:1.6;
+}
+.offer-perks li::before{
+  content:"";flex-shrink:0;width:18px;height:18px;margin-top:3px;border-radius:50%;
+  background:var(--rose) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="white" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></svg>') center/11px no-repeat;
+}
+
+/* ---------- サロン情報 ---------- */
+.salon{background:var(--bg);}
+.salon-card{
+  background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);
+  max-width:560px;margin:0 auto;overflow:hidden;
+}
+@media(min-width:900px){.salon-card{max-width:880px;display:grid;grid-template-columns:1fr 1fr;}}
+.salon-map{
+  position:relative;min-height:220px;
+  background:
+    radial-gradient(circle at 70% 40%,#F4E0D8 0%,transparent 50%),
+    linear-gradient(140deg,#F8ECE6,#EFD9D1);
+}
+.salon-map svg{position:absolute;inset:0;width:100%;height:100%;}
+.salon-info{padding:28px 26px 30px;}
+.salon-info h3{font-family:var(--serif);font-size:19px;letter-spacing:.12em;font-weight:600;margin-bottom:14px;}
+.salon-info dl{display:grid;grid-template-columns:78px 1fr;gap:8px 12px;font-size:13px;}
+.salon-info dt{font-weight:800;color:var(--rose-deep);letter-spacing:.04em;}
+.salon-info dd{color:var(--ink-soft);}
+
+/* ---------- FAQ ---------- */
+.faq{background:var(--white);}
+.faq-list{max-width:640px;margin:0 auto;display:grid;gap:12px;}
+.faq-item{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--bg);}
+.faq-q{
+  width:100%;display:flex;align-items:center;gap:12px;text-align:left;
+  padding:16px 48px 16px 18px;background:none;border:none;cursor:pointer;
+  font-family:var(--sans);font-size:14px;font-weight:700;color:var(--ink);line-height:1.65;position:relative;
+}
+.faq-q::before{
+  content:"Q";flex-shrink:0;width:27px;height:27px;border-radius:50%;
+  background:var(--rose);color:#fff;font-weight:800;font-size:12.5px;
+  display:flex;align-items:center;justify-content:center;font-family:var(--serif);
+}
+.faq-q::after{
+  content:"";position:absolute;right:18px;top:50%;width:9px;height:9px;
+  border-right:2px solid var(--rose);border-bottom:2px solid var(--rose);
+  transform:translateY(-70%) rotate(45deg);transition:transform .3s;
+}
+.faq-item.open .faq-q::after{transform:translateY(-30%) rotate(-135deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.faq-a-inner{display:flex;gap:12px;padding:2px 18px 18px;font-size:13px;color:var(--ink-soft);line-height:1.85;}
+.faq-a-inner::before{
+  content:"A";flex-shrink:0;width:27px;height:27px;border-radius:50%;
+  background:var(--gold);color:#fff;font-weight:800;font-size:12.5px;
+  display:flex;align-items:center;justify-content:center;font-family:var(--serif);
+}
+
+/* ---------- 最終CTA ---------- */
+.last-cta{
+  background:
+    radial-gradient(circle at 15% 20%,rgba(201,162,75,.12) 0%,transparent 40%),
+    radial-gradient(circle at 88% 80%,rgba(183,110,121,.16) 0%,transparent 45%),
+    var(--bg-deep);
+  text-align:center;
+}
+.last-cta .lc-flower{max-width:120px;margin:0 auto 16px;}
+.last-cta h2{
+  font-family:var(--serif);font-size:clamp(21px,5.8vw,30px);font-weight:600;
+  line-height:1.8;letter-spacing:.1em;margin-bottom:12px;
+}
+.last-cta p{font-size:13.5px;color:var(--ink-soft);margin-bottom:28px;letter-spacing:.04em;}
+
+/* ---------- フッター ---------- */
+.site-footer{background:#6E4A4E;color:rgba(255,255,255,.85);padding:38px 0 110px;font-size:12px;}
+.site-footer .f-logo{font-family:var(--serif);text-align:center;font-size:18px;letter-spacing:.2em;color:#fff;margin-bottom:4px;}
+.site-footer .f-sub{text-align:center;font-size:9.5px;letter-spacing:.3em;color:rgba(255,255,255,.6);margin-bottom:18px;font-style:italic;}
+.f-links{display:flex;justify-content:center;gap:18px;margin-bottom:20px;flex-wrap:wrap;}
+.f-links a{opacity:.8;}
+.f-demo{
+  max-width:520px;margin:0 auto 14px;padding:12px 16px;
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-radius:10px;
+  font-size:11.5px;line-height:1.7;text-align:center;
+}
+.f-copy{text-align:center;opacity:.6;font-size:11px;}
+
+/* ---------- 追従CTA ---------- */
+.sticky-cta{
+  position:fixed;left:0;right:0;bottom:0;z-index:90;
+  padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+  background:rgba(255,255,255,.95);backdrop-filter:blur(8px);
+  border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(84,69,63,.12);
+  transform:translateY(110%);transition:transform .35s ease;
+}
+.sticky-cta.show{transform:none;}
+.sticky-cta .btn-cta{padding:12px 42px 11px 20px;max-width:480px;}
+.sticky-cta .btn-cta .b-small{font-size:10px;}
+.sticky-cta .btn-cta .b-main{font-size:15px;}
+</style>
+</head>
+<body>
+
+<!-- ============ ヘッダー ============ -->
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="#top">Lulia<small>HAIR DESIGN OMOTESANDO</small></a>
+    <a class="header-btn" href="#offer">WEB予約</a>
+  </div>
+</header>
+
+<!-- ============ ヒーロー ============ -->
+<section class="hero" id="top">
+
+  <!-- ▼▼ 画像差し替えスロット①: ヒーロー写真 ▼▼
+       想定画像: 明るくおしゃれな美容室の店内で、ヘアカラーをした笑顔の20代日本人女性の
+       後ろ姿と横顔。柔らかい自然光、ピンクベージュ系、左側にテキスト用の余白がある構図。
+       差し替え方法: .hero-photo-ph の中身を <img src="hero.jpg" style="width:100%;height:100%;object-fit:cover;"> に置き換え -->
+  <div class="hero-photo" data-image-slot="hero-photo">
+    <div class="hero-photo-ph">
+      <svg viewBox="0 0 420 480" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <!-- 女性の後ろ姿シルエット(線画・上品なプレースホルダ) -->
+        <defs>
+          <linearGradient id="hairGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#D9A18F"/>
+            <stop offset="1" stop-color="#C2826F"/>
+          </linearGradient>
+        </defs>
+        <!-- 髪 -->
+        <path d="M210 60c64 0 102 50 102 116 0 40-8 78 6 122 10 32 14 80 6 122l-228 0c-8-42-4-90 6-122 14-44 6-82 6-122C108 110 146 60 210 60z" fill="url(#hairGrad)"/>
+        <path d="M210 60c64 0 102 50 102 116 0 40-8 78 6 122 6 19 10 44 10 70-22-30-30-74-26-110 5-45-2-90-24-122-18-26-42-40-68-40s-50 14-68 40c-22 32-29 77-24 122 4 36-4 80-26 110 0-26 4-51 10-70 14-44 6-82 6-122C108 110 146 60 210 60z" fill="#B5705C" opacity=".45"/>
+        <!-- 髪のハイライト -->
+        <path d="M160 120c-14 30-16 70-10 104M260 120c14 30 16 70 10 104M210 96v60" stroke="#F0C5B2" stroke-width="5" stroke-linecap="round" fill="none" opacity=".75"/>
+        <!-- 肩 -->
+        <path d="M118 420c10-44 48-66 92-66s82 22 92 66l4 60H114z" fill="#F7EBE3"/>
+        <path d="M118 420c10-44 48-66 92-66s82 22 92 66" fill="none" stroke="#E8CFC2" stroke-width="3"/>
+        <!-- きらめき -->
+        <g fill="#fff" opacity=".85">
+          <path d="M96 150l4 10 10 4-10 4-4 10-4-10-10-4 10-4z"/>
+          <path d="M330 220l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/>
+          <path d="M120 300l2.5 6.5 6.5 2.5-6.5 2.5-2.5 6.5-2.5-6.5-6.5-2.5 6.5-2.5z"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+  <!-- ▲▲ 画像差し替えスロット① ここまで ▲▲ -->
+
+  <div class="wrap">
+    <div class="hero-copy">
+      <p class="h-eyebrow">PRIVATE HAIR SALON — OMOTESANDO</p>
+      <h1>その髪色が、<br>わたしの<span class="accent">自信</span>になる。</h1>
+      <p class="hero-sub">表参道駅 徒歩3分。カウンセリングから仕上げまで、ひとりのスタイリストが寄り添うプライベートサロン。</p>
+      <ul class="hero-badges">
+        <li>完全マンツーマン</li>
+        <li>透明感カラーが得意</li>
+        <li>当日予約OK</li>
+      </ul>
+      <div class="coupon-mini">
+        <span class="c-label">初回限定<br>クーポン</span>
+        <span>
+          <span class="c-name">カット＋透明感カラー＋うる艶トリートメント</span>
+          <span class="c-price">
+            <span class="c-old">通常17,600円</span>
+            <span class="c-now">9,900<small>円</small></span>
+          </span>
+        </span>
+      </div>
+      <a class="btn-cta" href="#offer" id="hero-cta">
+        <span class="b-small">24時間受付・かんたん1分</span>
+        <span class="b-main">WEB予約はこちら</span>
+      </a>
+      <p class="cta-note"><span>表参道駅 徒歩3分</span><span>22時まで営業</span><span>当日予約OK</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 実績バー ============ -->
+<div class="trust-bar">
+  <div class="wrap">
+    <div class="trust-row">
+      <div class="trust-item"><span class="t-label">口コミ評価</span><span class="t-value">4.9<small>/5.0</small></span></div>
+      <div class="trust-item"><span class="t-label">リピート率</span><span class="t-value">92<small>%</small></span></div>
+      <div class="trust-item"><span class="t-label">指名予約</span><span class="t-value">月180<small>件</small></span></div>
+    </div>
+    <p class="trust-foot">※数値はデモ表示用のサンプルです(架空データ)</p>
+  </div>
+</div>
+
+<!-- ============ 悩み共感 ============ -->
+<section class="nayami">
+  <div class="wrap">
+    <p class="eyebrow fade">Check</p>
+    <h2 class="sec-title fade">美容室で、こんな経験<br>ありませんか？</h2>
+    <ul class="nayami-list">
+      <li class="fade">写真を見せても、<b>イメージ通りの色にならない</b></li>
+      <li class="fade">カラーを重ねるたびに、<b>パサつきが気になる</b></li>
+      <li class="fade">担当が毎回変わって、<b>好みを一から説明している</b></li>
+      <li class="fade">サロンでは可愛いのに、<b>家で再現できない</b></li>
+    </ul>
+    <p class="nayami-close fade">Luliaは、その全部を<br><span class="big">「ひとりの担当が最後まで」</span><br>で解決します。</p>
+    <div class="down-arrow"></div>
+  </div>
+</section>
+
+<!-- ============ 選ばれる理由 ============ -->
+<section class="reasons">
+  <div class="wrap">
+    <p class="eyebrow fade">Reason</p>
+    <h2 class="sec-title fade">Luliaが選ばれる理由</h2>
+    <p class="sec-lead fade">「また来たい」と思っていただくために、つくり込んだ4つのこだわり。</p>
+    <div class="reason-list">
+
+      <div class="reason-card fade">
+        <svg class="reason-icon" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="#F7E8E5"/><circle cx="32" cy="25" r="9" fill="#B76E79"/><path d="M16 48c2-10 8-15 16-15s14 5 16 15" fill="#B76E79"/><path d="M44 18l3-6 3 6 6 1-4.5 4 1 6-5.5-3-5.5 3 1-6-4.5-4z" fill="#C9A24B"/></svg>
+        <div>
+          <span class="r-num">Reason 01</span>
+          <h3>完全マンツーマンの半個室</h3>
+          <p>カウンセリングからブローまで、ひとりのスタイリストが担当。半個室のセット面で、まわりを気にせずゆったり過ごせます。</p>
+        </div>
+      </div>
+
+      <div class="reason-card fade">
+        <svg class="reason-icon" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="#F7E8E5"/><path d="M20 40c0-12 5-20 12-24 7 4 12 12 12 24 0 7-5 11-12 11s-12-4-12-11z" fill="#fff" stroke="#B76E79" stroke-width="2.6"/><path d="M27 38c-1-5 1-10 5-13" stroke="#B76E79" stroke-width="2.6" stroke-linecap="round" fill="none"/><path d="M24 18c2-3 5-5 8-5M40 18c-2-3-5-5-8-5" stroke="#C9A24B" stroke-width="2.6" stroke-linecap="round" fill="none"/></svg>
+        <div>
+          <span class="r-num">Reason 02</span>
+          <h3>カウンセリングに20分</h3>
+          <p>初回は施術前に20分かけてヒアリング。なりたい色だけでなく、骨格・肌のトーン・普段の服装まで見て、似合う透明感カラーをご提案します。</p>
+        </div>
+      </div>
+
+      <div class="reason-card fade">
+        <svg class="reason-icon" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="#F7E8E5"/><path d="M22 14h20v22c0 8-4 14-10 14s-10-6-10-14z" fill="#fff" stroke="#B76E79" stroke-width="2.6"/><path d="M22 22h20" stroke="#B76E79" stroke-width="2.6"/><path d="M28 30c2 2 6 2 8 0M28 38c2 2 6 2 8 0" stroke="#C9A24B" stroke-width="2.4" stroke-linecap="round" fill="none"/></svg>
+        <div>
+          <span class="r-num">Reason 03</span>
+          <h3>髪をいたわるケアカラー</h3>
+          <p>カラー剤に毛髪補修成分を配合し、施術中のダメージを抑える独自レシピ。カラー後の手触りの違いを、初回で体感してください。</p>
+        </div>
+      </div>
+
+      <div class="reason-card fade">
+        <svg class="reason-icon" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="#F7E8E5"/><rect x="16" y="20" width="32" height="22" rx="4" fill="#fff" stroke="#B76E79" stroke-width="2.6"/><circle cx="32" cy="31" r="6" fill="none" stroke="#C9A24B" stroke-width="2.6"/><path d="M26 48h12" stroke="#B76E79" stroke-width="2.6" stroke-linecap="round"/></svg>
+        <div>
+          <span class="r-num">Reason 04</span>
+          <h3>家で再現できる仕上げ</h3>
+          <p>お帰り前に、ドライヤーの当て方とスタイリング剤の使い方をミニレッスン。「サロン帰りの髪」を毎朝5分で再現できるようにお教えします。</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ メニュー ============ -->
+<section class="menu">
+  <div class="wrap">
+    <p class="eyebrow fade">Menu</p>
+    <h2 class="sec-title fade">メニュー・料金</h2>
+    <p class="sec-lead fade">表示はすべて税込価格です。</p>
+    <div class="menu-table fade">
+      <div class="menu-row is-pickup">
+        <span class="m-name"><span class="m-badge">初回限定</span>カット＋透明感カラー＋うる艶トリートメント<small>カウンセリング20分つき・指名料無料</small></span>
+        <span class="m-price">¥9,900</span>
+      </div>
+      <div class="menu-row"><span class="m-name">カット<small>シャンプー・ブロー込み</small></span><span class="m-price">¥6,600</span></div>
+      <div class="menu-row"><span class="m-name">カット＋カラー</span><span class="m-price">¥13,200</span></div>
+      <div class="menu-row"><span class="m-name">カット＋パーマ</span><span class="m-price">¥14,300</span></div>
+      <div class="menu-row"><span class="m-name">うる艶トリートメント<small>ホームケア剤つき</small></span><span class="m-price">¥6,600</span></div>
+      <div class="menu-row"><span class="m-name">前髪カット</span><span class="m-price">¥1,650</span></div>
+    </div>
+    <p class="menu-note">ロング料金なし・指名料なし。メニューに迷ったら、当日のカウンセリングでご相談ください。</p>
+  </div>
+</section>
+
+<!-- ============ お客様の声 ============ -->
+<section class="voice">
+  <div class="wrap">
+    <p class="eyebrow fade">Voice</p>
+    <h2 class="sec-title fade">お客様の声</h2>
+    <p class="sec-lead fade">初回クーポンからリピートしてくださった方の声をご紹介します。</p>
+    <div class="voice-grid">
+
+      <div class="voice-card fade">
+        <div class="voice-head">
+          <!-- ▼ 画像差し替えスロット②a: お客様写真 -->
+          <div class="voice-avatar" data-image-slot="voice-photo-1">
+            <svg viewBox="0 0 54 54"><circle cx="27" cy="27" r="27" fill="#F4E0D8"/><path d="M27 10c10 0 15 8 15 17 0 5-1 9 2 14l-7 5c-2-7-1-13-2-18-1-6-4-9-8-9s-7 3-8 9c-1 5 0 11-2 18l-7-5c3-5 2-9 2-14 0-9 5-17 15-17z" fill="#A56A52"/><circle cx="27" cy="28" r="9" fill="#F9E9DE"/></svg>
+          </div>
+          <div class="voice-meta">
+            <p class="v-name">M.K さま(20代)</p>
+            <p class="v-attr">初回クーポン利用 → 月1で通院中</p>
+          </div>
+        </div>
+        <p class="voice-stars" aria-label="5段階中5の評価">★★★★★</p>
+        <h3>「写真の色そのまま」が初めて叶った</h3>
+        <p>今までどこへ行っても暗くなりがちだったのに、見せた写真通りの透け感ベージュに。カウンセリングで肌の色まで見てもらえたのは初めてでした。</p>
+      </div>
+
+      <div class="voice-card fade">
+        <div class="voice-head">
+          <!-- ▼ 画像差し替えスロット②b: お客様写真 -->
+          <div class="voice-avatar" data-image-slot="voice-photo-2">
+            <svg viewBox="0 0 54 54"><circle cx="27" cy="27" r="27" fill="#EFE0E4"/><path d="M27 9c9 0 14 7 14 15 0 8 2 12 4 16l-9 6c-1-4-1-8-2-13-1-7-3-12-7-12s-6 5-7 12c-1 5-1 9-2 13l-9-6c2-4 4-8 4-16 0-8 5-15 14-15z" fill="#6B4A3E"/><circle cx="27" cy="27" r="9" fill="#F9E9DE"/></svg>
+          </div>
+          <div class="voice-meta">
+            <p class="v-name">A.S さま(30代)</p>
+            <p class="v-attr">カラー＋トリートメント</p>
+          </div>
+        </div>
+        <p class="voice-stars" aria-label="5段階中5の評価">★★★★★</p>
+        <h3>ブリーチ続きの髪が、指通りから変わった</h3>
+        <p>正直トリートメントは半信半疑でしたが、乾かしたときのまとまりが別物。教わったドライヤーの当て方だけでも通う価値がありました。</p>
+      </div>
+
+      <div class="voice-card fade">
+        <div class="voice-head">
+          <!-- ▼ 画像差し替えスロット②c: お客様写真 -->
+          <div class="voice-avatar" data-image-slot="voice-photo-3">
+            <svg viewBox="0 0 54 54"><circle cx="27" cy="27" r="27" fill="#F4E8DA"/><path d="M27 10c9 0 14 7 14 15v6c0 3 1 6 3 9l-8 5v-12c0-9-4-13-9-13s-9 4-9 13v12l-8-5c2-3 3-6 3-9v-6c0-8 5-15 14-15z" fill="#8A5A40"/><circle cx="27" cy="28" r="9" fill="#F9E9DE"/></svg>
+          </div>
+          <div class="voice-meta">
+            <p class="v-name">Y.T さま(20代)</p>
+            <p class="v-attr">仕事帰りに利用</p>
+          </div>
+        </div>
+        <p class="voice-stars" aria-label="5段階中4.5の評価">★★★★☆</p>
+        <h3>22時まで営業が、社会人にありがたい</h3>
+        <p>19時すぎに入っても急かされず、丁寧に仕上げてもらえます。半個室なので仕事帰りの疲れた顔でも気楽なのがうれしい(笑)。</p>
+      </div>
+
+    </div>
+    <p class="voice-note">※掲載のお客様の声・評価は、デモページ用に作成した架空のサンプルです。</p>
+  </div>
+</section>
+
+<!-- ============ スタイリスト ============ -->
+<section class="stylist">
+  <div class="wrap">
+    <p class="eyebrow fade">Stylist</p>
+    <h2 class="sec-title fade">担当スタイリスト</h2>
+    <p class="sec-lead fade">指名料無料。プロフィールを見て、好みが近い担当をお選びください。</p>
+    <div class="stylist-grid">
+
+      <div class="stylist-card fade">
+        <!-- ▼ 画像差し替えスロット③a: スタイリスト写真 -->
+        <div class="stylist-photo" data-image-slot="stylist-photo-1">
+          <svg viewBox="0 0 92 92"><circle cx="46" cy="46" r="46" fill="#F4E0D8"/><path d="M46 18c14 0 21 10 21 22 0 9 2 14 5 19l-11 7c-2-9-1-16-2-22-2-10-6-14-13-14s-11 4-13 14c-1 6 0 13-2 22l-11-7c3-5 5-10 5-19 0-12 7-22 21-22z" fill="#5C4035"/><circle cx="46" cy="44" r="14" fill="#F9E9DE"/><path d="M40 44c1-1 3-1 4 0M48 44c1-1 3-1 4 0" stroke="#5C4035" stroke-width="1.6" stroke-linecap="round"/><path d="M43 51c2 1.6 4 1.6 6 0" stroke="#C2766B" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg>
+        </div>
+        <div>
+          <span class="s-role">OWNER / TOP STYLIST</span>
+          <h3>AOI<small>スタイリスト歴12年</small></h3>
+          <p>外資系サロンで7年経験後、Luliaをオープン。ブリーチを使わない透明感カラーのレシピづくりが得意。骨格補正カットで「乾かすだけでキマる」を約束します。</p>
+        </div>
+      </div>
+
+      <div class="stylist-card fade">
+        <!-- ▼ 画像差し替えスロット③b: スタイリスト写真 -->
+        <div class="stylist-photo" data-image-slot="stylist-photo-2">
+          <svg viewBox="0 0 92 92"><circle cx="46" cy="46" r="46" fill="#EFE0E4"/><path d="M46 18c13 0 20 9 20 21v8c0 5 1 9 4 13l-10 6V52c0-12-5-17-14-17s-14 5-14 17v14l-10-6c3-4 4-8 4-13v-8c0-12 7-21 20-21z" fill="#7A4A35"/><circle cx="46" cy="45" r="14" fill="#F9E9DE"/><path d="M40 45c1-1 3-1 4 0M48 45c1-1 3-1 4 0" stroke="#7A4A35" stroke-width="1.6" stroke-linecap="round"/><path d="M43 52c2 1.6 4 1.6 6 0" stroke="#C2766B" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg>
+        </div>
+        <div>
+          <span class="s-role">STYLIST</span>
+          <h3>RINA<small>スタイリスト歴6年</small></h3>
+          <p>韓国風スタイルとレイヤーカットが得意。「初めての美容室は緊張する」という方にこそ指名してほしい、聞き上手なスタイリストです。</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 料金・オファー ============ -->
+<section class="offer" id="offer">
+  <div class="wrap">
+    <p class="eyebrow fade">Special Offer</p>
+    <h2 class="sec-title fade" style="color:#fff;">初めての方への、<br>ご招待クーポン</h2>
+    <p class="sec-lead fade">まずは一度、仕上がりの違いを体験してください。</p>
+
+    <div class="offer-card fade">
+      <div class="offer-card-head">
+        <p class="o-label">First Visit Coupon</p>
+        <p class="o-title">初回限定・WEB予約クーポン</p>
+      </div>
+      <div class="offer-card-body">
+        <p class="offer-menu">カット<span class="plus">＋</span>透明感カラー<span class="plus">＋</span>うる艶トリートメント</p>
+        <p class="offer-price-line">
+          <span class="p-old">通常 17,600円</span>
+          <span class="p-off">44%OFF</span>
+        </p>
+        <p class="offer-price"><span class="p-num">9,900</span><span class="p-yen">円</span><span class="p-tax">税込</span></p>
+        <p class="offer-sub">カウンセリング20分・指名料・ロング料金 すべて込み</p>
+        <ul class="offer-perks">
+          <li>WEB予約は24時間受付。空き枠がリアルタイムで見えます</li>
+          <li>当日予約OK。仕事帰りの「今日行きたい」に対応(22時まで)</li>
+          <li>2回目以降も使えるリピーター割をお渡しします</li>
+          <li>強引な店販・次回予約のおすすめは一切しません</li>
+        </ul>
+        <a class="btn-cta" href="#" data-demo-cta>
+          <span class="b-small">空き枠を見ながら選べる</span>
+          <span class="b-main">WEBで予約する</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ サロン情報 ============ -->
+<section class="salon">
+  <div class="wrap">
+    <p class="eyebrow fade">Salon</p>
+    <h2 class="sec-title fade">サロン情報・アクセス</h2>
+    <p class="sec-lead fade">表参道駅A2出口から、ケヤキ並木を歩いて3分。</p>
+    <div class="salon-card fade">
+      <!-- ▼ 画像差し替えスロット④: 店内写真 or 地図 -->
+      <div class="salon-map" data-image-slot="salon-interior">
+        <svg viewBox="0 0 440 240" xmlns="http://www.w3.org/2000/svg" aria-label="アクセスマップ(イメージ)">
+          <rect width="440" height="240" fill="#F6E9E3"/>
+          <path d="M0 150 L440 90" stroke="#fff" stroke-width="26"/>
+          <path d="M0 150 L440 90" stroke="#E3CCC2" stroke-width="26" stroke-dasharray="1 0" opacity=".0"/>
+          <path d="M140 0 L180 240" stroke="#fff" stroke-width="18"/>
+          <path d="M300 0 L320 240" stroke="#fff" stroke-width="14"/>
+          <text x="20" y="140" font-size="11" fill="#A98B7F" font-family="sans-serif" transform="rotate(-7.8 20 140)">表参道 けやき並木通り</text>
+          <g>
+            <circle cx="166" cy="132" r="10" fill="#54453F"/>
+            <text x="166" y="136" text-anchor="middle" font-size="9" fill="#fff" font-family="sans-serif" font-weight="bold">A2</text>
+            <text x="166" y="158" text-anchor="middle" font-size="10" fill="#54453F" font-family="sans-serif">表参道駅</text>
+          </g>
+          <g>
+            <path d="M318 96c0-14 11-25 25-25s25 11 25 25c0 18-25 38-25 38s-25-20-25-38z" fill="#B76E79"/>
+            <circle cx="343" cy="96" r="10" fill="#fff"/>
+            <text x="343" y="100" text-anchor="middle" font-size="9" fill="#B76E79" font-family="serif" font-style="italic" font-weight="bold">L</text>
+          </g>
+          <text x="343" y="155" text-anchor="middle" font-size="11" fill="#9D5560" font-family="sans-serif" font-weight="bold">Lulia 2F</text>
+          <circle cx="60" cy="60" r="14" fill="#E8D5CC"/><circle cx="84" cy="48" r="10" fill="#E8D5CC"/>
+          <circle cx="390" cy="200" r="14" fill="#E8D5CC"/><circle cx="412" cy="188" r="10" fill="#E8D5CC"/>
+        </svg>
+      </div>
+      <div class="salon-info">
+        <h3>Lulia hair design</h3>
+        <dl>
+          <dt>住所</dt><dd>東京都港区南青山X-X-X LuliaビルD 2F(デモ用の架空住所です)</dd>
+          <dt>アクセス</dt><dd>東京メトロ「表参道駅」A2出口 徒歩3分</dd>
+          <dt>営業時間</dt><dd>平日 11:00-22:00 ／ 土日祝 10:00-20:00</dd>
+          <dt>定休日</dt><dd>毎週火曜</dd>
+          <dt>支払い</dt><dd>各種クレジット・QR決済・交通系IC</dd>
+          <dt>席数</dt><dd>半個室4席(完全予約制)</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq">
+  <div class="wrap">
+    <p class="eyebrow fade">FAQ</p>
+    <h2 class="sec-title fade">よくあるご質問</h2>
+    <div class="faq-list">
+      <div class="faq-item fade">
+        <button class="faq-q" type="button" aria-expanded="false">当日予約はできますか？</button>
+        <div class="faq-a"><div class="faq-a-inner">はい、空き枠があれば当日2時間前まで承ります。WEB予約ページでリアルタイムの空き状況をご確認いただけます。お急ぎの場合はお電話が確実です。</div></div>
+      </div>
+      <div class="faq-item fade">
+        <button class="faq-q" type="button" aria-expanded="false">施術時間はどのくらいかかりますか？</button>
+        <div class="faq-a"><div class="faq-a-inner">初回クーポン(カット＋カラー＋トリートメント)は、カウンセリング込みで約2時間30分が目安です。お時間に限りがある場合は、予約時の備考欄にご記入いただければ調整します。</div></div>
+      </div>
+      <div class="faq-item fade">
+        <button class="faq-q" type="button" aria-expanded="false">ブリーチなしでも透明感カラーはできますか？</button>
+        <div class="faq-a"><div class="faq-a-inner">はい、Luliaの得意分野です。髪の赤みを抑える調合で、ブリーチなしでも透け感のある仕上がりをつくります。髪の状態によってご提案が変わるため、カウンセリングで最適なプランをお出しします。</div></div>
+      </div>
+      <div class="faq-item fade">
+        <button class="faq-q" type="button" aria-expanded="false">初回クーポンの利用に条件はありますか？</button>
+        <div class="faq-a"><div class="faq-a-inner">Luliaのご利用が初めての方で、WEB予約をされた方が対象です。回数契約や次回予約の強制は一切ありません。2回目以降もリピーター割をご用意しています。</div></div>
+      </div>
+      <div class="faq-item fade">
+        <button class="faq-q" type="button" aria-expanded="false">男性や子ども連れでも利用できますか？</button>
+        <div class="faq-a"><div class="faq-a-inner">もちろんご利用いただけます。半個室席のため、お子さま連れの方はベビーカーのまま入店可能です。ご希望があれば予約時にお知らせください。</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 最終CTA ============ -->
+<section class="last-cta">
+  <div class="wrap">
+    <div class="lc-flower fade">
+      <svg viewBox="0 0 120 70"><g fill="none" stroke="#B76E79" stroke-width="2" stroke-linecap="round"><path d="M60 62c0-18 8-30 22-36M60 62c0-18-8-30-22-36M60 62c0-24 0-38 0-48"/><circle cx="60" cy="10" r="4" fill="#B76E79" stroke="none"/><circle cx="84" cy="24" r="3.4" fill="#C9A24B" stroke="none"/><circle cx="36" cy="24" r="3.4" fill="#C9A24B" stroke="none"/><path d="M52 14c3-2 6-3 8-3M68 14c-3-2-6-3-8-3" stroke="#D9A18F"/></g></svg>
+    </div>
+    <h2 class="fade">次の予定の前に、<br>髪から気分を変えにきませんか。</h2>
+    <p class="fade">初回9,900円・指名料無料・22時まで営業。空き枠を見ながら今すぐ予約できます。</p>
+    <a class="btn-cta fade" href="#offer">
+      <span class="b-small">初回限定 44%OFFクーポン</span>
+      <span class="b-main">WEB予約にすすむ</span>
+    </a>
+    <p class="cta-note fade"><span>24時間受付</span><span>当日予約OK</span><span>表参道駅 徒歩3分</span></p>
+  </div>
+</section>
+
+<!-- ============ フッター ============ -->
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="f-logo">Lulia</p>
+    <p class="f-sub">HAIR DESIGN — OMOTESANDO</p>
+    <ul class="f-links">
+      <li><a href="#" data-demo-cta>採用情報</a></li>
+      <li><a href="#" data-demo-cta>プライバシーポリシー</a></li>
+      <li><a href="#" data-demo-cta>運営会社</a></li>
+    </ul>
+    <p class="f-demo">※このページはLP制作サービスのデモ用サンプルです。実在の店舗・企業ではありません。<br>掲載している価格・実績・お客様の声・住所はすべて架空のものです。</p>
+    <p class="f-copy">&copy; 2026 Lulia hair design (DEMO)</p>
+  </div>
+</footer>
+
+<!-- ============ 追従CTA ============ -->
+<div class="sticky-cta" id="stickyCta">
+  <a class="btn-cta" href="#offer">
+    <span class="b-small">初回限定 9,900円クーポン</span>
+    <span class="b-main">WEB予約はこちら</span>
+  </a>
+</div>
+
+<script>
+// スクロールフェードイン
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+
+// FAQアコーディオン
+document.querySelectorAll('.faq-item').forEach(item=>{
+  const q = item.querySelector('.faq-q');
+  const a = item.querySelector('.faq-a');
+  q.addEventListener('click',()=>{
+    const open = item.classList.toggle('open');
+    q.setAttribute('aria-expanded', open);
+    a.style.maxHeight = open ? a.scrollHeight + 'px' : 0;
+  });
+});
+
+// 追従CTA(ヒーロー通過後に表示、オファーセクションでは非表示)
+const sticky = document.getElementById('stickyCta');
+const heroCta = document.getElementById('hero-cta');
+const offerSec = document.getElementById('offer');
+function updateSticky(){
+  const heroGone = heroCta.getBoundingClientRect().bottom < 0;
+  const offerRect = offerSec.getBoundingClientRect();
+  const inOffer = offerRect.top < innerHeight && offerRect.bottom > 0;
+  sticky.classList.toggle('show', heroGone && !inOffer);
+}
+addEventListener('scroll', updateSticky, {passive:true});
+updateSticky();
+
+// デモ用: 実遷移するリンクはアラート案内
+document.querySelectorAll('[data-demo-cta]').forEach(el=>{
+  el.addEventListener('click',(e)=>{
+    e.preventDefault();
+    alert('デモページのため、ここから先の予約フォーム・下層ページはございません。\n実際の制作では、ご利用の予約システム(ホットペッパー・リザービア等)に接続します。');
+  });
+});
+</script>
+</body>
+</html>
