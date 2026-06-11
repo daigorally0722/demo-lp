@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>うちのこ食堂｜国産・無添加のフレッシュドッグフード定期便【デモサンプル】</title>
+<meta name="description" content="国産食材100%・合成添加物不使用のフレッシュドッグフード。獣医師と共同開発した総合栄養食を、毎月ポストにお届け。初回限定980円。※LP制作サービスのデモ用サンプルページです。">
+<meta name="robots" content="noindex">
+<style>
+/* ============================================================
+   うちのこ食堂 - デモLP
+   配色: クリーム×ディープグリーン×テラコッタ
+   ============================================================ */
+:root{
+  --cream:#FAF5EC;
+  --cream-deep:#F3EADA;
+  --green:#3D6B4F;
+  --green-deep:#2C503C;
+  --green-deep:#2E523D;
+  --green-pale:#E4EFE7;
+  --terra:#E0702E;
+  --terra-deep:#C95F22;
+  --ink:#46362A;
+  --ink-soft:#7A6A5C;
+  --line:#E6DCCB;
+  --white:#FFFFFF;
+  --gold:#D9A93C;
+  --radius:18px;
+  --shadow:0 8px 30px rgba(70,54,42,.10);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{
+  font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic Medium","YuGothic",-apple-system,BlinkMacSystemFont,"Segoe UI",Meiryo,sans-serif;
+  color:var(--ink);
+  background:var(--cream);
+  line-height:1.85;
+  font-size:16px;
+  overflow-x:hidden;
+}
+img,svg{display:block;max-width:100%;}
+a{text-decoration:none;color:inherit;}
+ul{list-style:none;}
+
+.wrap{width:100%;max-width:560px;margin:0 auto;padding:0 22px;}
+@media(min-width:900px){.wrap{max-width:1024px;}}
+
+/* ---------- 共通パーツ ---------- */
+.eyebrow{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  font-size:12px;font-weight:700;letter-spacing:.28em;color:var(--green);
+  text-transform:uppercase;margin-bottom:10px;
+}
+.eyebrow::before,.eyebrow::after{content:"";width:26px;height:1px;background:var(--green);opacity:.5;}
+.sec-title{
+  font-size:clamp(20px,5.4vw,32px);font-weight:800;line-height:1.5;
+  text-align:center;letter-spacing:.04em;margin-bottom:14px;
+}
+.sec-title .marker{
+  background:linear-gradient(transparent 62%,#F7DFA8 62%);
+  padding:0 2px;
+}
+.sec-lead{text-align:center;font-size:14.5px;color:var(--ink-soft);margin-bottom:36px;}
+section{padding:72px 0;}
+
+/* CTAボタン */
+.btn-cta{
+  position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  width:100%;max-width:420px;margin:0 auto;padding:18px 48px 17px 24px;
+  background:linear-gradient(135deg,var(--terra) 0%,var(--terra-deep) 100%);
+  color:#fff;border-radius:999px;border:none;cursor:pointer;
+  box-shadow:0 10px 24px rgba(224,112,46,.38),inset 0 -3px 0 rgba(0,0,0,.12);
+  transition:transform .2s ease,box-shadow .2s ease;
+  text-align:center;
+}
+.btn-cta:active{transform:scale(.97);}
+@media(hover:hover){.btn-cta:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(224,112,46,.45);}}
+.btn-cta .b-small{font-size:12px;font-weight:700;letter-spacing:.08em;opacity:.95;}
+.btn-cta .b-main{font-size:19px;font-weight:800;letter-spacing:.06em;line-height:1.4;}
+.btn-cta::after{
+  content:"";position:absolute;right:22px;top:50%;width:9px;height:9px;
+  border-top:2.5px solid #fff;border-right:2.5px solid #fff;
+  transform:translateY(-50%) rotate(45deg);
+}
+.cta-note{display:flex;justify-content:center;gap:14px;margin-top:14px;font-size:12px;color:var(--ink-soft);flex-wrap:wrap;}
+.cta-note span{display:flex;align-items:center;gap:4px;}
+.cta-note span::before{content:"✓";color:var(--green);font-weight:800;}
+
+/* スクロールフェードイン */
+.fade{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
+.fade.in{opacity:1;transform:none;}
+
+/* ---------- ヘッダー ---------- */
+.site-header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(250,245,236,.92);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;height:58px;}
+.logo{display:flex;align-items:center;gap:8px;font-weight:800;font-size:17px;letter-spacing:.06em;}
+.logo svg{width:30px;height:30px;}
+.logo .logo-sub{font-size:9px;font-weight:600;letter-spacing:.18em;color:var(--green);display:block;line-height:1.2;}
+.header-btn{
+  font-size:12.5px;font-weight:800;color:#fff;background:var(--terra);
+  padding:9px 16px;border-radius:999px;letter-spacing:.04em;
+  box-shadow:0 4px 10px rgba(224,112,46,.3);
+}
+
+/* ---------- ヒーロー ---------- */
+.hero{
+  position:relative;padding:44px 0 56px;overflow:hidden;
+  background:
+    radial-gradient(circle at 85% 8%,#F2E3C8 0%,transparent 42%),
+    radial-gradient(circle at 8% 92%,#E4EFE7 0%,transparent 45%),
+    var(--cream);
+}
+.hero-badges{display:flex;justify-content:center;gap:8px;margin-bottom:20px;flex-wrap:wrap;}
+.hero-badges li{
+  font-size:11px;font-weight:800;letter-spacing:.05em;color:var(--green);
+  background:var(--white);border:1.5px solid var(--green);
+  padding:5px 13px;border-radius:999px;
+}
+.hero h1{
+  font-size:clamp(28px,7.6vw,44px);font-weight:900;line-height:1.45;
+  text-align:center;letter-spacing:.04em;margin-bottom:14px;
+}
+.hero h1 .accent{color:var(--green);}
+.hero-sub{text-align:center;font-size:14px;color:var(--ink-soft);font-weight:600;letter-spacing:.04em;margin-bottom:26px;}
+.hero-visual{position:relative;max-width:460px;margin:0 auto 26px;}
+.hero-visual svg{width:100%;height:auto;}
+.hero-visual video{
+  width:100%;height:auto;border-radius:22px;
+  box-shadow:0 16px 40px rgba(70,54,42,.22);
+  border:5px solid var(--white);
+}
+.hero-video-badge{
+  position:absolute;left:14px;top:14px;z-index:2;
+  font-size:11px;font-weight:800;letter-spacing:.06em;color:var(--green-deep);
+  background:rgba(255,255,255,.92);padding:6px 12px;border-radius:999px;
+  box-shadow:0 2px 8px rgba(70,54,42,.15);
+}
+
+/* 初回オファーフラッグ */
+.offer-flash{
+  display:flex;align-items:center;justify-content:center;gap:16px;
+  max-width:420px;margin:0 auto 22px;padding:14px 18px;
+  background:var(--white);border:2px solid var(--terra);border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+.offer-flash .of-label{
+  font-size:11.5px;font-weight:800;color:#fff;background:var(--terra);
+  padding:7px 10px;border-radius:10px;text-align:center;line-height:1.45;letter-spacing:.04em;flex-shrink:0;
+}
+.offer-flash .of-price{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;}
+.offer-flash .of-old{font-size:13px;color:var(--ink-soft);text-decoration:line-through;font-weight:600;}
+.offer-flash .of-now{font-size:34px;font-weight:900;color:var(--terra);line-height:1;letter-spacing:.01em;}
+.offer-flash .of-now small{font-size:14px;font-weight:800;}
+.offer-flash .of-tax{font-size:11px;color:var(--ink-soft);font-weight:600;}
+
+@media(min-width:900px){
+  .hero{padding:64px 0 72px;}
+  .hero-grid{display:grid;grid-template-columns:1fr 420px;gap:48px;align-items:center;}
+  .hero-grid .hero-left h1,.hero-grid .hero-left .hero-sub{text-align:left;}
+  .hero-grid .hero-badges{justify-content:flex-start;}
+  .hero-grid .offer-flash,.hero-grid .btn-cta{margin-left:0;}
+  .hero-grid .cta-note{justify-content:flex-start;}
+}
+
+/* ---------- 実績バー ---------- */
+.trust-bar{background:var(--green);padding:18px 0;}
+.trust-bar .wrap{display:flex;justify-content:center;gap:6px;}
+.trust-item{flex:1;max-width:170px;text-align:center;color:#fff;padding:4px 6px;}
+.trust-item+.trust-item{border-left:1px solid rgba(255,255,255,.25);}
+.trust-item .t-label{font-size:10.5px;letter-spacing:.08em;opacity:.85;display:block;}
+.trust-item .t-value{font-size:17px;font-weight:900;letter-spacing:.03em;}
+.trust-item .t-value small{font-size:11px;font-weight:700;}
+.trust-foot{text-align:center;color:rgba(255,255,255,.7);font-size:9.5px;margin-top:8px;letter-spacing:.05em;}
+
+/* ---------- 悩み共感 ---------- */
+.nayami{background:var(--white);}
+.nayami-list{display:grid;gap:12px;max-width:520px;margin:0 auto 8px;}
+@media(min-width:900px){.nayami-list{max-width:760px;grid-template-columns:1fr 1fr;}}
+.nayami-list li{
+  display:flex;gap:12px;align-items:flex-start;
+  background:var(--cream);border-radius:14px;padding:16px 18px;
+  font-size:14.5px;font-weight:600;line-height:1.7;
+}
+.nayami-list li::before{
+  content:"";flex-shrink:0;width:22px;height:22px;margin-top:2px;border-radius:6px;
+  background:var(--green) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="white" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></svg>') center/14px no-repeat;
+}
+.nayami-close{
+  text-align:center;margin-top:36px;font-size:clamp(17px,4.6vw,22px);font-weight:800;line-height:1.8;
+}
+.nayami-close .big{color:var(--green);font-size:1.18em;}
+.down-arrow{width:0;height:0;margin:28px auto 0;border-left:26px solid transparent;border-right:26px solid transparent;border-top:20px solid var(--green-pale);}
+
+/* ---------- 商品コンセプト ---------- */
+.concept{background:var(--green-pale);}
+.concept-card{
+  background:var(--white);border-radius:24px;box-shadow:var(--shadow);
+  padding:34px 26px;max-width:560px;margin:0 auto;
+}
+@media(min-width:900px){
+  .concept-card{max-width:900px;display:grid;grid-template-columns:380px 1fr;gap:40px;align-items:center;padding:48px;}
+}
+.concept-visual{max-width:340px;margin:0 auto 24px;}
+@media(min-width:900px){.concept-visual{margin:0;}}
+.concept-name{font-size:12px;font-weight:800;letter-spacing:.22em;color:var(--green);margin-bottom:6px;}
+.concept-title{font-size:clamp(20px,5.4vw,26px);font-weight:800;line-height:1.6;margin-bottom:14px;}
+.concept-text{font-size:14.5px;color:var(--ink-soft);margin-bottom:20px;}
+.concept-specs{display:flex;flex-wrap:wrap;gap:8px;}
+.concept-specs li{
+  font-size:11.5px;font-weight:700;color:var(--green-deep);
+  background:var(--green-pale);padding:6px 12px;border-radius:999px;
+}
+
+/* ---------- 選ばれる理由 ---------- */
+.reasons{background:var(--cream);}
+.reason-grid{display:grid;gap:16px;}
+@media(min-width:900px){.reason-grid{grid-template-columns:repeat(3,1fr);gap:22px;}}
+.reason-card{
+  background:var(--white);border-radius:var(--radius);padding:26px 22px;
+  box-shadow:var(--shadow);position:relative;
+}
+.reason-num{
+  position:absolute;top:18px;right:20px;
+  font-size:30px;font-weight:900;color:var(--cream-deep);line-height:1;letter-spacing:.02em;
+}
+.reason-icon{width:58px;height:58px;margin-bottom:14px;}
+.reason-card h3{font-size:17px;font-weight:800;line-height:1.55;margin-bottom:8px;letter-spacing:.03em;}
+.reason-card p{font-size:13.5px;color:var(--ink-soft);line-height:1.8;}
+
+/* ---------- お客様の声 ---------- */
+.voice{background:var(--white);}
+.voice-grid{display:grid;gap:18px;}
+@media(min-width:900px){.voice-grid{grid-template-columns:repeat(3,1fr);}}
+.voice-card{
+  background:var(--cream);border-radius:var(--radius);padding:24px 22px;position:relative;
+}
+.voice-head{display:flex;align-items:center;gap:14px;margin-bottom:12px;}
+.voice-avatar{width:56px;height:56px;flex-shrink:0;border-radius:50%;overflow:hidden;background:var(--white);border:2px solid var(--line);}
+.voice-meta .v-name{font-size:13.5px;font-weight:800;}
+.voice-meta .v-attr{font-size:11.5px;color:var(--ink-soft);}
+.voice-stars{color:var(--gold);font-size:14px;letter-spacing:2px;margin-bottom:8px;}
+.voice-card h3{font-size:15.5px;font-weight:800;line-height:1.6;margin-bottom:8px;color:var(--green-deep);}
+.voice-card p{font-size:13.5px;color:var(--ink-soft);}
+.voice-note{text-align:center;font-size:11px;color:var(--ink-soft);margin-top:22px;opacity:.85;}
+
+/* ---------- 料金・オファー ---------- */
+.price{background:linear-gradient(180deg,var(--green) 0%,var(--green-deep) 100%);color:#fff;}
+.price .eyebrow{color:#F7DFA8;}
+.price .eyebrow::before,.price .eyebrow::after{background:#F7DFA8;}
+.price .sec-lead{color:rgba(255,255,255,.85);}
+.price-card{
+  background:var(--white);color:var(--ink);border-radius:26px;
+  max-width:480px;margin:0 auto;overflow:hidden;
+  box-shadow:0 20px 50px rgba(0,0,0,.25);
+}
+.price-card-head{
+  background:var(--terra);color:#fff;text-align:center;padding:16px 20px 14px;
+}
+.price-card-head .p-label{font-size:12.5px;font-weight:800;letter-spacing:.14em;}
+.price-card-head .p-title{font-size:21px;font-weight:900;letter-spacing:.04em;}
+.price-card-body{padding:30px 26px 34px;}
+.price-line{text-align:center;margin-bottom:6px;}
+.price-line .p-old{font-size:15px;color:var(--ink-soft);font-weight:700;text-decoration:line-through;}
+.price-line .p-off{
+  display:inline-block;font-size:12px;font-weight:900;color:#fff;background:var(--green);
+  border-radius:8px;padding:3px 10px;margin-left:8px;vertical-align:2px;
+}
+.price-main{text-align:center;line-height:1.1;margin-bottom:6px;}
+.price-main .p-num{font-size:64px;font-weight:900;color:var(--terra);letter-spacing:-.01em;}
+.price-main .p-yen{font-size:26px;font-weight:900;color:var(--terra);}
+.price-main .p-tax{font-size:12px;color:var(--ink-soft);font-weight:600;margin-left:6px;}
+.price-sub{text-align:center;font-size:12.5px;color:var(--ink-soft);margin-bottom:20px;}
+.price-perks{display:grid;gap:9px;margin-bottom:26px;}
+.price-perks li{
+  display:flex;align-items:flex-start;gap:10px;font-size:13.5px;font-weight:700;
+  background:var(--cream);border-radius:10px;padding:11px 14px;line-height:1.6;
+}
+.price-perks li::before{
+  content:"";flex-shrink:0;width:19px;height:19px;margin-top:2px;border-radius:50%;
+  background:var(--terra) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="white" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></svg>') center/12px no-repeat;
+}
+.guarantee{
+  display:flex;align-items:center;gap:14px;
+  border:2px dashed var(--green);border-radius:14px;padding:14px 16px;margin-top:22px;
+  background:var(--green-pale);
+}
+.guarantee svg{width:46px;height:46px;flex-shrink:0;}
+.guarantee .g-title{font-size:14px;font-weight:900;color:var(--green-deep);}
+.guarantee .g-text{font-size:11.5px;color:var(--ink-soft);line-height:1.6;}
+
+/* ---------- ご利用の流れ ---------- */
+.flow{background:var(--cream);}
+.flow-list{display:grid;gap:14px;max-width:520px;margin:0 auto;counter-reset:flow;}
+@media(min-width:900px){.flow-list{max-width:100%;grid-template-columns:repeat(4,1fr);}}
+.flow-list li{
+  background:var(--white);border-radius:var(--radius);padding:22px 20px 22px 64px;
+  position:relative;box-shadow:var(--shadow);counter-increment:flow;
+}
+@media(min-width:900px){.flow-list li{padding:54px 20px 22px;text-align:center;}}
+.flow-list li::before{
+  content:"0" counter(flow);
+  position:absolute;left:18px;top:22px;
+  width:32px;height:32px;border-radius:50%;background:var(--green);color:#fff;
+  font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center;
+}
+@media(min-width:900px){.flow-list li::before{left:50%;transform:translateX(-50%);top:14px;}}
+.flow-list h3{font-size:15.5px;font-weight:800;margin-bottom:4px;}
+.flow-list p{font-size:12.5px;color:var(--ink-soft);line-height:1.7;}
+
+/* ---------- FAQ ---------- */
+.faq{background:var(--white);}
+.faq-list{max-width:640px;margin:0 auto;display:grid;gap:12px;}
+.faq-item{border:1.5px solid var(--line);border-radius:14px;overflow:hidden;background:var(--cream);}
+.faq-q{
+  width:100%;display:flex;align-items:center;gap:12px;text-align:left;
+  padding:17px 50px 17px 18px;background:none;border:none;cursor:pointer;
+  font-family:inherit;font-size:14.5px;font-weight:800;color:var(--ink);line-height:1.6;position:relative;
+}
+.faq-q::before{
+  content:"Q";flex-shrink:0;width:28px;height:28px;border-radius:50%;
+  background:var(--green);color:#fff;font-weight:900;font-size:13px;
+  display:flex;align-items:center;justify-content:center;
+}
+.faq-q::after{
+  content:"";position:absolute;right:18px;top:50%;width:10px;height:10px;
+  border-right:2.5px solid var(--green);border-bottom:2.5px solid var(--green);
+  transform:translateY(-70%) rotate(45deg);transition:transform .3s;
+}
+.faq-item.open .faq-q::after{transform:translateY(-30%) rotate(-135deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.faq-a-inner{display:flex;gap:12px;padding:2px 18px 18px;font-size:13.5px;color:var(--ink-soft);line-height:1.8;}
+.faq-a-inner::before{
+  content:"A";flex-shrink:0;width:28px;height:28px;border-radius:50%;
+  background:var(--terra);color:#fff;font-weight:900;font-size:13px;
+  display:flex;align-items:center;justify-content:center;
+}
+
+/* ---------- 最終CTA ---------- */
+.last-cta{
+  background:
+    radial-gradient(circle at 12% 15%,rgba(224,112,46,.12) 0%,transparent 40%),
+    radial-gradient(circle at 90% 85%,rgba(61,107,79,.14) 0%,transparent 45%),
+    var(--cream-deep);
+  text-align:center;
+}
+.last-cta .lc-visual{max-width:200px;margin:0 auto 18px;}
+.last-cta h2{font-size:clamp(22px,6vw,30px);font-weight:900;line-height:1.6;margin-bottom:10px;letter-spacing:.04em;}
+.last-cta p{font-size:14px;color:var(--ink-soft);margin-bottom:26px;}
+
+/* ---------- フッター ---------- */
+.site-footer{background:var(--green-deep);color:rgba(255,255,255,.85);padding:38px 0 110px;font-size:12px;}
+.site-footer .f-logo{display:flex;align-items:center;justify-content:center;gap:8px;font-weight:800;font-size:16px;color:#fff;margin-bottom:14px;}
+.site-footer .f-logo svg{width:26px;height:26px;}
+.f-links{display:flex;justify-content:center;gap:18px;margin-bottom:20px;flex-wrap:wrap;}
+.f-links a{opacity:.8;}
+.f-demo{
+  max-width:520px;margin:0 auto 14px;padding:12px 16px;
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-radius:10px;
+  font-size:11.5px;line-height:1.7;text-align:center;
+}
+.f-copy{text-align:center;opacity:.6;font-size:11px;}
+
+/* ---------- 追従CTAバー ---------- */
+.sticky-cta{
+  position:fixed;left:0;right:0;bottom:0;z-index:90;
+  padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+  background:rgba(255,255,255,.95);backdrop-filter:blur(8px);
+  border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(70,54,42,.12);
+  transform:translateY(110%);transition:transform .35s ease;
+}
+.sticky-cta.show{transform:none;}
+.sticky-cta .btn-cta{padding:13px 44px 12px 20px;max-width:480px;}
+.sticky-cta .btn-cta .b-small{font-size:10.5px;}
+.sticky-cta .btn-cta .b-main{font-size:15.5px;}
+</style>
+</head>
+<body>
+
+<!-- ============ ヘッダー ============ -->
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="うちのこ食堂">
+      <!-- ロゴアイコン(肉球) -->
+      <svg viewBox="0 0 48 48" aria-hidden="true">
+        <circle cx="24" cy="24" r="23" fill="#3D6B4F"/>
+        <ellipse cx="16" cy="17" rx="3.6" ry="4.6" fill="#FAF5EC" transform="rotate(-14 16 17)"/>
+        <ellipse cx="24" cy="14.5" rx="3.6" ry="4.6" fill="#FAF5EC"/>
+        <ellipse cx="32" cy="17" rx="3.6" ry="4.6" fill="#FAF5EC" transform="rotate(14 32 17)"/>
+        <path d="M24 22.5c5.6 0 9.5 4.4 9.5 8.2 0 3-2.3 4.8-4.8 4.3-2-.4-3-1.2-4.7-1.2s-2.7.8-4.7 1.2c-2.5.5-4.8-1.3-4.8-4.3 0-3.8 3.9-8.2 9.5-8.2z" fill="#FAF5EC"/>
+      </svg>
+      <span>うちのこ食堂<span class="logo-sub">UCHINOKO SHOKUDO</span></span>
+    </a>
+    <a class="header-btn" href="#offer">初回980円</a>
+  </div>
+</header>
+
+<!-- ============ ヒーロー ============ -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-left">
+      <ul class="hero-badges">
+        <li>国産食材100%</li>
+        <li>合成添加物 不使用</li>
+        <li>獣医師と共同開発</li>
+      </ul>
+      <h1>毎日のごはんを、<br>いちばんの<span class="accent">健康習慣</span>に。</h1>
+      <p class="hero-sub">人も食べられる品質の、フレッシュドッグフード定期便</p>
+
+      <!-- ▼▼ メディア差し替えスロット①: ヒーロー動画（hero.mp4 / AI生成のイメージ映像） ▼▼ -->
+      <div class="hero-visual" data-image-slot="hero-main">
+        <span class="hero-video-badge">湯気まで、ごちそう。</span>
+        <video src="hero.mp4" autoplay muted loop playsinline aria-label="湯気の立つ鶏むね肉と野菜のフレッシュフードのイメージ映像"></video>
+      </div>
+      <!-- ▲▲ メディア差し替えスロット① ここまで ▲▲ -->
+
+      <div class="offer-flash">
+        <span class="of-label">初回限定<br>モニター価格</span>
+        <span class="of-price">
+          <span class="of-old">通常4,980円</span>
+          <span class="of-now">980<small>円</small></span>
+          <span class="of-tax">(税込・送料無料)</span>
+        </span>
+      </div>
+
+      <a class="btn-cta" href="#offer" id="hero-cta">
+        <span class="b-small">＼ 約80%OFFは今だけ ／</span>
+        <span class="b-main">初回980円でためしてみる</span>
+      </a>
+      <p class="cta-note"><span>定期縛りなし</span><span>いつでも解約OK</span><span>全額返金保証つき</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 実績バー ============ -->
+<div class="trust-bar">
+  <div class="wrap" style="display:block;">
+    <div style="display:flex;justify-content:center;">
+      <div class="trust-item"><span class="t-label">シリーズ累計</span><span class="t-value">120<small>万食</small></span></div>
+      <div class="trust-item"><span class="t-label">定期便の継続率</span><span class="t-value">94.2<small>%</small></span></div>
+      <div class="trust-item"><span class="t-label">愛犬家の満足度</span><span class="t-value">4.8<small>/5.0</small></span></div>
+    </div>
+    <p class="trust-foot">※数値はデモ表示用のサンプルです（自社調べ想定の架空データ）</p>
+  </div>
+</div>
+
+<!-- ============ 悩み共感 ============ -->
+<section class="nayami">
+  <div class="wrap">
+    <p class="eyebrow fade">CHECK</p>
+    <h2 class="sec-title fade">愛犬のごはん、<br class="sp"><span class="marker">こんなモヤモヤ</span>ありませんか？</h2>
+    <ul class="nayami-list">
+      <li class="fade">原材料表示が難しくて、<b>結局よくわからないまま</b>選んでいる</li>
+      <li class="fade">食いつきにムラがあり、<b>残されるたびに不安</b>になる</li>
+      <li class="fade"><b>涙やけ・毛づや・うんちの調子</b>が気になっている</li>
+      <li class="fade">シニア期に向けて、<b>そろそろ食事を見直したい</b></li>
+    </ul>
+    <p class="nayami-close fade">そのモヤモヤ、<br><span class="big">「ごはんの中身」を変えるだけ</span>で<br>スッと軽くなるかもしれません。</p>
+    <div class="down-arrow"></div>
+  </div>
+</section>
+
+<!-- ============ 商品コンセプト ============ -->
+<section class="concept">
+  <div class="wrap">
+    <p class="eyebrow fade">ABOUT</p>
+    <h2 class="sec-title fade">人の食事と同じ基準の、<br>"手づくり品質"のごはん</h2>
+    <p class="sec-lead fade">うちのこ食堂は、台所でつくるごはんのような安心を目指しました。</p>
+    <div class="concept-card fade">
+      <!-- ▼▼ 画像差し替えスロット②: 商品パッケージ写真 ▼▼ -->
+      <div class="concept-visual" data-image-slot="product-package">
+        <svg viewBox="0 0 340 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="うちのこ食堂のパッケージイメージ">
+          <ellipse cx="170" cy="272" rx="120" ry="14" fill="#EFE5D2"/>
+          <!-- パウチ袋 -->
+          <path d="M96 76 C96 58 116 48 170 48 C224 48 244 58 244 76 L250 240 C250 256 216 266 170 266 C124 266 90 256 90 240 Z" fill="#3D6B4F"/>
+          <path d="M96 76 C96 58 116 48 170 48 C224 48 244 58 244 76 L245 96 C220 106 120 106 95 96 Z" fill="#2E523D"/>
+          <path d="M104 60 L236 60 L238 74 C210 84 130 84 102 74 Z" fill="#E6DCCB"/>
+          <!-- ラベル -->
+          <rect x="113" y="118" width="114" height="118" rx="14" fill="#FAF5EC"/>
+          <circle cx="170" cy="156" r="24" fill="#E8A55F"/>
+          <path d="M152 144l-8-16 17 7zM188 144l8-16-17 7z" fill="#D98E4A"/>
+          <circle cx="162" cy="154" r="2.6" fill="#46362A"/>
+          <circle cx="178" cy="154" r="2.6" fill="#46362A"/>
+          <ellipse cx="170" cy="162" rx="3.4" ry="2.6" fill="#46362A"/>
+          <text x="170" y="201" text-anchor="middle" font-size="15" font-weight="800" fill="#46362A" font-family="sans-serif">うちのこ食堂</text>
+          <text x="170" y="218" text-anchor="middle" font-size="8" letter-spacing="2" fill="#3D6B4F" font-family="sans-serif">FRESH DOG FOOD</text>
+          <rect x="130" y="225" width="80" height="1.6" fill="#E6DCCB"/>
+          <!-- 素材イラスト -->
+          <g transform="translate(44 180)">
+            <circle r="22" fill="#F6E3CC"/>
+            <path d="M-8-6c4-7 12-7 16 0 4 6 0 14-8 14s-12-8-8-14z" fill="#E8A55F"/>
+          </g>
+          <g transform="translate(296 168)">
+            <circle r="22" fill="#E4EFE7"/>
+            <path d="M0-12c7 4 9 12 4 18-4 5-12 5-16-1 2-9 6-13 12-17z" fill="#7FA864"/>
+          </g>
+          <g transform="translate(286 234)">
+            <circle r="18" fill="#FBE9DC"/>
+            <circle r="9" fill="#E0702E"/>
+            <path d="M0-9c2-3 4-4 6-4" stroke="#7FA864" stroke-width="3" stroke-linecap="round" fill="none"/>
+          </g>
+        </svg>
+      </div>
+      <!-- ▲▲ 画像差し替えスロット② ここまで ▲▲ -->
+      <div>
+        <p class="concept-name">UCHINOKO SHOKUDO FRESH</p>
+        <h3 class="concept-title">主原料は国産鶏むね肉。<br>低温調理でふっくら仕上げ。</h3>
+        <p class="concept-text">高温加工で失われがちな香りと栄養を守るため、低温スチーム調理を採用。開封した瞬間にふわっと広がる"おいしい匂い"が、食いつきの違いをつくります。総合栄養食基準に適合しているので、毎日の主食としてそのまま与えられます。</p>
+        <ul class="concept-specs">
+          <li>総合栄養食(AAFCO基準適合)</li>
+          <li>全犬種・全年齢対応</li>
+          <li>1食分ずつ小分けパック</li>
+          <li>グレインフリー設計</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 選ばれる理由 ============ -->
+<section class="reasons" id="reasons">
+  <div class="wrap">
+    <p class="eyebrow fade">REASON</p>
+    <h2 class="sec-title fade">うちのこ食堂が<br class="sp"><span class="marker">選ばれる6つの理由</span></h2>
+    <p class="sec-lead fade">「安心の根拠」をすべて開示しています。</p>
+    <div class="reason-grid">
+
+      <div class="reason-card fade">
+        <span class="reason-num">01</span>
+        <svg class="reason-icon" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="#E4EFE7"/><circle cx="32" cy="32" r="17" fill="#E77A6E"/><circle cx="32" cy="32" r="9" fill="#fff"/><circle cx="32" cy="32" r="9" fill="#E77A6E" opacity=".25"/><path d="M32 12c3 5 3 8 0 11" stroke="#7FA864" stroke-width="4" stroke-linecap="round" fill="none"/></svg>
+        <h3>国産食材100%</h3>
+        <p>主原料の鶏むね肉をはじめ、野菜・雑穀まで産地を開示できる国産食材のみ。輸入肉・ミートミールは一切使いません。</p>
+      </div>
+
+      <div class="reason-card fade">
+        <span class="reason-num">02</span>
+        <svg class="reason-icon" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="#FBE9DC"/><path d="M20 18h24l-3 28c-.3 3-2.7 5-5.7 5H28.7c-3 0-5.4-2-5.7-5z" fill="#fff" stroke="#E0702E" stroke-width="3"/><path d="M18 44 L46 20" stroke="#E0702E" stroke-width="4" stroke-linecap="round"/><circle cx="32" cy="14" r="3" fill="#E0702E"/></svg>
+        <h3>合成添加物 不使用</h3>
+        <p>合成保存料・着色料・香料・発色剤は不使用。酸化防止は天然由来のミックストコフェロールのみで行っています。</p>
+      </div>
+
+      <div class="reason-card fade">
+        <span class="reason-num">03</span>
+        <svg class="reason-icon" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="#E4EFE7"/><path d="M32 14l5 10 11 1.6-8 7.8 1.9 11L32 39.2 22.1 44.4 24 33.4l-8-7.8L27 24z" fill="#D9A93C"/></svg>
+        <h3>ヒューマングレード</h3>
+        <p>人の食品と同じ衛生基準の国内キッチンで製造。原材料の受け入れから出荷まで、人の食事と同じ管理体制です。</p>
+      </div>
+
+      <div class="reason-card fade">
+        <span class="reason-num">04</span>
+        <svg class="reason-icon" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="#FBE9DC"/><path d="M22 40c-4-12 4-22 10-26 6 4 14 14 10 26-3 8-17 8-20 0z" fill="#fff" stroke="#E0702E" stroke-width="3"/><path d="M27 38c-1.5-6 2-11 5-13" stroke="#E0702E" stroke-width="3" stroke-linecap="round" fill="none"/><path d="M20 50h24" stroke="#3D6B4F" stroke-width="4" stroke-linecap="round"/></svg>
+        <h3>低温スチーム調理</h3>
+        <p>素材の栄養と香りを残す低温調理。高温加工フードとの食いつきの差を、ぜひ初回で体感してください。</p>
+      </div>
+
+      <div class="reason-card fade">
+        <span class="reason-num">05</span>
+        <svg class="reason-icon" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="#E4EFE7"/><rect x="20" y="22" width="24" height="26" rx="4" fill="#fff" stroke="#3D6B4F" stroke-width="3"/><path d="M27 22v-4a5 5 0 0 1 10 0v4" stroke="#3D6B4F" stroke-width="3" fill="none"/><path d="M28 33h8M32 29v8" stroke="#E77A6E" stroke-width="3.6" stroke-linecap="round"/></svg>
+        <h3>獣医師×栄養士が開発</h3>
+        <p>獣医師とペット栄養管理士が共同でレシピを設計。年齢や体重に合わせた給餌量ガイドも毎回同梱します。</p>
+      </div>
+
+      <div class="reason-card fade">
+        <span class="reason-num">06</span>
+        <svg class="reason-icon" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="#FBE9DC"/><rect x="16" y="20" width="20" height="26" rx="4" fill="#fff" stroke="#E0702E" stroke-width="3"/><rect x="29" y="26" width="20" height="26" rx="4" fill="#FAF5EC" stroke="#3D6B4F" stroke-width="3"/><path d="M35 39h8M39 35v8" stroke="#3D6B4F" stroke-width="3" stroke-linecap="round"/></svg>
+        <h3>1食ずつ小分けパック</h3>
+        <p>使い切りの小分け真空パックだから、開封後の酸化や保存の手間を心配せず、いつでも作りたての風味のまま。</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ お客様の声 ============ -->
+<section class="voice">
+  <div class="wrap">
+    <p class="eyebrow fade">VOICE</p>
+    <h2 class="sec-title fade">先輩飼い主さんの<span class="marker">リアルな声</span></h2>
+    <p class="sec-lead fade">切り替えたご家庭から、うれしい報告が届いています。</p>
+    <div class="voice-grid">
+
+      <div class="voice-card fade">
+        <div class="voice-head">
+          <!-- ▼ 画像差し替えスロット③a: お客様写真(犬) -->
+          <div class="voice-avatar" data-image-slot="voice-photo-1">
+            <svg viewBox="0 0 56 56"><circle cx="28" cy="28" r="28" fill="#F6E3CC"/><circle cx="28" cy="30" r="15" fill="#C9A06B"/><circle cx="28" cy="33" r="9" fill="#F3E1C8"/><path d="M15 22c-3-7 1-12 6-13 2 4 2 9-1 13zM41 22c3-7-1-12-6-13-2 4-2 9 1 13z" fill="#B8854A"/><circle cx="22" cy="27" r="2.4" fill="#46362A"/><circle cx="34" cy="27" r="2.4" fill="#46362A"/><ellipse cx="28" cy="32" rx="3" ry="2.4" fill="#46362A"/></svg>
+          </div>
+          <div class="voice-meta">
+            <p class="v-name">モカちゃん(トイプードル・3歳)</p>
+            <p class="v-attr">東京都・30代女性の飼い主さま</p>
+          </div>
+        </div>
+        <p class="voice-stars" aria-label="5段階中5の評価">★★★★★</p>
+        <h3>偏食娘が、お皿をなめるほど完食。</h3>
+        <p>何を試しても2、3日で飽きる子だったのに、初日から完食。3週間続いた今も、ごはんの時間になるとキッチンで待つようになりました。</p>
+      </div>
+
+      <div class="voice-card fade">
+        <div class="voice-head">
+          <!-- ▼ 画像差し替えスロット③b: お客様写真(犬) -->
+          <div class="voice-avatar" data-image-slot="voice-photo-2">
+            <svg viewBox="0 0 56 56"><circle cx="28" cy="28" r="28" fill="#E4EFE7"/><circle cx="28" cy="30" r="15" fill="#E8A55F"/><path d="M28 22c8 0 13 7 13 13 0 5-6 9-13 9s-13-4-13-9c0-6 5-13 13-13z" fill="#FBF3E6"/><path d="M16 21l-5-10 11 4zM40 21l5-10-11 4z" fill="#D98E4A"/><circle cx="22" cy="28" r="2.4" fill="#46362A"/><circle cx="34" cy="28" r="2.4" fill="#46362A"/><ellipse cx="28" cy="33" rx="3" ry="2.4" fill="#46362A"/></svg>
+          </div>
+          <div class="voice-meta">
+            <p class="v-name">こたろうくん(柴犬・7歳)</p>
+            <p class="v-attr">大阪府・40代男性の飼い主さま</p>
+          </div>
+        </div>
+        <p class="voice-stars" aria-label="5段階中5の評価">★★★★★</p>
+        <h3>7歳からの切り替えでも遅くなかった。</h3>
+        <p>シニア期に入る前にと思い切って変更。2ヶ月ほどで毛づやを褒められることが増え、お腹の調子も安定。もっと早く知りたかったです。</p>
+      </div>
+
+      <div class="voice-card fade">
+        <div class="voice-head">
+          <!-- ▼ 画像差し替えスロット③c: お客様写真(犬) -->
+          <div class="voice-avatar" data-image-slot="voice-photo-3">
+            <svg viewBox="0 0 56 56"><circle cx="28" cy="28" r="28" fill="#FBE9DC"/><circle cx="28" cy="31" r="14" fill="#FBF3E6"/><path d="M14 26c-4-9 0-15 6-16 3 4 3 11-1 16zM42 26c4-9 0-15-6-16-3 4-3 11 1 16z" fill="#D9B98E"/><circle cx="22.5" cy="29" r="2.6" fill="#46362A"/><circle cx="33.5" cy="29" r="2.6" fill="#46362A"/><ellipse cx="28" cy="34" rx="3" ry="2.4" fill="#46362A"/><path d="M20 22c2-2 4-2 6 0" stroke="#D9B98E" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+          </div>
+          <div class="voice-meta">
+            <p class="v-name">ぷりんちゃん(チワワ・12歳)</p>
+            <p class="v-attr">福岡県・50代女性の飼い主さま</p>
+          </div>
+        </div>
+        <p class="voice-stars" aria-label="5段階中4.5の評価">★★★★☆</p>
+        <h3>12歳のシニア犬がまた食べる喜びを。</h3>
+        <p>食が細くなって心配でしたが、ぬるま湯でほぐすと香りが立つようで、少しずつ完食できる日が増えました。小分けパックも扱いやすいです。</p>
+      </div>
+
+    </div>
+    <p class="voice-note">※掲載のお客様の声・写真・数値は、デモページ用に作成した架空のサンプルです。</p>
+  </div>
+</section>
+
+<!-- ============ 料金・オファー ============ -->
+<section class="price" id="offer">
+  <div class="wrap">
+    <p class="eyebrow fade">OFFER</p>
+    <h2 class="sec-title fade">まずは初回限定モニター価格で、<br>食いつきをお試しください。</h2>
+    <p class="sec-lead fade">合うかどうかは、その子が教えてくれます。</p>
+
+    <div class="price-card fade">
+      <div class="price-card-head">
+        <p class="p-label">WEB申込限定</p>
+        <p class="p-title">定期コース 初回お試しセット</p>
+      </div>
+      <div class="price-card-body">
+        <p class="price-line">
+          <span class="p-old">通常価格 4,980円</span>
+          <span class="p-off">約80%OFF</span>
+        </p>
+        <p class="price-main"><span class="p-num">980</span><span class="p-yen">円</span><span class="p-tax">税込</span></p>
+        <p class="price-sub">2回目以降もずっと10%OFF(4,482円・税込/1.2kg)</p>
+        <ul class="price-perks">
+          <li>全国どこでも送料無料(ポスト投函でお受け取り)</li>
+          <li>回数縛りなし。マイページからいつでも解約・お休みOK</li>
+          <li>愛犬に合わせた給餌量ガイドブックを同梱</li>
+          <li>食いつきに満足できなければ初回全額返金保証</li>
+        </ul>
+        <a class="btn-cta" href="#" data-demo-cta>
+          <span class="b-small">＼ かんたん1分・スマホで完結 ／</span>
+          <span class="b-main">初回980円で申し込む</span>
+        </a>
+        <div class="guarantee">
+          <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" fill="#3D6B4F"/><path d="M24 8l3.2 6.6 7.3 1-5.3 5.1 1.3 7.2L24 24.5l-6.5 3.4 1.3-7.2-5.3-5.1 7.3-1z" fill="#F7DFA8"/><path d="M14 36c6 4 14 4 20 0" stroke="#F7DFA8" stroke-width="3" stroke-linecap="round" fill="none"/></svg>
+          <div>
+            <p class="g-title">初回全額返金保証</p>
+            <p class="g-text">万が一食べてくれなかった場合は、商品到着後20日以内のご連絡で初回代金を全額返金します。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ご利用の流れ ============ -->
+<section class="flow">
+  <div class="wrap">
+    <p class="eyebrow fade">FLOW</p>
+    <h2 class="sec-title fade">お届けまでの流れ</h2>
+    <p class="sec-lead fade">申込みから最短3日でポストに届きます。</p>
+    <ul class="flow-list">
+      <li class="fade"><h3>WEBで申し込み</h3><p>スマホから約1分で完了。クレジットカード・コンビニ後払いに対応しています。</p></li>
+      <li class="fade"><h3>最短3日でお届け</h3><p>初回セットはポスト投函。受け取りの予定を気にせず始められます。</p></li>
+      <li class="fade"><h3>ガイドに沿って切り替え</h3><p>今のフードに混ぜながら7日間かけて移行。LINEで給餌の相談もできます。</p></li>
+      <li class="fade"><h3>ペースは自由に調整</h3><p>お届け間隔の変更・お休み・解約は、マイページからいつでも手続きできます。</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq">
+  <div class="wrap">
+    <p class="eyebrow fade">FAQ</p>
+    <h2 class="sec-title fade">よくあるご質問</h2>
+    <div class="faq-list">
+      <div class="faq-item fade">
+        <button class="faq-q" type="button" aria-expanded="false">子犬やシニア犬にも与えられますか？</button>
+        <div class="faq-a"><div class="faq-a-inner">はい、全犬種・全年齢に対応した総合栄養食です。同梱の給餌量ガイドで、月齢・体重ごとの適量をご案内しています。離乳期の子犬やシニア犬には、ぬるま湯でふやかすと食べやすくなります。</div></div>
+      </div>
+      <div class="faq-item fade">
+        <button class="faq-q" type="button" aria-expanded="false">本当にいつでも解約できますか？</button>
+        <div class="faq-a"><div class="faq-a-inner">はい、回数縛りは一切ありません。次回お届け予定日の7日前までに、マイページからお手続きいただくだけで解約・お休みができます。電話での引き止めなどもありません。</div></div>
+      </div>
+      <div class="faq-item fade">
+        <button class="faq-q" type="button" aria-expanded="false">アレルギーが心配です。原材料は確認できますか？</button>
+        <div class="faq-a"><div class="faq-a-inner">全原材料と産地を公式サイトで開示しています。小麦・トウモロコシ不使用のグレインフリー設計です。食物アレルギーをお持ちの子は、かかりつけの獣医師にご相談のうえお試しください。</div></div>
+      </div>
+      <div class="faq-item fade">
+        <button class="faq-q" type="button" aria-expanded="false">保存方法と賞味期限を教えてください。</button>
+        <div class="faq-a"><div class="faq-a-inner">未開封で製造から12ヶ月、常温保存が可能です。1食ずつの真空小分けパックなので、開封後はその日のうちに使い切るだけ。冷蔵庫のスペースを圧迫しません。</div></div>
+      </div>
+      <div class="faq-item fade">
+        <button class="faq-q" type="button" aria-expanded="false">今のフードからどうやって切り替えればいいですか？</button>
+        <div class="faq-a"><div class="faq-a-inner">急な切り替えはお腹の負担になるため、現在のフードに少しずつ混ぜながら7日間かけて移行する方法をおすすめしています。手順は同梱のガイドブックと公式LINEでサポートします。</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 最終CTA ============ -->
+<section class="last-cta">
+  <div class="wrap">
+    <!-- ▼ 画像差し替えスロット④: クロージング画像(犬の写真想定) -->
+    <div class="lc-visual fade" data-image-slot="closing-visual">
+      <svg viewBox="0 0 200 150"><ellipse cx="100" cy="136" rx="64" ry="8" fill="#EADFC9"/><circle cx="100" cy="74" r="46" fill="#E8A55F"/><path d="M100 56c20 0 32 17 32 31 0 13-14 22-32 22s-32-9-32-22c0-14 12-31 32-31z" fill="#FBF3E6"/><path d="M64 52L52 28l26 9zM136 52l12-24-26 9z" fill="#D98E4A"/><circle cx="84" cy="70" r="5" fill="#46362A"/><circle cx="116" cy="70" r="5" fill="#46362A"/><circle cx="86" cy="68" r="1.6" fill="#fff"/><circle cx="118" cy="68" r="1.6" fill="#fff"/><ellipse cx="100" cy="84" rx="7" ry="5.5" fill="#46362A"/><path d="M100 89v7M100 96c-2 5-9 6-13 2M100 96c2 5 9 6 13 2" stroke="#46362A" stroke-width="3" stroke-linecap="round" fill="none"/><g stroke="#E77A6E" stroke-width="3" stroke-linecap="round"><path d="M40 96c-8-2-10-12-2-15 4-1 7 1 8 4 1-3 4-5 8-4 8 3 6 13-2 15-4 1-9 1-12 0z" fill="#E77A6E" stroke="none"/></g><path d="M156 90l5 5M161 90l-5 5" stroke="#D9A93C" stroke-width="2.6" stroke-linecap="round"/></svg>
+    </div>
+    <h2 class="fade">10年後も隣で笑っていてほしいから。<br>今日のごはんから、変えてみませんか。</h2>
+    <p class="fade">初回980円・縛りなし・全額返金保証つき。リスクなしで始められます。</p>
+    <a class="btn-cta fade" href="#offer">
+      <span class="b-small">＼ 初回限定・約80%OFF ／</span>
+      <span class="b-main">980円モニターに申し込む</span>
+    </a>
+    <p class="cta-note fade"><span>定期縛りなし</span><span>送料無料</span><span>ポスト投函</span></p>
+  </div>
+</section>
+
+<!-- ============ フッター ============ -->
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="f-logo">
+      <svg viewBox="0 0 48 48" aria-hidden="true">
+        <circle cx="24" cy="24" r="23" fill="#FAF5EC"/>
+        <ellipse cx="16" cy="17" rx="3.6" ry="4.6" fill="#3D6B4F" transform="rotate(-14 16 17)"/>
+        <ellipse cx="24" cy="14.5" rx="3.6" ry="4.6" fill="#3D6B4F"/>
+        <ellipse cx="32" cy="17" rx="3.6" ry="4.6" fill="#3D6B4F" transform="rotate(14 32 17)"/>
+        <path d="M24 22.5c5.6 0 9.5 4.4 9.5 8.2 0 3-2.3 4.8-4.8 4.3-2-.4-3-1.2-4.7-1.2s-2.7.8-4.7 1.2c-2.5.5-4.8-1.3-4.8-4.3 0-3.8 3.9-8.2 9.5-8.2z" fill="#3D6B4F"/>
+      </svg>
+      うちのこ食堂
+    </p>
+    <ul class="f-links">
+      <li><a href="#" data-demo-cta>特定商取引法に基づく表記</a></li>
+      <li><a href="#" data-demo-cta>プライバシーポリシー</a></li>
+      <li><a href="#" data-demo-cta>運営会社</a></li>
+    </ul>
+    <p class="f-demo">※このページはLP制作サービスのデモ用サンプルです。実在の商品・企業ではありません。<br>掲載している価格・実績・お客様の声はすべて架空のものです。</p>
+    <p class="f-copy">&copy; 2026 UCHINOKO SHOKUDO (DEMO)</p>
+  </div>
+</footer>
+
+<!-- ============ 追従CTAバー ============ -->
+<div class="sticky-cta" id="stickyCta">
+  <a class="btn-cta" href="#offer">
+    <span class="b-small">初回限定・約80%OFF</span>
+    <span class="b-main">980円でためしてみる</span>
+  </a>
+</div>
+
+<script>
+// スクロールフェードイン
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+
+// FAQアコーディオン
+document.querySelectorAll('.faq-item').forEach(item=>{
+  const q = item.querySelector('.faq-q');
+  const a = item.querySelector('.faq-a');
+  q.addEventListener('click',()=>{
+    const open = item.classList.toggle('open');
+    q.setAttribute('aria-expanded', open);
+    a.style.maxHeight = open ? a.scrollHeight + 'px' : 0;
+  });
+});
+
+// ヒーローを過ぎたら追従CTAを表示(料金セクション付近では非表示)
+const sticky = document.getElementById('stickyCta');
+const heroCta = document.getElementById('hero-cta');
+const offerSec = document.getElementById('offer');
+function updateSticky(){
+  const heroGone = heroCta.getBoundingClientRect().bottom < 0;
+  const offerRect = offerSec.getBoundingClientRect();
+  const inOffer = offerRect.top < innerHeight && offerRect.bottom > 0;
+  sticky.classList.toggle('show', heroGone && !inOffer);
+}
+addEventListener('scroll', updateSticky, {passive:true});
+updateSticky();
+
+// デモ用: 実フォームに遷移するボタンはアラートで案内
+document.querySelectorAll('[data-demo-cta]').forEach(el=>{
+  el.addEventListener('click',(e)=>{
+    e.preventDefault();
+    alert('デモページのため、ここから先の申込フォーム・下層ページはございません。\n実際の制作では、ご指定のフォーム・予約システム等に接続します。');
+  });
+});
+</script>
+</body>
+</html>

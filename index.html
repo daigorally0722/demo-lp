@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LP制作デモサンプル一覧</title>
+<meta name="robots" content="noindex">
+<style>
+:root{--ink:#1F2430;--sub:#6B7280;--line:#E5E7EB;--accent:#2563EB;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Meiryo,sans-serif;
+  color:var(--ink);background:#F8FAFC;line-height:1.8;padding:48px 22px 64px;
+}
+.wrap{max-width:680px;margin:0 auto;}
+h1{font-size:24px;font-weight:800;letter-spacing:.03em;margin-bottom:6px;}
+.lead{font-size:13.5px;color:var(--sub);margin-bottom:32px;}
+.grid{display:grid;gap:14px;}
+.card{
+  display:flex;align-items:center;gap:16px;
+  background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:18px 20px;text-decoration:none;color:inherit;
+  transition:box-shadow .2s,transform .2s;
+}
+.card:hover{box-shadow:0 8px 24px rgba(31,36,48,.10);transform:translateY(-2px);}
+.card.disabled{opacity:.45;pointer-events:none;}
+.num{
+  flex-shrink:0;width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:15px;color:#fff;
+}
+.card h2{font-size:15.5px;font-weight:800;}
+.card p{font-size:12.5px;color:var(--sub);}
+.tag{margin-left:auto;flex-shrink:0;font-size:11px;font-weight:700;color:var(--accent);}
+.card.disabled .tag{color:var(--sub);}
+.foot{margin-top:36px;font-size:11.5px;color:var(--sub);text-align:center;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>LP制作デモサンプル</h1>
+  <p class="lead">業種別のデザイン・構成サンプルです。すべて架空のブランドです。</p>
+  <div class="grid">
+    <a class="card" href="01-dogfood/">
+      <span class="num" style="background:#3D6B4F;">01</span>
+      <span><h2>EC・D2C｜無添加ドッグフード定期便</h2><p>うちのこ食堂 — 定期購入の申込獲得</p></span>
+      <span class="tag">見る →</span>
+    </a>
+    <span class="card disabled">
+      <span class="num" style="background:#B76E79;">02</span>
+      <span><h2>美容サロン｜表参道ヘアサロン</h2><p>初回クーポン — WEB予約獲得（準備中）</p></span>
+      <span class="tag">準備中</span>
+    </span>
+    <span class="card disabled">
+      <span class="num" style="background:#1E5AA8;">03</span>
+      <span><h2>英会話スクール｜マンツーマン英会話</h2><p>無料体験レッスン申込獲得（準備中）</p></span>
+      <span class="tag">準備中</span>
+    </span>
+    <span class="card disabled">
+      <span class="num" style="background:#0E9594;">04</span>
+      <span><h2>留学エージェント｜オーストラリア留学</h2><p>LINE相談登録獲得（準備中）</p></span>
+      <span class="tag">準備中</span>
+    </span>
+    <span class="card disabled">
+      <span class="num" style="background:#8A6D3B;">05</span>
+      <span><h2>不動産｜新築戸建て見学会</h2><p>来場予約獲得（準備中）</p></span>
+      <span class="tag">準備中</span>
+    </span>
+    <span class="card disabled">
+      <span class="num" style="background:#4F46E5;">06</span>
+      <span><h2>BtoB SaaS｜クラウド勤怠管理</h2><p>資料請求獲得（準備中）</p></span>
+      <span class="tag">準備中</span>
+    </span>
+  </div>
+  <p class="foot">※各ページはLP制作サービスのデモ用サンプルです。実在の商品・企業ではありません。</p>
+</div>
+</body>
+</html>
