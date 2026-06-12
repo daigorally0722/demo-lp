@@ -97,71 +97,15 @@ section{padding:76px 0;}
   --gold-soft:#C8B186;
   --ivory:#FBFAF7;
 }
-.hero{position:relative;padding:0 0 56px;background:var(--ivory);overflow:hidden;}
-/* 写真プレースホルダ: 白い窓辺のサロン+横顔の女性(差し替え時はimg/背景画像をこのdivに) */
-.hero-photo{
-  position:relative;height:54vh;min-height:380px;max-height:500px;overflow:hidden;
-}
-.hero-photo-ph{
-  position:absolute;inset:0;
-  background:
-    linear-gradient(90deg,rgba(255,255,255,.95) 0%,rgba(255,255,255,0) 45%),
-    radial-gradient(circle at 82% 25%,#FFFDF8 0%,transparent 50%),
-    linear-gradient(150deg,#FCFAF6 0%,#F1EAE0 60%,#E7DCCC 100%);
-}
-/* 窓の光 */
-.hero-photo-ph::before{
-  content:"";position:absolute;right:4%;top:0;bottom:0;width:14%;
-  background:linear-gradient(180deg,#FFFFFF 0%,#F7F0E4 100%);opacity:.8;
-  box-shadow:-60px 0 80px rgba(255,255,255,.9);
-}
-.hero-photo-ph svg{position:absolute;right:-22%;bottom:0;height:94%;width:auto;opacity:.75;}
-@media(min-width:900px){.hero-photo-ph svg{right:8%;}}
-.hero-photo::after{
-  content:"";position:absolute;left:0;right:0;bottom:0;height:80px;
-  background:linear-gradient(180deg,transparent,var(--ivory));
-}
-.hero-copy{position:relative;margin-top:-100px;z-index:2;}
-.h-lead{
-  font-family:var(--serif);font-size:clamp(14px,3.9vw,18px);font-weight:600;
-  letter-spacing:.14em;line-height:2;color:var(--ink);margin-bottom:14px;
-}
-.hero-copy h1{
-  font-family:var(--serif);font-weight:600;
-  font-size:clamp(30px,8.2vw,52px);line-height:1.55;letter-spacing:.1em;
-  margin-bottom:16px;
-}
-.hero-copy h1 .gold{
-  color:var(--gold-deep);font-size:1.12em;letter-spacing:.06em;
-}
-.h-subbox{
-  display:inline-block;font-family:var(--serif);font-size:clamp(13px,3.6vw,16px);
-  font-weight:600;letter-spacing:.16em;color:var(--ink);
-  padding-bottom:8px;border-bottom:1px solid var(--ink);margin-bottom:14px;
-}
-.h-script{
-  font-family:"Snell Roundhand","Savoye LET","Brush Script MT",cursive;
-  font-size:clamp(26px,7vw,38px);color:var(--gold-soft);
-  letter-spacing:.04em;margin-bottom:24px;
-}
-/* 丸バッジ3つ */
-.hero-circles{display:flex;justify-content:center;gap:14px;margin-bottom:26px;}
-.hero-circles li{
-  width:104px;height:104px;border-radius:50%;
-  background:rgba(255,255,255,.85);border:1px solid var(--gold-soft);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;
-  box-shadow:0 6px 18px rgba(168,137,63,.12);
-  font-family:var(--serif);font-size:11px;font-weight:600;letter-spacing:.04em;
-  line-height:1.5;text-align:center;color:var(--ink);padding:8px;
-}
-.hero-circles li svg{width:24px;height:24px;}
+.hero{position:relative;padding:0 0 48px;background:var(--ivory);overflow:hidden;}
+/* ヒーロー画像(広告バナー: コピー・バッジ・20%OFF焼き込み済み) */
+.hero-photo{position:relative;}
+.hero-photo img{width:100%;height:auto;display:block;}
+.hero-copy{position:relative;margin-top:26px;z-index:2;}
 @media(min-width:900px){
-  .hero{padding:0 0 76px;}
-  .hero-photo{height:560px;max-height:none;}
-  .hero-copy{margin-top:-400px;max-width:540px;}
-  .hero-circles{justify-content:flex-start;}
-  .hero-copy .cta-note{justify-content:flex-start;}
-  .hero-copy .offer-box{margin-left:0;}
+  .hero{padding:0 0 72px;}
+  .hero-photo{max-width:1200px;margin:0 auto;}
+  .hero-copy{margin-top:34px;}
 }
 /* ゴールドのオファーボックス */
 .offer-box{
@@ -435,63 +379,18 @@ section{padding:76px 0;}
 <!-- ============ ヒーロー ============ -->
 <section class="hero" id="top">
 
-  <!-- ▼▼ 画像差し替えスロット①: ヒーロー写真 ▼▼
-       想定画像: 明るくおしゃれな美容室の店内で、ヘアカラーをした笑顔の20代日本人女性の
-       後ろ姿と横顔。柔らかい自然光、ピンクベージュ系、左側にテキスト用の余白がある構図。
-       差し替え方法: .hero-photo-ph の中身を <img src="hero.jpg" style="width:100%;height:100%;object-fit:cover;"> に置き換え -->
+  <!-- ▼▼ ヒーロー画像(実画像差し込み済み: hero.jpg / AI生成の広告バナー) ▼▼ -->
   <div class="hero-photo" data-image-slot="hero-photo">
-    <div class="hero-photo-ph">
-      <svg viewBox="0 0 420 480" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <!-- 女性の後ろ姿シルエット(線画・上品なプレースホルダ) -->
-        <defs>
-          <linearGradient id="hairGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#C9AE97"/>
-            <stop offset="1" stop-color="#A98A72"/>
-          </linearGradient>
-        </defs>
-        <!-- 髪 -->
-        <path d="M210 60c64 0 102 50 102 116 0 40-8 78 6 122 10 32 14 80 6 122l-228 0c-8-42-4-90 6-122 14-44 6-82 6-122C108 110 146 60 210 60z" fill="url(#hairGrad)"/>
-        <path d="M210 60c64 0 102 50 102 116 0 40-8 78 6 122 6 19 10 44 10 70-22-30-30-74-26-110 5-45-2-90-24-122-18-26-42-40-68-40s-50 14-68 40c-22 32-29 77-24 122 4 36-4 80-26 110 0-26 4-51 10-70 14-44 6-82 6-122C108 110 146 60 210 60z" fill="#94755D" opacity=".4"/>
-        <!-- 髪のハイライト -->
-        <path d="M160 120c-14 30-16 70-10 104M260 120c14 30 16 70 10 104M210 96v60" stroke="#EBDCCB" stroke-width="5" stroke-linecap="round" fill="none" opacity=".8"/>
-        <!-- 肩 -->
-        <path d="M118 420c10-44 48-66 92-66s82 22 92 66l4 60H114z" fill="#FDFBF7"/>
-        <path d="M118 420c10-44 48-66 92-66s82 22 92 66" fill="none" stroke="#E9DFD2" stroke-width="3"/>
-        <!-- きらめき -->
-        <g fill="#fff" opacity=".85">
-          <path d="M96 150l4 10 10 4-10 4-4 10-4-10-10-4 10-4z"/>
-          <path d="M330 220l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/>
-          <path d="M120 300l2.5 6.5 6.5 2.5-6.5 2.5-2.5 6.5-2.5-6.5-6.5-2.5 6.5-2.5z"/>
-        </g>
-      </svg>
-    </div>
+    <img src="hero.jpg" alt="毎日が、好きになるうるツヤ髪へ。あなたの「なりたい」を叶える表参道のヘアサロン Lulia">
   </div>
-  <!-- ▲▲ 画像差し替えスロット① ここまで ▲▲ -->
+  <!-- ▲▲ ヒーロー画像 ここまで ▲▲ -->
 
   <div class="wrap">
     <div class="hero-copy">
-      <p class="h-lead">髪から、あなたらしさが<br>もっと輝き出す。</p>
-      <h1>毎日が、好きになる<br><span class="gold">うるツヤ髪</span>へ。</h1>
-      <p class="h-subbox">あなたの「なりたい」を叶える表参道のサロン</p>
-      <p class="h-script">Be your best.</p>
-      <ul class="hero-circles">
-        <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke="#A8893F" stroke-width="1.6" stroke-linecap="round"><circle cx="7" cy="7" r="3"/><circle cx="7" cy="17" r="3"/><path d="M9.5 9.5L20 20M9.5 14.5L20 4"/></svg>
-          似合わせ<br>カット
-        </li>
-        <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke="#A8893F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.6L18 9l-4.2 1.4L12 15l-1.8-4.6L6 9l4.2-1.4z"/><path d="M19 15l.9 2.3L22 18l-2.1.7L19 21l-.9-2.3L16 18l2.1-.7z"/></svg>
-          透明感カラー<br>で美しく
-        </li>
-        <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke="#A8893F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-5 -2-8-5.5-8-10 0-3 2-5 5-5 1.5 0 2.5.6 3 1.4C12.5 6.6 13.5 6 15 6c3 0 5 2 5 5 0 4.5-3 8-8 10z"/></svg>
-          髪と頭皮に<br>優しいケア
-        </li>
-      </ul>
       <a class="offer-box" href="#offer" id="hero-cta">
         <span class="ob-label">初めての方限定</span>
-        <span class="ob-off">44<small>%OFF</small></span>
-        <span class="ob-detail">カット＋カラー＋トリートメント 17,600円 → 9,900円(税込)</span>
+        <span class="ob-off">20<small>%OFF</small></span>
+        <span class="ob-detail">カット＋カラー＋トリートメント 17,600円 → 14,080円(税込)</span>
         <span class="ob-cta">ご予約は今すぐこちら</span>
       </a>
       <p class="cta-note"><span>表参道駅 徒歩3分</span><span>22時まで営業</span><span>当日予約OK</span></p>
@@ -584,7 +483,7 @@ section{padding:76px 0;}
     <div class="menu-table fade">
       <div class="menu-row is-pickup">
         <span class="m-name"><span class="m-badge">初回限定</span>カット＋透明感カラー＋うる艶トリートメント<small>カウンセリング20分つき・指名料無料</small></span>
-        <span class="m-price">¥9,900</span>
+        <span class="m-price">¥14,080</span>
       </div>
       <div class="menu-row"><span class="m-name">カット<small>シャンプー・ブロー込み</small></span><span class="m-price">¥6,600</span></div>
       <div class="menu-row"><span class="m-name">カット＋カラー</span><span class="m-price">¥13,200</span></div>
@@ -709,9 +608,9 @@ section{padding:76px 0;}
         <p class="offer-menu">カット<span class="plus">＋</span>透明感カラー<span class="plus">＋</span>うる艶トリートメント</p>
         <p class="offer-price-line">
           <span class="p-old">通常 17,600円</span>
-          <span class="p-off">44%OFF</span>
+          <span class="p-off">20%OFF</span>
         </p>
-        <p class="offer-price"><span class="p-num">9,900</span><span class="p-yen">円</span><span class="p-tax">税込</span></p>
+        <p class="offer-price"><span class="p-num">14,080</span><span class="p-yen">円</span><span class="p-tax">税込</span></p>
         <p class="offer-sub">カウンセリング20分・指名料・ロング料金 すべて込み</p>
         <ul class="offer-perks">
           <li>WEB予約は24時間受付。空き枠がリアルタイムで見えます</li>
@@ -811,9 +710,9 @@ section{padding:76px 0;}
       <svg viewBox="0 0 120 70"><g fill="none" stroke="#B76E79" stroke-width="2" stroke-linecap="round"><path d="M60 62c0-18 8-30 22-36M60 62c0-18-8-30-22-36M60 62c0-24 0-38 0-48"/><circle cx="60" cy="10" r="4" fill="#B76E79" stroke="none"/><circle cx="84" cy="24" r="3.4" fill="#C9A24B" stroke="none"/><circle cx="36" cy="24" r="3.4" fill="#C9A24B" stroke="none"/><path d="M52 14c3-2 6-3 8-3M68 14c-3-2-6-3-8-3" stroke="#D9A18F"/></g></svg>
     </div>
     <h2 class="fade">次の予定の前に、<br>髪から気分を変えませんか。</h2>
-    <p class="fade">初回9,900円・指名料無料・22時まで営業。空き枠を見ながら今すぐ予約できます。</p>
+    <p class="fade">初回20%OFF・指名料無料・22時まで営業。空き枠を見ながら今すぐ予約できます。</p>
     <a class="btn-cta fade" href="#offer">
-      <span class="b-small">初回限定 44%OFFクーポン</span>
+      <span class="b-small">初回限定 20%OFFクーポン</span>
       <span class="b-main">WEB予約にすすむ</span>
     </a>
     <p class="cta-note fade"><span>24時間受付</span><span>当日予約OK</span><span>表参道駅 徒歩3分</span></p>
@@ -838,7 +737,7 @@ section{padding:76px 0;}
 <!-- ============ 追従CTA ============ -->
 <div class="sticky-cta" id="stickyCta">
   <a class="btn-cta" href="#offer">
-    <span class="b-small">初回限定 9,900円クーポン</span>
+    <span class="b-small">初回限定 20%OFFクーポン</span>
     <span class="b-main">WEB予約はこちら</span>
   </a>
 </div>
