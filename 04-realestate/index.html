@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>青葉の家｜新築戸建て 完成見学会 6/27(土)・28(日)開催【デモサンプル】</title>
+<meta name="description" content="家事ラク動線と吹き抜けの光を、建てる前に体感。耐震等級3・長期60年保証の新築戸建て完成見学会。来場予約で3,000円分ギフトカードプレゼント。※LP制作サービスのデモ用サンプルページです。">
+<meta name="robots" content="noindex">
+<style>
+/* ============================================================
+   青葉の家 - 完成見学会デモLP
+   配色: ネイビー×ベージュ×真鍮ゴールド / 信頼感×上質
+   ============================================================ */
+:root{
+  --navy:#1E3A5F;
+  --navy-deep:#152C49;
+  --navy-pale:#E8EDF4;
+  --beige:#F6F1E8;
+  --beige-deep:#EDE4D3;
+  --brass:#B08D45;
+  --brass-deep:#96763A;
+  --ink:#2E3440;
+  --ink-soft:#6E7682;
+  --line:#E2DACB;
+  --white:#FFFFFF;
+  --radius:16px;
+  --shadow:0 10px 30px rgba(30,58,95,.10);
+  --serif:"Hiragino Mincho ProN","Hiragino Mincho Pro","Yu Mincho","YuMincho",serif;
+  --sans:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic Medium",-apple-system,BlinkMacSystemFont,"Segoe UI",Meiryo,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{
+  font-family:var(--sans);color:var(--ink);background:var(--beige);
+  line-height:1.85;font-size:15.5px;overflow-x:hidden;
+}
+img,svg{display:block;max-width:100%;}
+a{text-decoration:none;color:inherit;}
+ul{list-style:none;}
+.wrap{width:100%;max-width:560px;margin:0 auto;padding:0 22px;}
+@media(min-width:900px){.wrap{max-width:1024px;}}
+
+/* ---------- 共通 ---------- */
+.eyebrow{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  font-size:11.5px;font-weight:700;letter-spacing:.3em;color:var(--brass);
+  text-transform:uppercase;margin-bottom:10px;
+}
+.eyebrow::before,.eyebrow::after{content:"";width:24px;height:1px;background:var(--brass);}
+.sec-title{
+  font-family:var(--serif);font-size:clamp(20px,5.4vw,30px);font-weight:600;
+  line-height:1.7;text-align:center;letter-spacing:.08em;margin-bottom:14px;
+}
+.sec-lead{text-align:center;font-size:13.5px;color:var(--ink-soft);margin-bottom:36px;}
+section{padding:72px 0;}
+.fade{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease;}
+.fade.in{opacity:1;transform:none;}
+
+/* CTAボタン */
+.btn-cta{
+  position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  width:100%;max-width:420px;margin:0 auto;padding:17px 46px 16px 24px;
+  background:linear-gradient(135deg,#C49A4D 0%,var(--brass-deep) 100%);
+  color:#fff;border-radius:999px;border:none;cursor:pointer;text-align:center;
+  box-shadow:0 10px 24px rgba(176,141,69,.4),inset 0 -3px 0 rgba(0,0,0,.12);
+  transition:transform .2s,box-shadow .2s;
+}
+.btn-cta:active{transform:scale(.97);}
+@media(hover:hover){.btn-cta:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(176,141,69,.5);}}
+.btn-cta .b-small{font-size:11.5px;font-weight:700;letter-spacing:.1em;opacity:.95;}
+.btn-cta .b-main{font-size:18px;font-weight:800;letter-spacing:.1em;line-height:1.5;}
+.btn-cta::after{
+  content:"";position:absolute;right:22px;top:50%;width:8px;height:8px;
+  border-top:2px solid #fff;border-right:2px solid #fff;
+  transform:translateY(-50%) rotate(45deg);
+}
+.cta-note{display:flex;justify-content:center;gap:14px;margin-top:14px;font-size:11.5px;color:var(--ink-soft);flex-wrap:wrap;}
+.cta-note span::before{content:"✓ ";color:var(--brass);font-weight:800;}
+
+/* ---------- ヘッダー ---------- */
+.site-header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(246,241,232,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;height:58px;}
+.logo{display:flex;align-items:center;gap:9px;}
+.logo svg{width:30px;height:30px;}
+.logo .l-name{font-family:var(--serif);font-size:18px;font-weight:600;letter-spacing:.16em;}
+.logo .l-sub{display:block;font-size:8.5px;letter-spacing:.24em;color:var(--brass);line-height:1.2;font-family:var(--sans);font-weight:700;}
+.header-btn{
+  font-size:12px;font-weight:800;color:#fff;background:var(--navy);
+  padding:9px 16px;border-radius:999px;letter-spacing:.06em;
+  box-shadow:0 4px 10px rgba(30,58,95,.3);
+}
+
+/* ---------- ヒーロー ---------- */
+.hero{
+  position:relative;padding:0 0 56px;
+  background:linear-gradient(180deg,var(--navy) 0%,var(--navy-deep) 100%);
+  color:#fff;overflow:hidden;
+}
+.hero-date-band{
+  background:var(--brass);text-align:center;padding:8px 14px;
+  font-size:12.5px;font-weight:800;letter-spacing:.14em;color:#fff;
+}
+.hero-inner{padding:36px 0 0;}
+.hero-label{
+  display:flex;align-items:center;justify-content:center;gap:12px;
+  font-family:var(--serif);font-size:13px;letter-spacing:.3em;color:#D9C28E;margin-bottom:14px;
+}
+.hero-label::before,.hero-label::after{content:"";width:30px;height:1px;background:#D9C28E;opacity:.7;}
+.hero h1{
+  font-family:var(--serif);font-weight:600;text-align:center;
+  font-size:clamp(27px,7.4vw,46px);line-height:1.65;letter-spacing:.1em;
+  margin-bottom:14px;
+}
+.hero h1 .gold{color:#D9C28E;}
+.hero-sub{text-align:center;font-size:13.5px;color:rgba(255,255,255,.85);letter-spacing:.06em;margin-bottom:24px;}
+
+/* 開催情報カード */
+.event-card{
+  max-width:440px;margin:0 auto 24px;background:var(--white);color:var(--ink);
+  border-radius:var(--radius);overflow:hidden;box-shadow:0 16px 40px rgba(0,0,0,.3);
+}
+.event-card .e-head{
+  background:var(--beige-deep);text-align:center;padding:10px;
+  font-family:var(--serif);font-size:13px;font-weight:600;letter-spacing:.26em;color:var(--navy);
+}
+.event-card .e-body{padding:18px 22px 20px;}
+.event-date{display:flex;justify-content:center;align-items:center;gap:14px;margin-bottom:10px;}
+.event-date .d-box{text-align:center;line-height:1.3;}
+.event-date .d-num{font-family:var(--serif);font-size:42px;font-weight:700;color:var(--navy);letter-spacing:.02em;}
+.event-date .d-num small{font-size:16px;}
+.event-date .d-day{display:inline-block;font-size:11px;font-weight:800;color:#fff;border-radius:6px;padding:1px 8px;margin-top:2px;}
+.event-date .sat{background:#3B6CB4;}
+.event-date .sun{background:#C25B5B;}
+.event-date .d-x{font-family:var(--serif);font-size:20px;color:var(--ink-soft);}
+.event-meta{display:grid;gap:5px;font-size:12.5px;color:var(--ink-soft);text-align:center;}
+.event-meta b{color:var(--ink);}
+
+/* 来場特典 */
+.hero-gift{
+  display:flex;align-items:center;gap:14px;max-width:440px;margin:0 auto 26px;
+  background:rgba(255,255,255,.12);border:1px dashed rgba(217,194,142,.8);
+  border-radius:12px;padding:13px 16px;
+}
+.hero-gift svg{width:44px;height:44px;flex-shrink:0;}
+.hero-gift .g-title{font-size:13.5px;font-weight:800;color:#F0E1BD;letter-spacing:.04em;}
+.hero-gift .g-text{font-size:11.5px;color:rgba(255,255,255,.85);line-height:1.6;}
+
+@media(min-width:900px){.hero-inner{padding:48px 0 0;}}
+
+/* ---------- 外観ビジュアル ---------- */
+.house-visual{
+  position:relative;margin:0 auto;max-width:560px;padding:0 22px;
+}
+.house-visual .hv-frame{
+  border-radius:var(--radius);overflow:hidden;border:4px solid rgba(255,255,255,.95);
+  box-shadow:0 18px 44px rgba(0,0,0,.35);
+}
+@media(min-width:900px){.house-visual{max-width:720px;}}
+
+/* ---------- 悩み共感 ---------- */
+.nayami{background:var(--white);}
+.nayami-list{display:grid;gap:12px;max-width:520px;margin:0 auto;}
+@media(min-width:900px){.nayami-list{max-width:780px;grid-template-columns:1fr 1fr;}}
+.nayami-list li{
+  display:flex;gap:12px;align-items:flex-start;
+  background:var(--beige);border-radius:14px;padding:16px 18px;
+  font-size:14px;font-weight:600;line-height:1.75;
+}
+.nayami-list li::before{
+  content:"";flex-shrink:0;width:20px;height:20px;margin-top:4px;border-radius:6px;
+  background:var(--navy) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="white" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></svg>') center/12px no-repeat;
+}
+.nayami-close{
+  text-align:center;margin-top:38px;font-family:var(--serif);
+  font-size:clamp(17px,4.8vw,23px);font-weight:600;line-height:2;letter-spacing:.06em;
+}
+.nayami-close .big{color:var(--navy);font-size:1.15em;border-bottom:2px solid var(--brass);padding-bottom:2px;}
+
+/* ---------- 体感ポイント ---------- */
+.points{background:var(--beige);}
+.point-list{display:grid;gap:18px;}
+@media(min-width:900px){.point-list{grid-template-columns:1fr 1fr;gap:24px;}}
+.point-card{
+  background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);
+}
+.point-photo{position:relative;height:170px;}
+.point-photo svg{width:100%;height:100%;}
+.point-num{
+  position:absolute;left:14px;top:14px;
+  font-family:var(--serif);font-style:italic;font-size:13px;letter-spacing:.16em;
+  background:rgba(255,255,255,.92);color:var(--navy);padding:4px 12px;border-radius:999px;
+}
+.point-body{padding:20px 22px 24px;}
+.point-body h3{font-family:var(--serif);font-size:17.5px;font-weight:600;letter-spacing:.05em;line-height:1.6;margin-bottom:6px;}
+.point-body p{font-size:13px;color:var(--ink-soft);line-height:1.85;}
+
+/* ---------- 物件概要 ---------- */
+.spec{background:var(--white);}
+.spec-card{
+  max-width:560px;margin:0 auto;background:var(--beige);
+  border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);
+}
+@media(min-width:900px){.spec-card{max-width:900px;display:grid;grid-template-columns:1.1fr 1fr;}}
+.spec-plan{position:relative;min-height:260px;background:var(--white);border-bottom:1px solid var(--line);}
+@media(min-width:900px){.spec-plan{border-bottom:none;border-right:1px solid var(--line);}}
+.spec-plan svg{position:absolute;inset:0;width:100%;height:100%;padding:18px;}
+.spec-info{padding:26px 26px 30px;}
+.spec-info h3{font-family:var(--serif);font-size:18px;letter-spacing:.1em;font-weight:600;margin-bottom:14px;}
+.spec-info dl{display:grid;grid-template-columns:92px 1fr;gap:9px 12px;font-size:13px;}
+.spec-info dt{font-weight:800;color:var(--navy);}
+.spec-info dd{color:var(--ink-soft);}
+.spec-badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;}
+.spec-badges li{
+  font-size:11px;font-weight:800;color:var(--navy);background:var(--navy-pale);
+  border:1px solid var(--navy);border-radius:999px;padding:4px 12px;letter-spacing:.04em;
+}
+
+/* ---------- 選ばれる理由 ---------- */
+.reasons{background:var(--navy);color:#fff;}
+.reasons .eyebrow{color:#D9C28E;}
+.reasons .eyebrow::before,.reasons .eyebrow::after{background:#D9C28E;}
+.reasons .sec-lead{color:rgba(255,255,255,.8);}
+.reason-grid{display:grid;gap:16px;}
+@media(min-width:900px){.reason-grid{grid-template-columns:repeat(4,1fr);gap:20px;}}
+.reason-card{
+  background:rgba(255,255,255,.07);border:1px solid rgba(217,194,142,.35);
+  border-radius:var(--radius);padding:24px 20px;text-align:center;
+}
+.reason-card svg{width:52px;height:52px;margin:0 auto 12px;}
+.reason-card .r-big{
+  font-family:var(--serif);font-size:26px;font-weight:700;color:#D9C28E;line-height:1.3;letter-spacing:.04em;
+}
+.reason-card .r-big small{font-size:13px;}
+.reason-card h3{font-size:14px;font-weight:800;letter-spacing:.06em;margin:4px 0 6px;}
+.reason-card p{font-size:12px;color:rgba(255,255,255,.78);line-height:1.8;}
+.reasons-note{text-align:center;font-size:10.5px;color:rgba(255,255,255,.6);margin-top:18px;}
+
+/* ---------- お客様の声 ---------- */
+.voice{background:var(--beige);}
+.voice-grid{display:grid;gap:18px;}
+@media(min-width:900px){.voice-grid{grid-template-columns:repeat(3,1fr);}}
+.voice-card{background:var(--white);border-radius:var(--radius);padding:24px 22px;box-shadow:var(--shadow);}
+.voice-head{display:flex;align-items:center;gap:14px;margin-bottom:12px;}
+.voice-avatar{width:54px;height:54px;flex-shrink:0;border-radius:50%;overflow:hidden;background:var(--navy-pale);}
+.voice-meta .v-name{font-size:13px;font-weight:800;}
+.voice-meta .v-attr{font-size:11px;color:var(--ink-soft);}
+.voice-card h3{font-family:var(--serif);font-size:15.5px;font-weight:600;line-height:1.7;margin-bottom:8px;color:var(--navy);}
+.voice-card p{font-size:13px;color:var(--ink-soft);line-height:1.85;}
+.voice-note{text-align:center;font-size:11px;color:var(--ink-soft);margin-top:22px;opacity:.85;}
+
+/* ---------- 当日の流れ ---------- */
+.flow{background:var(--white);}
+.flow-list{display:grid;gap:14px;max-width:520px;margin:0 auto;counter-reset:flow;}
+@media(min-width:900px){.flow-list{max-width:100%;grid-template-columns:repeat(4,1fr);}}
+.flow-list li{
+  background:var(--beige);border-radius:var(--radius);padding:22px 20px 22px 64px;
+  position:relative;counter-increment:flow;
+}
+@media(min-width:900px){.flow-list li{padding:56px 20px 22px;text-align:center;}}
+.flow-list li::before{
+  content:"0" counter(flow);
+  position:absolute;left:18px;top:22px;width:32px;height:32px;border-radius:50%;
+  background:var(--navy);color:#fff;font-size:13px;font-weight:900;
+  display:flex;align-items:center;justify-content:center;font-family:var(--serif);
+}
+@media(min-width:900px){.flow-list li::before{left:50%;transform:translateX(-50%);top:14px;}}
+.flow-list h3{font-size:15px;font-weight:800;margin-bottom:4px;}
+.flow-list p{font-size:12.5px;color:var(--ink-soft);line-height:1.75;}
+
+/* ---------- 予約セクション ---------- */
+.reserve{background:linear-gradient(170deg,var(--navy) 0%,var(--navy-deep) 100%);color:#fff;}
+.reserve .eyebrow{color:#D9C28E;}
+.reserve .eyebrow::before,.reserve .eyebrow::after{background:#D9C28E;}
+.reserve .sec-lead{color:rgba(255,255,255,.85);}
+.reserve-card{
+  background:var(--white);color:var(--ink);border-radius:22px;
+  max-width:480px;margin:0 auto;overflow:hidden;box-shadow:0 22px 56px rgba(0,0,0,.35);
+}
+.reserve-card-head{background:var(--brass);color:#fff;text-align:center;padding:14px;}
+.reserve-card-head .r-label{font-size:12px;font-weight:800;letter-spacing:.22em;}
+.reserve-card-head .r-title{font-family:var(--serif);font-size:19px;font-weight:600;letter-spacing:.1em;}
+.reserve-card-body{padding:28px 26px 32px;}
+.slot-table{display:grid;gap:8px;margin-bottom:20px;}
+.slot-row{
+  display:flex;align-items:center;justify-content:space-between;
+  background:var(--beige);border-radius:10px;padding:10px 16px;font-size:13.5px;font-weight:700;
+}
+.slot-row .s-status{font-size:11.5px;font-weight:800;padding:3px 10px;border-radius:999px;}
+.slot-row .ok{background:#E3F0E5;color:#2D6A3F;}
+.slot-row .few{background:#FAEDDC;color:#B0641E;}
+.slot-row .full{background:#EFE3E3;color:#9A4444;}
+.reserve-perks{display:grid;gap:9px;margin-bottom:24px;}
+.reserve-perks li{
+  display:flex;align-items:flex-start;gap:10px;font-size:13px;font-weight:700;
+  background:var(--beige);border-radius:10px;padding:11px 14px;line-height:1.6;
+}
+.reserve-perks li::before{
+  content:"";flex-shrink:0;width:18px;height:18px;margin-top:3px;border-radius:50%;
+  background:var(--brass) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="white" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></svg>') center/11px no-repeat;
+}
+
+/* ---------- アクセス ---------- */
+.access{background:var(--beige);}
+.access-card{
+  background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);
+  max-width:560px;margin:0 auto;overflow:hidden;
+}
+@media(min-width:900px){.access-card{max-width:880px;display:grid;grid-template-columns:1fr 1fr;}}
+.access-map{position:relative;min-height:220px;background:#EFE9DC;}
+.access-map svg{position:absolute;inset:0;width:100%;height:100%;}
+.access-info{padding:26px;}
+.access-info h3{font-family:var(--serif);font-size:18px;letter-spacing:.1em;font-weight:600;margin-bottom:12px;}
+.access-info dl{display:grid;grid-template-columns:84px 1fr;gap:8px 12px;font-size:13px;}
+.access-info dt{font-weight:800;color:var(--navy);}
+.access-info dd{color:var(--ink-soft);}
+
+/* ---------- FAQ ---------- */
+.faq{background:var(--white);}
+.faq-list{max-width:640px;margin:0 auto;display:grid;gap:12px;}
+.faq-item{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--beige);}
+.faq-q{
+  width:100%;display:flex;align-items:center;gap:12px;text-align:left;
+  padding:16px 48px 16px 18px;background:none;border:none;cursor:pointer;
+  font-family:var(--sans);font-size:14px;font-weight:700;color:var(--ink);line-height:1.65;position:relative;
+}
+.faq-q::before{
+  content:"Q";flex-shrink:0;width:27px;height:27px;border-radius:50%;
+  background:var(--navy);color:#fff;font-weight:800;font-size:12.5px;
+  display:flex;align-items:center;justify-content:center;font-family:var(--serif);
+}
+.faq-q::after{
+  content:"";position:absolute;right:18px;top:50%;width:9px;height:9px;
+  border-right:2px solid var(--navy);border-bottom:2px solid var(--navy);
+  transform:translateY(-70%) rotate(45deg);transition:transform .3s;
+}
+.faq-item.open .faq-q::after{transform:translateY(-30%) rotate(-135deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.faq-a-inner{display:flex;gap:12px;padding:2px 18px 18px;font-size:13px;color:var(--ink-soft);line-height:1.85;}
+.faq-a-inner::before{
+  content:"A";flex-shrink:0;width:27px;height:27px;border-radius:50%;
+  background:var(--brass);color:#fff;font-weight:800;font-size:12.5px;
+  display:flex;align-items:center;justify-content:center;font-family:var(--serif);
+}
+
+/* ---------- 最終CTA ---------- */
+.last-cta{
+  background:
+    radial-gradient(circle at 12% 18%,rgba(176,141,69,.14) 0%,transparent 40%),
+    radial-gradient(circle at 88% 82%,rgba(30,58,95,.12) 0%,transparent 45%),
+    var(--beige-deep);
+  text-align:center;
+}
+.last-cta h2{
+  font-family:var(--serif);font-size:clamp(21px,5.8vw,30px);font-weight:600;
+  line-height:1.8;letter-spacing:.08em;margin-bottom:12px;
+}
+.last-cta p{font-size:13.5px;color:var(--ink-soft);margin-bottom:26px;}
+
+/* ---------- フッター ---------- */
+.site-footer{background:var(--navy-deep);color:rgba(255,255,255,.85);padding:38px 0 110px;font-size:12px;}
+.site-footer .f-logo{font-family:var(--serif);text-align:center;font-size:17px;letter-spacing:.2em;color:#fff;margin-bottom:4px;}
+.site-footer .f-sub{text-align:center;font-size:9.5px;letter-spacing:.3em;color:rgba(255,255,255,.6);margin-bottom:18px;}
+.f-links{display:flex;justify-content:center;gap:18px;margin-bottom:20px;flex-wrap:wrap;}
+.f-links a{opacity:.8;}
+.f-demo{
+  max-width:520px;margin:0 auto 14px;padding:12px 16px;
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-radius:10px;
+  font-size:11.5px;line-height:1.7;text-align:center;
+}
+.f-copy{text-align:center;opacity:.6;font-size:11px;}
+
+/* ---------- 追従CTA ---------- */
+.sticky-cta{
+  position:fixed;left:0;right:0;bottom:0;z-index:90;
+  padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+  background:rgba(255,255,255,.95);backdrop-filter:blur(8px);
+  border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(30,58,95,.14);
+  transform:translateY(110%);transition:transform .35s ease;
+}
+.sticky-cta.show{transform:none;}
+.sticky-cta .btn-cta{padding:12px 42px 11px 20px;max-width:480px;}
+.sticky-cta .btn-cta .b-small{font-size:10px;}
+.sticky-cta .btn-cta .b-main{font-size:15px;}
+</style>
+</head>
+<body>
+
+<!-- ============ ヘッダー ============ -->
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="#top">
+      <svg viewBox="0 0 48 48" aria-hidden="true">
+        <rect x="2" y="2" width="44" height="44" rx="8" fill="#1E3A5F"/>
+        <path d="M24 11 L40 25 H35 V37 H27 V29 H21 V37 H13 V25 H8 Z" fill="#F6F1E8"/>
+        <path d="M24 11 L40 25 H35 L24 15.5 L13 25 H8 Z" fill="#B08D45"/>
+      </svg>
+      <span><span class="l-name">青葉の家</span><span class="l-sub">AOBA NO IE</span></span>
+    </a>
+    <a class="header-btn" href="#reserve">来場予約</a>
+  </div>
+</header>
+
+<!-- ============ ヒーロー ============ -->
+<section class="hero" id="top">
+  <p class="hero-date-band">＼ 予約枠 残りわずか ／ 6/27(土)・28(日) 完全予約制で開催</p>
+  <div class="hero-inner wrap">
+    <p class="hero-label">完成見学会</p>
+    <h1>家事ラク動線と、<br><span class="gold">吹き抜けの光</span>を<br>体感する2日間。</h1>
+    <p class="hero-sub">図面では伝わらない「住み心地」を、建てる前にあなたの足で確かめてください。</p>
+
+    <div class="event-card">
+      <p class="e-head">OPEN HOUSE</p>
+      <div class="e-body">
+        <div class="event-date">
+          <span class="d-box"><span class="d-num">6<small>/</small>27</span><br><span class="d-day sat">土</span></span>
+          <span class="d-x">・</span>
+          <span class="d-box"><span class="d-num">6<small>/</small>28</span><br><span class="d-day sun">日</span></span>
+        </div>
+        <div class="event-meta">
+          <p><b>10:00〜17:00</b>(各回60分・完全予約制)</p>
+          <p>会場:<b>あおば台コートテラス3号棟</b>(デモ用の架空分譲地)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-gift">
+      <svg viewBox="0 0 48 48"><rect x="6" y="16" width="36" height="26" rx="4" fill="#D9C28E"/><rect x="6" y="16" width="36" height="8" fill="#C9AE6F"/><rect x="21" y="12" width="6" height="30" fill="#1E3A5F"/><path d="M24 12c-6 0-9-3-7-6 2-2.6 5.5-1 7 3 1.5-4 5-5.6 7-3 2 3-1 6-7 6z" fill="#1E3A5F"/></svg>
+      <div>
+        <p class="g-title">WEB予約限定｜来場特典</p>
+        <p class="g-text">アンケート回答で3,000円分のギフトカードをプレゼント。お子さま連れにはお菓子の詰め合わせも。</p>
+      </div>
+    </div>
+
+    <a class="btn-cta" href="#reserve" id="hero-cta">
+      <span class="b-small">空き枠カレンダーから選ぶだけ・1分で完了</span>
+      <span class="b-main">見学会の来場予約をする</span>
+    </a>
+    <p class="cta-note" style="color:rgba(255,255,255,.8);"><span>参加無料</span><span>しつこい営業なし</span><span>子連れ歓迎</span></p>
+  </div>
+</section>
+
+<!-- ============ 外観ビジュアル ============ -->
+<div style="background:linear-gradient(180deg,var(--navy-deep) 0%,var(--navy-deep) 52%,var(--beige) 52%);padding:34px 0 0;">
+  <!-- ▼▼ 画像差し替えスロット①: 物件外観写真 ▼▼ -->
+  <div class="house-visual" data-image-slot="exterior-photo">
+    <div class="hv-frame">
+      <svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="新築戸建ての外観イメージ">
+        <!-- 空 -->
+        <rect width="720" height="420" fill="#DCE8F0"/>
+        <circle cx="600" cy="80" r="36" fill="#F4E9C8"/>
+        <ellipse cx="150" cy="70" rx="60" ry="18" fill="#fff" opacity=".8"/>
+        <ellipse cx="500" cy="50" rx="46" ry="14" fill="#fff" opacity=".7"/>
+        <!-- 地面 -->
+        <rect y="330" width="720" height="90" fill="#CBD8C2"/>
+        <rect y="326" width="720" height="10" fill="#B9C9AE"/>
+        <!-- 家本体 -->
+        <g>
+          <!-- 二階 -->
+          <rect x="180" y="120" width="240" height="120" fill="#F7F4ED"/>
+          <!-- 一階 -->
+          <rect x="140" y="220" width="340" height="116" fill="#FFFFFF"/>
+          <!-- 木目アクセント壁 -->
+          <rect x="420" y="120" width="120" height="216" fill="#A8794C"/>
+          <g stroke="#96683E" stroke-width="2" opacity=".6">
+            <line x1="420" y1="140" x2="540" y2="140"/><line x1="420" y1="162" x2="540" y2="162"/>
+            <line x1="420" y1="184" x2="540" y2="184"/><line x1="420" y1="206" x2="540" y2="206"/>
+            <line x1="420" y1="228" x2="540" y2="228"/><line x1="420" y1="250" x2="540" y2="250"/>
+            <line x1="420" y1="272" x2="540" y2="272"/><line x1="420" y1="294" x2="540" y2="294"/>
+            <line x1="420" y1="316" x2="540" y2="316"/>
+          </g>
+          <!-- 屋根 -->
+          <rect x="166" y="106" width="262" height="16" rx="3" fill="#2E3440"/>
+          <rect x="408" y="106" width="144" height="16" rx="3" fill="#2E3440"/>
+          <!-- 二階窓 -->
+          <rect x="206" y="146" width="64" height="56" rx="3" fill="#9FBFD4"/>
+          <rect x="206" y="146" width="64" height="56" rx="3" fill="none" stroke="#fff" stroke-width="4"/>
+          <line x1="238" y1="146" x2="238" y2="202" stroke="#fff" stroke-width="3"/>
+          <rect x="300" y="146" width="64" height="56" rx="3" fill="#9FBFD4"/>
+          <rect x="300" y="146" width="64" height="56" rx="3" fill="none" stroke="#fff" stroke-width="4"/>
+          <line x1="332" y1="146" x2="332" y2="202" stroke="#fff" stroke-width="3"/>
+          <!-- 大きな掃き出し窓(一階) -->
+          <rect x="170" y="244" width="150" height="80" rx="3" fill="#AFCBDD"/>
+          <rect x="170" y="244" width="150" height="80" rx="3" fill="none" stroke="#fff" stroke-width="5"/>
+          <line x1="245" y1="244" x2="245" y2="324" stroke="#fff" stroke-width="4"/>
+          <rect x="178" y="252" width="58" height="40" fill="#fff" opacity=".35"/>
+          <!-- 玄関ドア -->
+          <rect x="448" y="252" width="62" height="84" rx="3" fill="#6B4B2E"/>
+          <circle cx="500" cy="296" r="3.5" fill="#D9C28E"/>
+          <rect x="440" y="336" width="80" height="6" fill="#BFB6A4"/>
+          <!-- 表札灯 -->
+          <circle cx="479" cy="236" r="6" fill="#F4E9C8"/>
+        </g>
+        <!-- 植栽 -->
+        <g>
+          <circle cx="96" cy="306" r="30" fill="#7FA06A"/>
+          <circle cx="76" cy="322" r="22" fill="#8FB07A"/>
+          <rect x="90" y="326" width="10" height="22" fill="#7A5A3A"/>
+          <circle cx="640" cy="318" r="24" fill="#7FA06A"/>
+          <rect x="634" y="330" width="9" height="20" fill="#7A5A3A"/>
+        </g>
+        <!-- アプローチ -->
+        <path d="M448 342 L520 342 L600 420 L380 420 Z" fill="#D8D2C4"/>
+        <!-- のぼり旗 -->
+        <g>
+          <rect x="48" y="180" width="5" height="170" fill="#8A8378"/>
+          <path d="M53 184 h54 v92 h-54z" fill="#B08D45"/>
+          <text x="80" y="212" text-anchor="middle" font-size="17" fill="#fff" font-weight="bold" font-family="sans-serif" writing-mode="tb" letter-spacing="2">完成見学会</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+  <!-- ▲▲ 画像差し替えスロット① ここまで ▲▲ -->
+</div>
+
+<!-- ============ 悩み共感 ============ -->
+<section class="nayami">
+  <div class="wrap">
+    <p class="eyebrow fade">Check</p>
+    <h2 class="sec-title fade">家づくり、こんな不安は<br>ありませんか？</h2>
+    <ul class="nayami-list">
+      <li class="fade"><span>間取り図を見ても、<b>広さや明るさのイメージが湧かない</b></span></li>
+      <li class="fade"><span>モデルハウスは豪華すぎて、<b>現実的な予算感がわからない</b></span></li>
+      <li class="fade"><span>見学に行くと、<b>しつこく営業されそう</b>で気が重い</span></li>
+      <li class="fade"><span>収納や家事動線が、<b>実際の暮らしで足りるのか不安</b></span></li>
+    </ul>
+    <p class="nayami-close fade">だから青葉の家の見学会は、<br><span class="big">「等身大の家」をそのまま</span><br>ご覧いただきます。</p>
+  </div>
+</section>
+
+<!-- ============ 体感ポイント ============ -->
+<section class="points">
+  <div class="wrap">
+    <p class="eyebrow fade">Point</p>
+    <h2 class="sec-title fade">この見学会で体感できる<br>4つのポイント</h2>
+    <p class="sec-lead fade">実際にご家族が住む予定の、30坪・4LDKのリアルな家です。</p>
+    <div class="point-list">
+
+      <div class="point-card fade">
+        <!-- ▼ 画像差し替えスロット②a: LDK写真 -->
+        <div class="point-photo" data-image-slot="interior-ldk">
+          <svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice"><rect width="400" height="170" fill="#F3EDE2"/><rect y="120" width="400" height="50" fill="#D8C7A8"/><rect x="40" y="20" width="110" height="100" fill="#BFD8E8"/><rect x="40" y="20" width="110" height="100" fill="none" stroke="#fff" stroke-width="6"/><line x1="95" y1="20" x2="95" y2="120" stroke="#fff" stroke-width="4"/><rect x="200" y="78" width="120" height="14" rx="4" fill="#8A6A45"/><rect x="210" y="92" width="8" height="30" fill="#6B4B2E"/><rect x="302" y="92" width="8" height="30" fill="#6B4B2E"/><rect x="230" y="50" width="60" height="28" rx="6" fill="#9FB58B"/><circle cx="350" cy="40" r="16" fill="#F4E9C8"/></svg>
+        </div>
+        <div class="point-body">
+          <span style="font-family:var(--serif);font-style:italic;font-size:12px;color:var(--brass);letter-spacing:.18em;">POINT 01</span>
+          <h3>洗濯が3歩で終わる、家事動線</h3>
+          <p>洗う→干す→しまうがワンフロアで完結するランドリー動線。共働きのご夫婦に一番好評の間取りを、実際に歩いて確かめられます。</p>
+        </div>
+      </div>
+
+      <div class="point-card fade">
+        <!-- ▼ 画像差し替えスロット②b: 吹き抜け写真 -->
+        <div class="point-photo" data-image-slot="interior-void">
+          <svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice"><rect width="400" height="170" fill="#EFF3F6"/><rect x="150" y="10" width="100" height="150" fill="#FDFBF6"/><rect x="166" y="20" width="68" height="58" fill="#C8DEEC"/><rect x="166" y="20" width="68" height="58" fill="none" stroke="#fff" stroke-width="5"/><line x1="200" y1="20" x2="200" y2="78" stroke="#fff" stroke-width="3"/><path d="M150 160 L250 160 L250 100 L150 100Z" fill="#E7DDC9"/><g stroke="#F4E9C8" stroke-width="6" stroke-linecap="round" opacity=".85"><line x1="200" y1="84" x2="170" y2="150"/><line x1="208" y1="84" x2="208" y2="150"/><line x1="216" y1="84" x2="244" y2="150"/></g><rect x="60" y="90" width="60" height="70" fill="#D8C7A8"/><rect x="290" y="90" width="60" height="70" fill="#D8C7A8"/></svg>
+        </div>
+        <div class="point-body">
+          <span style="font-family:var(--serif);font-style:italic;font-size:12px;color:var(--brass);letter-spacing:.18em;">POINT 02</span>
+          <h3>吹き抜けの光と、夏冬の室温</h3>
+          <p>南向き吹き抜けの明るさと、高断熱(HEAT20 G2相当)の室温を体感。エアコン1台で家じゅう快適になる理由を、その場でご説明します。</p>
+        </div>
+      </div>
+
+      <div class="point-card fade">
+        <!-- ▼ 画像差し替えスロット②c: 収納写真 -->
+        <div class="point-photo" data-image-slot="interior-storage">
+          <svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice"><rect width="400" height="170" fill="#F4EFE6"/><rect x="50" y="20" width="300" height="130" rx="6" fill="#E7DCC8"/><g fill="#FDFBF6" stroke="#C9B690" stroke-width="2"><rect x="64" y="34" width="84" height="48" rx="4"/><rect x="158" y="34" width="84" height="48" rx="4"/><rect x="252" y="34" width="84" height="48" rx="4"/><rect x="64" y="92" width="84" height="44" rx="4"/><rect x="158" y="92" width="84" height="44" rx="4"/><rect x="252" y="92" width="84" height="44" rx="4"/></g><g fill="#B08D45"><rect x="100" y="54" width="14" height="5" rx="2"/><rect x="194" y="54" width="14" height="5" rx="2"/><rect x="288" y="54" width="14" height="5" rx="2"/><rect x="100" y="110" width="14" height="5" rx="2"/><rect x="194" y="110" width="14" height="5" rx="2"/><rect x="288" y="110" width="14" height="5" rx="2"/></g></svg>
+        </div>
+        <div class="point-body">
+          <span style="font-family:var(--serif);font-style:italic;font-size:12px;color:var(--brass);letter-spacing:.18em;">POINT 03</span>
+          <h3>「収納率12%」の実力を見る</h3>
+          <p>シューズクローク・パントリー・ファミリークローゼット。家族4人分の荷物がどこに収まるのか、扉を開けて確認してください。</p>
+        </div>
+      </div>
+
+      <div class="point-card fade">
+        <!-- ▼ 画像差し替えスロット②d: 相談コーナー写真 -->
+        <div class="point-photo" data-image-slot="consultation">
+          <svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice"><rect width="400" height="170" fill="#EFF1ED"/><rect x="90" y="95" width="220" height="14" rx="5" fill="#8A6A45"/><rect x="104" y="109" width="10" height="40" fill="#6B4B2E"/><rect x="286" y="109" width="10" height="40" fill="#6B4B2E"/><rect x="130" y="40" width="60" height="42" rx="5" fill="#fff" stroke="#C9B690" stroke-width="2"/><path d="M138 70 L156 52 L168 62 L182 48" stroke="#1E3A5F" stroke-width="3" fill="none" stroke-linecap="round"/><rect x="216" y="48" width="52" height="34" rx="4" fill="#D9E5EE"/><text x="242" y="70" text-anchor="middle" font-size="13" fill="#1E3A5F" font-weight="bold" font-family="sans-serif">¥</text><circle cx="60" cy="120" r="18" fill="#C8B591"/><circle cx="340" cy="120" r="18" fill="#9FB0C4"/></svg>
+        </div>
+        <div class="point-body">
+          <span style="font-family:var(--serif);font-style:italic;font-size:12px;color:var(--brass);letter-spacing:.18em;">POINT 04</span>
+          <h3>このままの仕様の「総額」がわかる</h3>
+          <p>見学した家の本体価格・土地込み総額・月々の支払い目安まで開示。ご希望の方には、その場でラフな資金計画もお出しします。</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 物件概要 ============ -->
+<section class="spec">
+  <div class="wrap">
+    <p class="eyebrow fade">House Data</p>
+    <h2 class="sec-title fade">今回ご覧いただく住まい</h2>
+    <p class="sec-lead fade">実際の分譲住宅です。気に入ればこのままご購入の相談もできます。</p>
+    <div class="spec-card fade">
+      <!-- ▼ 画像差し替えスロット③: 間取り図 -->
+      <div class="spec-plan" data-image-slot="floor-plan">
+        <svg viewBox="0 0 360 280" xmlns="http://www.w3.org/2000/svg" aria-label="間取り図(1階)のイメージ">
+          <rect x="20" y="20" width="320" height="240" fill="#FDFBF6" stroke="#2E3440" stroke-width="3"/>
+          <line x1="180" y1="20" x2="180" y2="160" stroke="#2E3440" stroke-width="2"/>
+          <line x1="20" y1="160" x2="340" y2="160" stroke="#2E3440" stroke-width="2"/>
+          <line x1="250" y1="160" x2="250" y2="260" stroke="#2E3440" stroke-width="2"/>
+          <rect x="30" y="30" width="140" height="120" fill="#F0E9D8"/>
+          <text x="100" y="86" text-anchor="middle" font-size="15" fill="#2E3440" font-family="sans-serif" font-weight="bold">LDK</text>
+          <text x="100" y="104" text-anchor="middle" font-size="10" fill="#6E7682" font-family="sans-serif">20.5帖・吹き抜け</text>
+          <rect x="190" y="30" width="140" height="120" fill="#E9EFF0"/>
+          <text x="260" y="80" text-anchor="middle" font-size="12" fill="#2E3440" font-family="sans-serif" font-weight="bold">ランドリー</text>
+          <text x="260" y="96" text-anchor="middle" font-size="10" fill="#6E7682" font-family="sans-serif">洗う→干す→しまう</text>
+          <rect x="30" y="170" width="210" height="80" fill="#EDE7F0"/>
+          <text x="135" y="206" text-anchor="middle" font-size="12" fill="#2E3440" font-family="sans-serif" font-weight="bold">ファミリークローク</text>
+          <text x="135" y="222" text-anchor="middle" font-size="10" fill="#6E7682" font-family="sans-serif">4.5帖</text>
+          <rect x="260" y="170" width="70" height="80" fill="#F0E4DC"/>
+          <text x="295" y="206" text-anchor="middle" font-size="11" fill="#2E3440" font-family="sans-serif" font-weight="bold">玄関</text>
+          <text x="295" y="222" text-anchor="middle" font-size="9" fill="#6E7682" font-family="sans-serif">SC付き</text>
+          <text x="330" y="272" text-anchor="end" font-size="9" fill="#9AA0A8" font-family="sans-serif">1F PLAN(イメージ)</text>
+        </svg>
+      </div>
+      <div class="spec-info">
+        <h3>あおば台コートテラス 3号棟</h3>
+        <dl>
+          <dt>間取り</dt><dd>4LDK＋ファミリークローク＋パントリー</dd>
+          <dt>延床面積</dt><dd>99.36㎡(30.05坪)</dd>
+          <dt>土地面積</dt><dd>132.20㎡(39.99坪)</dd>
+          <dt>構造</dt><dd>木造2階建て(耐震等級3)</dd>
+          <dt>断熱性能</dt><dd>HEAT20 G2相当(UA値0.34)</dd>
+          <dt>引渡し</dt><dd>2026年9月予定</dd>
+        </dl>
+        <ul class="spec-badges">
+          <li>耐震等級3</li>
+          <li>長期優良住宅</li>
+          <li>ZEH水準</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 選ばれる理由 ============ -->
+<section class="reasons">
+  <div class="wrap">
+    <p class="eyebrow fade">Reason</p>
+    <h2 class="sec-title fade" style="color:#fff;">青葉の家が選ばれる理由</h2>
+    <p class="sec-lead fade">地域で家を建て続けて、もうすぐ半世紀になります。</p>
+    <div class="reason-grid">
+      <div class="reason-card fade">
+        <svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24" fill="rgba(217,194,142,.15)"/><path d="M26 10 L40 22 H36 V40 H29 V31 H23 V40 H16 V22 H12 Z" fill="#D9C28E"/></svg>
+        <p class="r-big">1,200<small>棟</small></p>
+        <h3>地域施工実績</h3>
+        <p>創業48年。このエリアの気候と土地を知り尽くした地元工務店です。</p>
+      </div>
+      <div class="reason-card fade">
+        <svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24" fill="rgba(217,194,142,.15)"/><path d="M26 9l5 9 10 1.7-7.2 7 1.7 10-9.5-4.7-9.5 4.7 1.7-10-7.2-7L21 18z" fill="#D9C28E"/></svg>
+        <p class="r-big">等級<small> </small>3</p>
+        <h3>全棟 耐震等級3</h3>
+        <p>消防署や警察署と同等の最高等級を、全棟標準で確保しています。</p>
+      </div>
+      <div class="reason-card fade">
+        <svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24" fill="rgba(217,194,142,.15)"/><path d="M26 10c6 5 12 7 14 7 0 14-5 22-14 25-9-3-14-11-14-25 2 0 8-2 14-7z" fill="none" stroke="#D9C28E" stroke-width="3"/><path d="M19 26l5 5 9-10" stroke="#D9C28E" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <p class="r-big">60<small>年</small></p>
+        <h3>長期保証・点検</h3>
+        <p>引渡し後も定期点検と保証延長制度で、住んでからを支え続けます。</p>
+      </div>
+      <div class="reason-card fade">
+        <svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24" fill="rgba(217,194,142,.15)"/><circle cx="26" cy="20" r="7" fill="#D9C28E"/><path d="M13 41c2-9 7-13 13-13s11 4 13 13" fill="#D9C28E"/></svg>
+        <p class="r-big">専任<small>制</small></p>
+        <h3>営業ノルマなし</h3>
+        <p>担当は設計士。当日その場での契約のお願いは一切しない方針です。</p>
+      </div>
+    </div>
+    <p class="reasons-note">※実績数値はデモ表示用のサンプルです(架空データ)</p>
+  </div>
+</section>
+
+<!-- ============ お客様の声 ============ -->
+<section class="voice">
+  <div class="wrap">
+    <p class="eyebrow fade">Voice</p>
+    <h2 class="sec-title fade">見学会に参加された方の声</h2>
+    <p class="sec-lead fade">参加のきっかけは、みなさん「とりあえず見てみたい」でした。</p>
+    <div class="voice-grid">
+
+      <div class="voice-card fade">
+        <div class="voice-head">
+          <!-- ▼ 画像差し替えスロット④a -->
+          <div class="voice-avatar" data-image-slot="voice-photo-1">
+            <svg viewBox="0 0 54 54"><circle cx="27" cy="27" r="27" fill="#DCE5EF"/><circle cx="20" cy="24" r="7" fill="#C8B591"/><circle cx="34" cy="24" r="7" fill="#9FB0C4"/><path d="M8 44c2-8 6-12 12-12s10 4 12 12M22 44c2-8 6-12 12-12s10 4 12 12" fill="#7E92AB" opacity=".7"/></svg>
+          </div>
+          <div class="voice-meta">
+            <p class="v-name">30代ご夫婦＋お子さま1人</p>
+            <p class="v-attr">見学会参加 → 半年後にご契約</p>
+          </div>
+        </div>
+        <h3>「等身大」という言葉どおりでした</h3>
+        <p>豪華なモデルハウスに疲れていたので、実際に売っている家を見られたのが良かった。総額と月々の支払いまでその場で分かり、夫婦の話し合いが一気に進みました。</p>
+      </div>
+
+      <div class="voice-card fade">
+        <div class="voice-head">
+          <!-- ▼ 画像差し替えスロット④b -->
+          <div class="voice-avatar" data-image-slot="voice-photo-2">
+            <svg viewBox="0 0 54 54"><circle cx="27" cy="27" r="27" fill="#E8E2D2"/><circle cx="27" cy="22" r="8" fill="#C8B591"/><path d="M12 46c2-10 7-14 15-14s13 4 15 14" fill="#A98A72"/></svg>
+          </div>
+          <div class="voice-meta">
+            <p class="v-name">20代ご夫婦</p>
+            <p class="v-attr">家づくり検討を始めたばかり</p>
+          </div>
+        </div>
+        <h3>初心者の質問にも嫌な顔ひとつせず</h3>
+        <p>「土地ってどう探すんですか」レベルの質問ばかりでしたが、設計士さんが図を描きながら丁寧に説明してくれました。営業電話も本当に来ません(笑)。</p>
+      </div>
+
+      <div class="voice-card fade">
+        <div class="voice-head">
+          <!-- ▼ 画像差し替えスロット④c -->
+          <div class="voice-avatar" data-image-slot="voice-photo-3">
+            <svg viewBox="0 0 54 54"><circle cx="27" cy="27" r="27" fill="#E3EDE2"/><circle cx="27" cy="21" r="8" fill="#B08A68"/><path d="M12 46c2-10 7-14 15-14s13 4 15 14" fill="#5F7A8A"/><path d="M18 16c2-4 6-6 9-6s7 2 9 6c-3 2-6 3-9 3s-6-1-9-3z" fill="#4A4038"/></svg>
+          </div>
+          <div class="voice-meta">
+            <p class="v-name">40代ご夫婦＋お子さま2人</p>
+            <p class="v-attr">建て替えを検討中</p>
+          </div>
+        </div>
+        <h3>子連れでも、ゆっくり見られた</h3>
+        <p>完全予約制で他の家族と重ならず、子どもがぐずっても気兼ねなし。キッズスペースとお菓子の心遣いもあり、夫婦交代でじっくり確認できました。</p>
+      </div>
+
+    </div>
+    <p class="voice-note">※掲載の声は、デモページ用に作成した架空のサンプルです。</p>
+  </div>
+</section>
+
+<!-- ============ 当日の流れ ============ -->
+<section class="flow">
+  <div class="wrap">
+    <p class="eyebrow fade">Flow</p>
+    <h2 class="sec-title fade">当日の流れ(約60分)</h2>
+    <p class="sec-lead fade">予約した時間に現地へ来ていただくだけ。手ぶらでどうぞ。</p>
+    <ul class="flow-list">
+      <li class="fade"><h3>受付・ご案内</h3><p>予約名をお伝えください。スリッパ・お子さまの遊び道具もご用意しています。</p></li>
+      <li class="fade"><h3>自由に見学</h3><p>収納の扉も設備もすべて開けてOK。気になる箇所は写真撮影も自由です。</p></li>
+      <li class="fade"><h3>質問タイム</h3><p>設計士が間取りや性能の意図をご説明。質問だけして帰るのも大歓迎です。</p></li>
+      <li class="fade"><h3>希望者のみ相談</h3><p>資金計画や土地探しの相談はご希望の方だけ。アンケート回答で特典をお渡しします。</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 予約 ============ -->
+<section class="reserve" id="reserve">
+  <div class="wrap">
+    <p class="eyebrow fade">Reservation</p>
+    <h2 class="sec-title fade" style="color:#fff;">見学会の来場予約</h2>
+    <p class="sec-lead fade">各回1組限定のため、お早めにご予約ください。</p>
+
+    <div class="reserve-card fade">
+      <div class="reserve-card-head">
+        <p class="r-label">WEB予約限定特典つき</p>
+        <p class="r-title">空き状況カレンダー</p>
+      </div>
+      <div class="reserve-card-body">
+        <div class="slot-table">
+          <div class="slot-row"><span>6/27(土) 午前の部</span><span class="s-status few">残り1枠</span></div>
+          <div class="slot-row"><span>6/27(土) 午後の部</span><span class="s-status ok">予約OK</span></div>
+          <div class="slot-row"><span>6/28(日) 午前の部</span><span class="s-status full">満席</span></div>
+          <div class="slot-row"><span>6/28(日) 午後の部</span><span class="s-status few">残り2枠</span></div>
+        </div>
+        <ul class="reserve-perks">
+          <li>アンケート回答で3,000円分ギフトカードプレゼント</li>
+          <li>各回1組限定。他のご家族と重なりません</li>
+          <li>当日その場で契約を迫ることは一切ありません</li>
+          <li>ご都合が変わったらLINEからキャンセル・変更OK</li>
+        </ul>
+        <a class="btn-cta" href="#" data-demo-cta>
+          <span class="b-small">かんたん1分・空き枠を選ぶだけ</span>
+          <span class="b-main">この日程で予約する</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ アクセス ============ -->
+<section class="access">
+  <div class="wrap">
+    <p class="eyebrow fade">Access</p>
+    <h2 class="sec-title fade">会場アクセス</h2>
+    <p class="sec-lead fade">現地に駐車場2台分をご用意しています。</p>
+    <div class="access-card fade">
+      <!-- ▼ 画像差し替えスロット⑤: 地図 or 現地写真 -->
+      <div class="access-map" data-image-slot="map">
+        <svg viewBox="0 0 440 240" xmlns="http://www.w3.org/2000/svg" aria-label="会場周辺の地図(イメージ)">
+          <rect width="440" height="240" fill="#EFE9DC"/>
+          <path d="M0 120 H440" stroke="#fff" stroke-width="24"/>
+          <path d="M120 0 V240" stroke="#fff" stroke-width="16"/>
+          <path d="M320 0 V240" stroke="#fff" stroke-width="14"/>
+          <rect x="100" y="100" width="40" height="40" rx="6" fill="#8FA98F"/>
+          <text x="120" y="160" text-anchor="middle" font-size="10" fill="#2E3440" font-family="sans-serif">あおば台公園</text>
+          <g>
+            <circle cx="120" cy="120" r="9" fill="#2E3440"/>
+            <text x="120" y="124" text-anchor="middle" font-size="8" fill="#fff" font-family="sans-serif" font-weight="bold">バス</text>
+          </g>
+          <g>
+            <path d="M296 70c0-13 11-24 24-24s24 11 24 24c0 17-24 36-24 36s-24-19-24-36z" fill="#B08D45"/>
+            <path d="M320 58 L330 67 H327 V76 H313 V67 H310 Z" fill="#fff"/>
+          </g>
+          <text x="320" y="125" text-anchor="middle" font-size="11" fill="#152C49" font-family="sans-serif" font-weight="bold">見学会会場</text>
+          <text x="320" y="139" text-anchor="middle" font-size="9" fill="#6E7682" font-family="sans-serif">駐車場2台あり</text>
+        </svg>
+      </div>
+      <div class="access-info">
+        <h3>あおば台コートテラス</h3>
+        <dl>
+          <dt>所在地</dt><dd>神奈川県横浜市青葉区あおば台1-2-3(デモ用の架空住所です)</dd>
+          <dt>電車</dt><dd>「あおば台駅」より徒歩12分</dd>
+          <dt>バス</dt><dd>「あおば台公園前」下車 徒歩3分</dd>
+          <dt>お車</dt><dd>現地駐車場2台(予約時にお知らせください)</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq">
+  <div class="wrap">
+    <p class="eyebrow fade">FAQ</p>
+    <h2 class="sec-title fade">よくあるご質問</h2>
+    <div class="faq-list">
+      <div class="faq-item fade">
+        <button class="faq-q" type="button" aria-expanded="false">予約なしで当日行ってもいいですか？</button>
+        <div class="faq-a"><div class="faq-a-inner">今回は各回1組限定の完全予約制のため、事前のご予約をお願いしています。空きがあれば当日朝のご予約も可能ですので、まずは空き状況カレンダーをご確認ください。</div></div>
+      </div>
+      <div class="faq-item fade">
+        <button class="faq-q" type="button" aria-expanded="false">行ったら営業されませんか？</button>
+        <div class="faq-a"><div class="faq-a-inner">当日その場で契約や商談をお願いすることは一切ありません。ご案内するのは営業ではなく設計士で、後日の営業電話も「希望する」と答えた方以外には行わない方針です。</div></div>
+      </div>
+      <div class="faq-item fade">
+        <button class="faq-q" type="button" aria-expanded="false">家づくりを考え始めたばかりでも参加できますか？</button>
+        <div class="faq-a"><div class="faq-a-inner">むしろ大歓迎です。参加者の約半数は「情報収集を始めたばかり」の方。土地の探し方や予算の立て方など、初歩の質問ほど喜んでお答えします。</div></div>
+      </div>
+      <div class="faq-item fade">
+        <button class="faq-q" type="button" aria-expanded="false">子どもを連れて行っても大丈夫ですか？</button>
+        <div class="faq-a"><div class="faq-a-inner">はい、キッズスペースとおもちゃをご用意しています。各回1組限定なので、お子さまが泣いても走っても気兼ねはいりません。ベビーカーのまま入れます。</div></div>
+      </div>
+      <div class="faq-item fade">
+        <button class="faq-q" type="button" aria-expanded="false">この家を購入することもできますか？</button>
+        <div class="faq-a"><div class="faq-a-inner">はい、今回の建物は実際の分譲住宅です(引渡し2026年9月予定)。ご希望の方には販売価格と資金計画をご提示します。同じ仕様での注文住宅のご相談も可能です。</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 最終CTA ============ -->
+<section class="last-cta">
+  <div class="wrap">
+    <h2 class="fade">家づくりの第一歩は、<br>「本物を一軒見ること」から。</h2>
+    <p class="fade">6/27(土)・28(日)開催。参加無料・各回1組限定・ギフトカード特典つき。</p>
+    <a class="btn-cta fade" href="#reserve">
+      <span class="b-small">予約枠 残りわずか</span>
+      <span class="b-main">見学会の来場予約をする</span>
+    </a>
+    <p class="cta-note fade"><span>参加無料</span><span>しつこい営業なし</span><span>子連れ歓迎</span></p>
+  </div>
+</section>
+
+<!-- ============ フッター ============ -->
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="f-logo">青葉の家</p>
+    <p class="f-sub">AOBA NO IE — SINCE 1978</p>
+    <ul class="f-links">
+      <li><a href="#" data-demo-cta>会社概要</a></li>
+      <li><a href="#" data-demo-cta>施工事例</a></li>
+      <li><a href="#" data-demo-cta>プライバシーポリシー</a></li>
+    </ul>
+    <p class="f-demo">※このページはLP制作サービスのデモ用サンプルです。実在の企業・物件・分譲地ではありません。<br>掲載している日程・価格・実績・お客様の声・住所はすべて架空のものです。</p>
+    <p class="f-copy">&copy; 2026 AOBA NO IE (DEMO)</p>
+  </div>
+</footer>
+
+<!-- ============ 追従CTA ============ -->
+<div class="sticky-cta" id="stickyCta">
+  <a class="btn-cta" href="#reserve">
+    <span class="b-small">6/27(土)・28(日)開催・特典つき</span>
+    <span class="b-main">来場予約はこちら</span>
+  </a>
+</div>
+
+<script>
+// スクロールフェードイン
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+
+// FAQアコーディオン
+document.querySelectorAll('.faq-item').forEach(item=>{
+  const q = item.querySelector('.faq-q');
+  const a = item.querySelector('.faq-a');
+  q.addEventListener('click',()=>{
+    const open = item.classList.toggle('open');
+    q.setAttribute('aria-expanded', open);
+    a.style.maxHeight = open ? a.scrollHeight + 'px' : 0;
+  });
+});
+
+// 追従CTA(ヒーロー通過後に表示、予約セクションでは非表示)
+const sticky = document.getElementById('stickyCta');
+const heroCta = document.getElementById('hero-cta');
+const reserveSec = document.getElementById('reserve');
+function updateSticky(){
+  const heroGone = heroCta.getBoundingClientRect().bottom < 0;
+  const r = reserveSec.getBoundingClientRect();
+  const inReserve = r.top < innerHeight && r.bottom > 0;
+  sticky.classList.toggle('show', heroGone && !inReserve);
+}
+addEventListener('scroll', updateSticky, {passive:true});
+updateSticky();
+
+// デモ用: 実遷移するリンクはアラート案内
+document.querySelectorAll('[data-demo-cta]').forEach(el=>{
+  el.addEventListener('click',(e)=>{
+    e.preventDefault();
+    alert('デモページのため、ここから先の予約フォーム・下層ページはございません。\n実際の制作では、ご利用の予約システムやフォームに接続します。');
+  });
+});
+</script>
+</body>
+</html>
