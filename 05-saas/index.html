@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KINTAI Cloud｜打刻も集計も、自動になる勤怠管理クラウド【デモサンプル】</title>
-<meta name="description" content="打刻・残業計算・有給管理・給与連携までを自動化するクラウド勤怠管理。法改正に自動対応、月末の集計作業をゼロへ。1名200円〜・初期費用0円。資料ダウンロード・無料トライアル受付中。※LP制作サービスのデモ用サンプルページです。">
+<title>KINTAI Cloud｜打刻もシフトも、社員のLINEに届く勤怠管理クラウド【デモサンプル】</title>
+<meta name="description" content="アプリ不要。社員一人ひとりのLINEに、打刻リマインド・シフト・残業アラート・給与明細まで自動で届くクラウド勤怠管理。集計・給与連携も自動、法改正に自動対応。1名200円〜・初期費用0円。資料ダウンロード受付中。※LP制作サービスのデモ用サンプルページです。">
 <meta name="robots" content="noindex">
 <style>
 /* ============================================================
@@ -173,6 +173,37 @@ section{padding:70px 0;}
 .dash-float .df-ic svg{width:20px;height:20px;}
 .dash-float .df-t{font-size:9.5px;color:var(--ink-soft);font-weight:700;}
 .dash-float .df-v{font-size:14px;font-weight:900;color:var(--green);}
+
+/* ---------- スマホ / LINE モックアップ ---------- */
+.phone{position:relative;width:252px;margin:0 auto;}
+.phone-body{background:#111827;border-radius:38px;padding:9px;box-shadow:0 26px 60px rgba(30,58,95,.28);}
+.phone-screen{background:#8FACD0;border-radius:30px;overflow:hidden;}
+.line-top{display:flex;align-items:center;gap:8px;padding:11px 12px;background:#fff;}
+.line-top .lt-back{color:#9AA6B5;font-size:20px;line-height:1;font-weight:700;}
+.line-top .lt-ava{width:30px;height:30px;border-radius:50%;background:#06C755;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;flex-shrink:0;}
+.line-top .lt-name{font-size:13px;font-weight:800;color:#1F2937;}
+.line-top .lt-badge{font-size:8.5px;color:#06C755;font-weight:800;border:1px solid #06C755;border-radius:4px;padding:1px 4px;}
+.line-chat{padding:14px 12px 18px;display:flex;flex-direction:column;gap:11px;}
+.ln-day{align-self:center;font-size:10px;color:#fff;background:rgba(0,0,0,.16);padding:2px 14px;border-radius:999px;}
+.ln-row{display:flex;gap:7px;align-items:flex-end;}
+.ln-ava{width:28px;height:28px;border-radius:50%;background:#06C755;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:11px;flex-shrink:0;}
+.ln-bubble{background:#fff;border-radius:4px 16px 16px 16px;padding:9px 12px;font-size:12px;line-height:1.65;max-width:174px;box-shadow:0 1px 2px rgba(0,0,0,.06);color:#1F2937;}
+.ln-bubble b{font-weight:800;}
+.ln-cta{display:block;margin-top:8px;background:#06C755;color:#fff;text-align:center;font-weight:800;font-size:11.5px;padding:7px;border-radius:9px;}
+.ln-row.sent{justify-content:flex-end;}
+.ln-row.sent .ln-bubble{background:#86E05B;border-radius:16px 4px 16px 16px;}
+.phone-chip{position:absolute;right:-10px;top:104px;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);padding:8px 12px;font-size:11px;font-weight:800;color:var(--blue-ink);display:flex;align-items:center;gap:7px;}
+.phone-chip .pc-dot{width:8px;height:8px;border-radius:50%;background:#06C755;box-shadow:0 0 0 3px rgba(6,199,85,.18);}
+@media(min-width:900px){.phone{width:272px;}}
+
+/* ---------- LINE通知セクション ---------- */
+.linesec{background:var(--bg);}
+.noti-grid{display:grid;gap:14px;}
+@media(min-width:680px){.noti-grid{grid-template-columns:repeat(3,1fr);}}
+.noti-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:22px 20px;}
+.noti-card .nc-ic{width:46px;height:46px;border-radius:12px;background:#E7F9EE;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:12px;}
+.noti-card h3{font-size:15.5px;font-weight:800;margin-bottom:6px;}
+.noti-card p{font-size:13px;color:var(--ink-soft);line-height:1.8;}
 
 /* ---------- 実績バー ---------- */
 .metrics{background:var(--blue-ink);padding:26px 0;}
@@ -391,12 +422,12 @@ section{padding:70px 0;}
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <ul class="hero-badges">
+        <li>アプリ不要</li>
+        <li>LINEで打刻</li>
         <li>導入企業 3,200社</li>
-        <li>満足度 98%</li>
-        <li>法改正に自動対応</li>
       </ul>
-      <h1>月末の勤怠集計、<br><span class="hl">まだ手作業</span>で<br>消耗していませんか。</h1>
-      <p class="hero-sub">打刻・残業計算・有給管理・給与連携まで、KINTAI Cloudが自動化。締め日の「Excelとの格闘」を、ボタン1つに変えます。</p>
+      <h1>打刻も、シフトも、給与明細も。<br><span class="hl">ぜんぶ、社員のLINE</span>に届く。</h1>
+      <p class="hero-sub">新しいアプリのインストールは不要。社員一人ひとりのLINEに、打刻リマインドからシフト・残業アラートまで自動で通知。集計と給与連携も、もちろん自動です。</p>
       <div class="hero-cta">
         <div class="cta-pair">
           <a class="btn btn-primary" href="#cta">
@@ -418,34 +449,43 @@ section{padding:70px 0;}
       </div>
     </div>
 
-    <!-- ▼▼ 画像差し替えスロット①: 管理画面イメージ(差し替え時はこのdash全体を実スクショ<img>に置換可) ▼▼ -->
-    <div class="hero-visual" data-image-slot="hero-dashboard">
-      <div class="dash">
-        <div class="dash-bar"><i class="r"></i><i class="y"></i><i class="g"></i><span>KINTAI Cloud — 勤怠ダッシュボード</span></div>
-        <div class="dash-body">
-          <div class="dash-row">
-            <div class="dash-stat"><span class="s-label">今月の総労働時間</span><span class="s-num">3,840<small>h</small></span></div>
-            <div class="dash-stat alt"><span class="s-label">集計の自動化率</span><span class="s-num">100<small>%</small></span></div>
-          </div>
-          <div class="dash-chart">
-            <p class="c-title">部署別 残業時間の推移<span>今週</span></p>
-            <div class="bars">
-              <div class="bar muted" style="height:42%"><span>月</span></div>
-              <div class="bar muted" style="height:58%"><span>火</span></div>
-              <div class="bar" style="height:36%"><span>水</span></div>
-              <div class="bar" style="height:70%"><span>木</span></div>
-              <div class="bar" style="height:30%"><span>金</span></div>
-              <div class="bar muted" style="height:20%"><span>土</span></div>
+    <!-- ▼▼ ヒーロー: 社員のLINE画面イメージ ▼▼ -->
+    <div class="hero-visual" data-image-slot="hero-line-phone">
+      <div class="phone">
+        <div class="phone-body">
+          <div class="phone-screen">
+            <div class="line-top">
+              <span class="lt-back">‹</span>
+              <span class="lt-ava">勤</span>
+              <span class="lt-name">KINTAI 勤怠</span>
+              <span class="lt-badge">公式</span>
+            </div>
+            <div class="line-chat">
+              <span class="ln-day">今日</span>
+              <div class="ln-row">
+                <span class="ln-ava">勤</span>
+                <div class="ln-bubble">おはようございます☀️<br>本日の出勤打刻はこちらから。
+                  <span class="ln-cta">▶ 出勤を打刻する</span>
+                </div>
+              </div>
+              <div class="ln-row sent"><div class="ln-bubble">打刻しました👍</div></div>
+              <div class="ln-row">
+                <span class="ln-ava">勤</span>
+                <div class="ln-bubble"><b>✅ 出勤を記録しました（9:00）</b><br>今日も一日がんばりましょう！</div>
+              </div>
+              <div class="ln-row">
+                <span class="ln-ava">勤</span>
+                <div class="ln-bubble">📅 来週のシフトが確定しました。
+                  <span class="ln-cta">シフトを確認する</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="dash-float">
-        <span class="df-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span>
-        <span><span class="df-t">月末の集計工数</span><br><span class="df-v">▲92% 削減</span></span>
+        <div class="phone-chip"><span class="pc-dot"></span>アプリ不要</div>
       </div>
     </div>
-    <!-- ▲▲ 画像差し替えスロット① ここまで ▲▲ -->
+    <!-- ▲▲ ヒーロー LINE画面 ここまで ▲▲ -->
   </div>
 </section>
 
@@ -501,20 +541,39 @@ section{padding:70px 0;}
     <div class="feature-list">
       <div class="feature-card fade">
         <span class="f-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 7h6M12 11v6M9 14h6"/></svg></span>
-        <div><span class="f-num">FEATURE 01</span><h3>多彩な打刻方法</h3><p>スマホ・PC・ICカード・顔認証・LINEに対応。GPS打刻で直行直帰やリモートの勤務もごまかしなく記録します。</p></div>
+        <div><span class="f-num">FEATURE 01</span><h3>LINEで、ワンタップ打刻</h3><p>社員は使い慣れたLINEで「出勤」をタップするだけ。新しいアプリも、IDやパスワードの管理も不要です。GPS・ICカード・PC打刻にも対応します。</p></div>
       </div>
       <div class="feature-card fade">
         <span class="f-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5m0 14h16M8 16V9m4 7V6m4 10v-4"/></svg></span>
-        <div><span class="f-num">FEATURE 02</span><h3>残業・休暇の自動集計</h3><p>変形労働・フレックス・36協定のアラートまで自動計算。締め日にはボタン1つで全社の勤怠が確定します。</p></div>
+        <div><span class="f-num">FEATURE 02</span><h3>一人ひとりに、LINEで自動通知</h3><p>打刻忘れ・シフト確定・残業超過・申請の承認結果を、本人のLINEへ自動でお知らせ。「見ていなかった」「言った言わない」をなくします。</p></div>
       </div>
       <div class="feature-card fade">
         <span class="f-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
-        <div><span class="f-num">FEATURE 03</span><h3>スマホで申請・承認</h3><p>休暇・残業・打刻修正の申請はスマホで完結。承認者にはプッシュ通知が届き、紙の回覧とハンコが不要に。</p></div>
+        <div><span class="f-num">FEATURE 03</span><h3>申請・承認もスマホで完結</h3><p>休暇・残業・打刻修正の申請はLINE／スマホから。承認者にも通知が届き、その場でタップ承認。紙の回覧とハンコが消えます。</p></div>
       </div>
       <div class="feature-card fade">
         <span class="f-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/><circle cx="18" cy="17" r="3"/></svg></span>
-        <div><span class="f-num">FEATURE 04</span><h3>給与ソフトと連携</h3><p>主要な給与計算ソフト・API連携に対応。確定した勤怠データをそのまま給与へ。二重入力を完全になくします。</p></div>
+        <div><span class="f-num">FEATURE 04</span><h3>集計・給与連携は全自動</h3><p>集まった打刻データは自動で集計し、主要な給与ソフトへ連携。法改正の計算ルールにも自動対応し、月末の手作業をゼロにします。</p></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LINE連携 ============ -->
+<section class="linesec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow fade">LINE連携</span>
+      <h2 class="sec-title fade">社員一人ひとりの<span class="blue">LINE</span>に、<br>自動で届く。</h2>
+      <p class="sec-lead fade">新しいアプリも、社内ポータルへのログインも不要。みんなが毎日使うLINEが、そのまま勤怠の窓口になります。</p>
+    </div>
+    <div class="noti-grid">
+      <div class="noti-card fade"><div class="nc-ic">🕘</div><h3>打刻リマインド</h3><p>出勤・退勤の打刻忘れを検知して、その人のLINEに自動でお知らせ。打刻漏れによる勤怠の抜けを防ぎます。</p></div>
+      <div class="noti-card fade"><div class="nc-ic">📅</div><h3>シフト確定通知</h3><p>シフトが確定・変更されたら、対象者のLINEへ即共有。「見ていなかった」によるすれ違いをなくします。</p></div>
+      <div class="noti-card fade"><div class="nc-ic">⚠️</div><h3>残業アラート</h3><p>残業が上限に近づいた社員と上長へ、早めにLINEで警告。36協定オーバーを未然に防ぎます。</p></div>
+      <div class="noti-card fade"><div class="nc-ic">✅</div><h3>承認結果のお知らせ</h3><p>休暇・残業・打刻修正の申請が承認／差戻しされると、申請者のLINEへ自動で結果を通知します。</p></div>
+      <div class="noti-card fade"><div class="nc-ic">💰</div><h3>給与明細の配信</h3><p>毎月の給与明細を、紙の配布なしで各自のLINEへ直接お届け。受け取りもLINE上で完結します。</p></div>
+      <div class="noti-card fade"><div class="nc-ic">📣</div><h3>お知らせ一斉配信</h3><p>全社・部署・雇用形態など、対象を絞ってLINEで一斉連絡。既読状況もダッシュボードで確認できます。</p></div>
     </div>
   </div>
 </section>
@@ -524,8 +583,8 @@ section{padding:70px 0;}
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow fade">PRODUCT</span>
-      <h2 class="sec-title fade">直感的に使える、<br>管理画面。</h2>
-      <p class="sec-lead fade">ITが苦手な総務担当者でも、研修なしで使いこなせます。</p>
+      <h2 class="sec-title fade">社員はLINE。<br>管理者は<span class="blue">この画面</span>だけ。</h2>
+      <p class="sec-lead fade">現場の打刻はLINEで自動集約。管理者はWeb画面で、全社の勤怠をリアルタイムに確認・確定できます。</p>
     </div>
     <!-- ▼▼ 画像差し替えスロット②: 管理画面スクリーンショット ▼▼ -->
     <div class="product-shot fade" data-image-slot="product-screenshot">
