@@ -205,11 +205,12 @@ function Counter({ to, suffix="", prefix="" }) {
   );
 }
 function StatBand() {
+  // 事実に基づく項目のみ（実績を装う数字は載せない）
   const stats = [
-    { to:120, suffix:"+", label:"制作実績" },
-    { to:98,  suffix:"%", label:"継続率" },
-    { to:7,   suffix:"日", label:"最短公開" },
-    { to:29800, prefix:"¥", label:"月額サポート" },
+    { value:"¥10,000", label:"初期制作費" },
+    { value:"¥29,800", label:"月額サポート" },
+    { value:"月額内", label:"修正対応" },
+    { value:"ワンストップ", label:"制作〜運用まで" },
   ];
   return (
     <section className="px-6 lg:px-10 -mt-6">
@@ -217,9 +218,7 @@ function StatBand() {
         <div className="max-w-6xl mx-auto rounded-3xl bg-white ring-1 ring-slate-100 shadow-[0_20px_60px_rgba(13,23,55,0.07)] grid grid-cols-2 lg:grid-cols-4 divide-y lg:divide-y-0 lg:divide-x divide-slate-100">
           {stats.map((s,i)=>(
             <div key={i} className="p-8 text-center">
-              <div className="font-display text-3xl sm:text-4xl font-extrabold text-navy-800">
-                <Counter to={s.to} suffix={s.suffix} prefix={s.prefix} />
-              </div>
+              <div className="font-display text-2xl sm:text-3xl font-extrabold text-navy-800">{s.value}</div>
               <div className="mt-2 text-sm text-slate-500">{s.label}</div>
             </div>
           ))}
@@ -348,9 +347,9 @@ function Works() {
     <section id="works" className="py-24 lg:py-32 bg-navy-800 relative overflow-hidden">
       <div className="absolute -top-32 left-1/2 -translate-x-1/2 h-[400px] w-[700px] rounded-full bg-brand-500/15 blur-3xl"></div>
       <div className="max-w-7xl mx-auto px-6 lg:px-10 relative">
-        <Reveal className="text-center"><Eyebrow light>Selected Works</Eyebrow></Reveal>
-        <Reveal delay={0.05}><h2 className="font-display text-center mt-5 text-3xl sm:text-4xl font-extrabold text-white">制作実績</h2></Reveal>
-        <Reveal delay={0.1}><p className="text-center mt-4 text-white/60 max-w-xl mx-auto">各カードをクリックすると、実際に制作したLPをご覧いただけます。</p></Reveal>
+        <Reveal className="text-center"><Eyebrow light>Design Samples</Eyebrow></Reveal>
+        <Reveal delay={0.05}><h2 className="font-display text-center mt-5 text-3xl sm:text-4xl font-extrabold text-white">制作サンプル</h2></Reveal>
+        <Reveal delay={0.1}><p className="text-center mt-4 text-white/60 max-w-xl mx-auto">「こんなLPが作れます」をお見せするデモLPです。各カードをクリックすると実際の画面をご覧いただけます。</p></Reveal>
         <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {WORKS.map((w,i)=><WorkCard key={w.key} w={w} i={i} />)}
         </div>
