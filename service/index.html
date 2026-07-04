@@ -3,460 +3,361 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>LP制作サービス | ご提案資料</title>
+<title>LP制作を、初期費用10,000円で。｜LP STUDIO</title>
+<meta name="description" content="初期費用わずか10,000円＋月額サポートで、高品質なLPの制作から公開後の運用までワンストップ。個人事業主・中小企業のための新しいLP制作サービス。" />
 <script src="https://cdn.tailwindcss.com"></script>
-<script src="https://unpkg.com/@babel/standalone@7.24.7/babel.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet" />
-<style>
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Inter','Noto Sans JP',sans-serif; -webkit-font-smoothing: antialiased; background:#ffffff; }
-  .font-display { font-family:'Inter','Noto Sans JP',sans-serif; letter-spacing:-0.02em; }
-  ::selection { background:#2F6DF0; color:#fff; }
-  .glass { backdrop-filter: blur(12px); }
-  /* gorgeous additions */
-  @keyframes float1 { 0%,100%{ transform:translate(0,0) scale(1);} 50%{ transform:translate(40px,-30px) scale(1.08);} }
-  @keyframes float2 { 0%,100%{ transform:translate(0,0) scale(1);} 50%{ transform:translate(-50px,30px) scale(1.12);} }
-  @keyframes shimmer { 0%{ background-position:0% 50%;} 100%{ background-position:200% 50%;} }
-  .aurora1 { animation: float1 14s ease-in-out infinite; }
-  .aurora2 { animation: float2 18s ease-in-out infinite; }
-  .text-shimmer { background-image:linear-gradient(100deg,#2F6DF0,#5B8DEF,#8FB3F6,#2F6DF0); background-size:200% auto; -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; animation:shimmer 6s linear infinite; }
-  .grain::before { content:""; position:fixed; inset:0; z-index:1; pointer-events:none; opacity:.025; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
-  .ring-gradient { position:relative; }
-  .ring-gradient::before { content:""; position:absolute; inset:0; border-radius:inherit; padding:1.5px; background:linear-gradient(135deg,rgba(143,179,246,.9),rgba(47,109,240,.2),rgba(143,179,246,.6)); -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0); -webkit-mask-composite:xor; mask-composite:exclude; pointer-events:none; }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
 <script>
   tailwind.config = {
     theme: { extend: {
       colors: {
-        navy: { 900:'#0A1130', 800:'#0D1737', 700:'#142149', 600:'#1C2C5C' },
-        brand:{ 500:'#2F6DF0', 400:'#5B8DEF', 300:'#8FB3F6' },
+        navy:  { 950:'#080F26', 900:'#0B1533', 800:'#111C44', 700:'#1A2A5E', 600:'#22347A' },
+        brand: { 600:'#1D4ED8', 500:'#2563EB', 400:'#3B82F6', 300:'#60A5FA', 100:'#DBEAFE' },
+        gold:  { 500:'#E0A83A', 400:'#F0BE55' },
       },
       fontFamily: { sans:['Inter','Noto Sans JP','sans-serif'] },
+      boxShadow: { soft:'0 20px 60px -15px rgba(11,21,51,0.15)', glow:'0 20px 70px -10px rgba(37,99,235,0.45)' },
     }}
   };
 </script>
+<style>
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter','Noto Sans JP',sans-serif;-webkit-font-smoothing:antialiased;}
+  ::selection{background:#2563EB;color:#fff;}
+  .grad-text{background:linear-gradient(100deg,#60A5FA,#3B82F6,#1D4ED8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  .floaty{animation:floaty 6s ease-in-out infinite;}
+  @keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+  .reveal{opacity:0;}
+  .reveal.in{animation:rise .7s cubic-bezier(.22,1,.36,1) forwards;}
+  .dotgrid{background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.08) 1px,transparent 0);background-size:26px 26px;}
+</style>
 </head>
-<body>
-<div id="root"></div>
+<body class="bg-white text-navy-900 antialiased">
 
-<script type="text/babel" data-type="module" data-presets="react">
-import React, { useState, useEffect, useRef } from "https://esm.sh/react@18.2.0";
-import { createRoot } from "https://esm.sh/react-dom@18.2.0/client";
-import { motion, useScroll, useTransform, AnimatePresence } from "https://esm.sh/framer-motion@11.0.8?deps=react@18.2.0,react-dom@18.2.0";
+<!-- ============ ヘッダー ============ -->
+<header id="hd" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-2 font-extrabold text-lg tracking-tight text-navy-900">
+      <span class="h-7 w-7 rounded-lg bg-gradient-to-br from-brand-500 to-brand-400"></span>LP STUDIO
+    </a>
+    <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600">
+      <a href="#value" class="hover:text-navy-900 transition">選ばれる理由</a>
+      <a href="#price" class="hover:text-navy-900 transition">料金</a>
+      <a href="#works" class="hover:text-navy-900 transition">制作サンプル</a>
+      <a href="#faq" class="hover:text-navy-900 transition">よくある質問</a>
+    </nav>
+    <a href="#contact" class="rounded-full bg-brand-500 text-white text-sm font-bold px-5 py-2.5 shadow-glow hover:bg-brand-600 hover:-translate-y-0.5 transition-all">無料相談</a>
+  </div>
+</header>
 
-/* ============================================================
-   設定：URLと画像はここで一括管理（差し替えやすい構造）
-   ============================================================ */
-const DEMO_BASE = "https://daigorally0722.github.io/demo-lp";
+<!-- ============ Section 1: Hero ============ -->
+<section class="relative overflow-hidden bg-navy-900 text-white">
+  <div class="absolute inset-0 dotgrid opacity-60"></div>
+  <div class="absolute -top-32 -right-24 h-[460px] w-[460px] rounded-full bg-brand-500/25 blur-3xl floaty"></div>
+  <div class="absolute top-40 -left-32 h-[380px] w-[380px] rounded-full bg-brand-400/15 blur-3xl"></div>
 
+  <div class="relative max-w-6xl mx-auto px-5 sm:px-8 pt-28 pb-20 lg:pt-36 lg:pb-28 grid lg:grid-cols-2 gap-14 items-center">
+    <div>
+      <div class="inline-flex items-center gap-2 rounded-full bg-white/10 ring-1 ring-white/20 px-4 py-1.5 text-xs font-semibold text-brand-300 backdrop-blur">
+        <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>個人事業主・中小企業のためのLP制作
+      </div>
+      <h1 class="mt-6 font-extrabold leading-[1.15] tracking-tight text-4xl sm:text-5xl lg:text-[3.4rem]">
+        高品質なLPが、<br class="hidden sm:block" />
+        <span class="grad-text">初期費用 10,000円。</span>
+      </h1>
+      <p class="mt-6 text-base sm:text-lg text-slate-300 leading-relaxed max-w-lg">
+        通常30〜50万円かかるLP制作を、初期費用わずか1万円で。公開後の修正・保守・運用まで、月額サポートでまるごとお任せいただけます。
+      </p>
+
+      <div class="mt-9 flex flex-col sm:flex-row gap-3 sm:items-center">
+        <a href="#contact" class="group inline-flex items-center justify-center gap-2 rounded-full bg-brand-500 text-white font-bold px-8 py-4 shadow-glow hover:bg-brand-600 hover:-translate-y-0.5 transition-all">
+          無料相談はこちら <span class="transition-transform group-hover:translate-x-1">→</span>
+        </a>
+        <a href="#works" class="inline-flex items-center justify-center gap-2 rounded-full bg-white/10 ring-1 ring-white/25 text-white font-semibold px-8 py-4 hover:bg-white/15 transition backdrop-blur">
+          制作サンプルを見る
+        </a>
+      </div>
+
+      <div class="mt-9 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-400">
+        <span class="inline-flex items-center gap-1.5"><span class="text-emerald-400">✓</span> 初期費用1万円のみ</span>
+        <span class="inline-flex items-center gap-1.5"><span class="text-emerald-400">✓</span> 修正は月額内で何度でも</span>
+        <span class="inline-flex items-center gap-1.5"><span class="text-emerald-400">✓</span> スマホ最適化</span>
+      </div>
+    </div>
+
+    <!-- 価格インパクトカード + ミニモック -->
+    <div class="relative">
+      <div class="relative mx-auto max-w-md rounded-3xl bg-white/[0.06] ring-1 ring-white/15 p-6 backdrop-blur shadow-2xl">
+        <div class="rounded-2xl bg-white p-6 text-navy-900">
+          <div class="flex items-baseline justify-between">
+            <span class="text-sm font-semibold text-slate-500">初期制作費</span>
+            <span class="text-xs font-bold text-emerald-600 bg-emerald-50 rounded-full px-2.5 py-1">相場の約1/40</span>
+          </div>
+          <div class="mt-2 flex items-end gap-1">
+            <span class="text-6xl font-black tracking-tight grad-text">10,000</span>
+            <span class="text-xl font-bold mb-1">円</span>
+          </div>
+          <div class="mt-1 text-sm text-slate-400 line-through">一般的な制作会社：300,000〜500,000円</div>
+          <div class="my-5 h-px bg-slate-100"></div>
+          <div class="flex items-baseline justify-between">
+            <span class="text-sm font-semibold text-slate-500">月額サポート</span>
+            <span class="text-2xl font-extrabold">29,800<span class="text-sm font-bold">円/月</span></span>
+          </div>
+          <ul class="mt-4 grid grid-cols-2 gap-x-3 gap-y-2 text-xs text-slate-600">
+            <li class="flex items-center gap-1.5"><span class="text-brand-500">✓</span>ドメイン・サーバー</li>
+            <li class="flex items-center gap-1.5"><span class="text-brand-500">✓</span>修正し放題</li>
+            <li class="flex items-center gap-1.5"><span class="text-brand-500">✓</span>保守・運用</li>
+            <li class="flex items-center gap-1.5"><span class="text-brand-500">✓</span>技術サポート</li>
+          </ul>
+          <a href="#contact" class="mt-5 block text-center rounded-xl bg-navy-900 text-white font-bold py-3 hover:bg-navy-800 transition">まずは無料で相談する</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Section 2: 選ばれる理由（信頼の3本柱） ============ -->
+<section id="value" class="py-20 lg:py-28">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8">
+    <div class="text-center reveal">
+      <div class="text-xs font-bold tracking-[0.2em] text-brand-500 uppercase">Why LP STUDIO</div>
+      <h2 class="mt-4 text-3xl sm:text-4xl font-extrabold tracking-tight">なぜ、1万円で高品質が実現できるのか</h2>
+      <p class="mt-4 text-slate-500 max-w-2xl mx-auto">「安かろう悪かろう」ではありません。制作の仕組みを変えることで、品質はそのままにコストを下げています。</p>
+    </div>
+    <div class="mt-14 grid md:grid-cols-3 gap-6">
+      <div class="reveal rounded-3xl bg-white ring-1 ring-slate-100 shadow-soft p-8">
+        <div class="h-12 w-12 rounded-2xl bg-brand-100 text-brand-600 grid place-items-center text-xl font-bold">01</div>
+        <h3 class="mt-5 text-lg font-bold">制作フローの効率化</h3>
+        <p class="mt-2 text-sm text-slate-500 leading-relaxed">最新のツールと制作テンプレートを活用し、無駄な工数を徹底的に削減。浮いたコストを価格に還元しています。</p>
+      </div>
+      <div class="reveal rounded-3xl bg-white ring-1 ring-slate-100 shadow-soft p-8">
+        <div class="h-12 w-12 rounded-2xl bg-brand-100 text-brand-600 grid place-items-center text-xl font-bold">02</div>
+        <h3 class="mt-5 text-lg font-bold">月額サポートで継続</h3>
+        <p class="mt-2 text-sm text-slate-500 leading-relaxed">「作って終わり」にしません。公開後の修正・保守・運用を月額でお引き受けし、長くお付き合いする前提の価格設計です。</p>
+      </div>
+      <div class="reveal rounded-3xl bg-white ring-1 ring-slate-100 shadow-soft p-8">
+        <div class="h-12 w-12 rounded-2xl bg-brand-100 text-brand-600 grid place-items-center text-xl font-bold">03</div>
+        <h3 class="mt-5 text-lg font-bold">ワンストップ対応</h3>
+        <p class="mt-2 text-sm text-slate-500 leading-relaxed">デザイン・制作・ドメイン・サーバー・公開・改善まで一括対応。複数業者に発注する手間とコストがかかりません。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Section 3: 料金比較 ============ -->
+<section id="price" class="py-20 lg:py-28 bg-slate-50">
+  <div class="max-w-5xl mx-auto px-5 sm:px-8">
+    <div class="text-center reveal">
+      <div class="text-xs font-bold tracking-[0.2em] text-brand-500 uppercase">Pricing</div>
+      <h2 class="mt-4 text-3xl sm:text-4xl font-extrabold tracking-tight">料金は、これだけシンプル。</h2>
+      <p class="mt-4 text-slate-500">一般的な制作会社と比べても、費用は一目瞭然です。</p>
+    </div>
+
+    <!-- 比較表 -->
+    <div class="reveal mt-12 overflow-hidden rounded-3xl bg-white ring-1 ring-slate-100 shadow-soft">
+      <div class="grid grid-cols-3">
+        <div class="p-4 sm:p-6"></div>
+        <div class="p-4 sm:p-6 text-center text-sm font-semibold text-slate-400 border-b border-slate-100">一般的な制作会社</div>
+        <div class="relative p-4 sm:p-6 text-center bg-gradient-to-br from-brand-600 to-brand-500">
+          <span class="inline-block text-[10px] font-bold text-navy-900 bg-gold-400 rounded-full px-2 py-0.5 mb-1">おすすめ</span>
+          <div class="text-sm font-extrabold text-white">当社</div>
+        </div>
+      </div>
+      <div id="cmp"></div>
+    </div>
+
+    <div class="reveal mt-8 rounded-2xl bg-navy-900 text-white p-6 sm:p-7 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <div class="text-sm text-slate-300">初年度の総額でも</div>
+        <div class="text-2xl sm:text-3xl font-extrabold">初期10,000円＋月額29,800円 = <span class="grad-text">年間 367,600円</span></div>
+      </div>
+      <a href="#contact" class="shrink-0 rounded-full bg-brand-500 text-white font-bold px-7 py-3.5 shadow-glow hover:bg-brand-600 transition">この料金で相談する →</a>
+    </div>
+    <p class="reveal mt-3 text-center text-xs text-slate-400">※「一般的な制作会社」の金額は業界の一般的な相場を参考にした目安です。</p>
+  </div>
+</section>
+
+<!-- ============ Section 4: 制作サンプル ============ -->
+<section id="works" class="py-20 lg:py-28 bg-navy-900 text-white relative overflow-hidden">
+  <div class="absolute -top-24 left-1/2 -translate-x-1/2 h-[360px] w-[640px] rounded-full bg-brand-500/15 blur-3xl"></div>
+  <div class="relative max-w-6xl mx-auto px-5 sm:px-8">
+    <div class="text-center reveal">
+      <div class="text-xs font-bold tracking-[0.2em] text-brand-300 uppercase">Design Samples</div>
+      <h2 class="mt-4 text-3xl sm:text-4xl font-extrabold tracking-tight">「こんなLPが作れます」</h2>
+      <p class="mt-4 text-slate-300 max-w-xl mx-auto">実際に制作したデモLPです。各カードをタップすると本物の画面をご覧いただけます。</p>
+    </div>
+    <div id="works-grid" class="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+    <div class="mt-12 text-center reveal">
+      <a href="#contact" class="inline-flex items-center gap-2 rounded-full bg-white text-navy-900 font-bold px-8 py-4 hover:-translate-y-0.5 transition-all shadow-xl">あなたの業種でも相談する →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Section 5: 制作の流れ ============ -->
+<section class="py-20 lg:py-28">
+  <div class="max-w-5xl mx-auto px-5 sm:px-8">
+    <div class="text-center reveal">
+      <div class="text-xs font-bold tracking-[0.2em] text-brand-500 uppercase">Process</div>
+      <h2 class="mt-4 text-3xl sm:text-4xl font-extrabold tracking-tight">ご相談から公開まで</h2>
+    </div>
+    <div id="flow" class="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+  </div>
+</section>
+
+<!-- ============ Section 6: FAQ ============ -->
+<section id="faq" class="py-20 lg:py-28 bg-slate-50">
+  <div class="max-w-3xl mx-auto px-5 sm:px-8">
+    <div class="text-center reveal">
+      <div class="text-xs font-bold tracking-[0.2em] text-brand-500 uppercase">FAQ</div>
+      <h2 class="mt-4 text-3xl sm:text-4xl font-extrabold tracking-tight">よくあるご質問</h2>
+    </div>
+    <div id="faq-list" class="mt-12 space-y-3"></div>
+  </div>
+</section>
+
+<!-- ============ Section 7: 最終CTA + フォーム ============ -->
+<section id="contact" class="py-20 lg:py-28">
+  <div class="max-w-5xl mx-auto px-5 sm:px-8">
+    <div class="reveal relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700 text-white px-6 sm:px-12 py-14 lg:py-20 shadow-2xl">
+      <div class="absolute -top-24 -left-16 h-64 w-64 rounded-full bg-brand-500/30 blur-3xl"></div>
+      <div class="absolute -bottom-24 -right-16 h-64 w-64 rounded-full bg-brand-400/20 blur-3xl"></div>
+      <div class="relative grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight">まずは無料で<br />相談してみませんか？</h2>
+          <p class="mt-5 text-slate-300 leading-relaxed">「うちの業種でも作れる？」「何から始めればいい？」など、どんなご相談でも大丈夫です。無理な営業は一切いたしません。</p>
+          <ul class="mt-6 space-y-2 text-sm text-slate-300">
+            <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> 相談・お見積もりは無料</li>
+            <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> ヒアリングから公開まで伴走</li>
+            <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> 最短1週間での公開が目安</li>
+          </ul>
+        </div>
+        <form class="rounded-2xl bg-white/[0.07] ring-1 ring-white/15 p-6 backdrop-blur space-y-3" onsubmit="return false;">
+          <input type="text" placeholder="お名前" class="w-full rounded-xl bg-white/90 text-navy-900 placeholder-slate-400 px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-brand-400" />
+          <input type="email" placeholder="メールアドレス" class="w-full rounded-xl bg-white/90 text-navy-900 placeholder-slate-400 px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-brand-400" />
+          <textarea placeholder="ご相談内容（任意）" rows="3" class="w-full rounded-xl bg-white/90 text-navy-900 placeholder-slate-400 px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-brand-400"></textarea>
+          <button class="w-full rounded-xl bg-brand-500 text-white font-bold py-3.5 shadow-glow hover:bg-brand-600 transition">無料相談を申し込む</button>
+          <p class="text-center text-[11px] text-slate-400">送信で当社の連絡先が表示されます。</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ フッター ============ -->
+<footer class="border-t border-slate-100 py-10">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-400">
+    <div class="flex items-center gap-2 font-extrabold text-navy-900">
+      <span class="h-6 w-6 rounded-md bg-gradient-to-br from-brand-500 to-brand-400"></span>LP STUDIO
+    </div>
+    <div>© <span id="yr"></span> LP STUDIO. All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- ============ モバイル固定CTA ============ -->
+<div class="lg:hidden fixed bottom-0 inset-x-0 z-50 p-3 bg-white/90 backdrop-blur border-t border-slate-100">
+  <a href="#contact" class="flex items-center justify-center gap-2 rounded-full bg-brand-500 text-white font-bold py-3.5 shadow-glow">
+    無料相談はこちら（初期1万円〜）→
+  </a>
+</div>
+
+<script>
+/* ---------- データ ---------- */
+const CMP = [
+  ["初期費用","30〜50万円","10,000円", true],
+  ["修正対応","別料金","月額内で何度でも"],
+  ["保守管理","別契約","月額内"],
+  ["サーバー・ドメイン","別途必要","月額内"],
+  ["更新・相談","別料金","月額内"],
+];
 const WORKS = [
-  { key:"saas",       industry:"SaaS",        title:"クラウド勤怠管理",      url:`${DEMO_BASE}/05-saas/`,          image:"./assets/saas.jpg" },
-  { key:"beauty",     industry:"美容室",      title:"表参道ヘアサロン",      url:`${DEMO_BASE}/02-beauty-salon/`, image:"./assets/beauty.jpg" },
-  { key:"english",    industry:"留学・英会話",title:"羽ばたけEnglish",      url:`${DEMO_BASE}/03-english/`,      image:"./assets/english.jpg" },
-  { key:"realestate", industry:"不動産",      title:"新築戸建て 完成見学会", url:`${DEMO_BASE}/04-realestate/`,   image:"./assets/realestate.jpg" },
-  { key:"dogfood",    industry:"EC・D2C",     title:"無添加ドッグフード",    url:`${DEMO_BASE}/01-dogfood/`,      image:"./assets/dogfood.jpg" },
-  { key:"more",       industry:"その他の業種",title:"あなたの事業も対応可能", url:"#contact",                      image:null, poster:"linear-gradient(135deg,#142149 0%,#2F6DF0 130%)", isContact:true },
+  { tag:"SaaS", title:"クラウド勤怠管理", url:"https://daigorally0722.github.io/demo-lp/05-saas/", img:"./assets/saas.jpg" },
+  { tag:"美容室", title:"表参道ヘアサロン", url:"https://daigorally0722.github.io/demo-lp/02-beauty-salon/", img:"./assets/beauty.jpg" },
+  { tag:"留学・英会話", title:"羽ばたけEnglish", url:"https://daigorally0722.github.io/demo-lp/03-english/", img:"./assets/english.jpg" },
+  { tag:"不動産", title:"新築戸建て 完成見学会", url:"https://daigorally0722.github.io/demo-lp/04-realestate/", img:"./assets/realestate.jpg" },
+  { tag:"EC・D2C", title:"無添加ドッグフード", url:"https://daigorally0722.github.io/demo-lp/01-dogfood/", img:"./assets/dogfood.jpg" },
+];
+const FLOW = [
+  ["01","ヒアリング","目的・ターゲット・ご要望を伺います"],
+  ["02","デザイン制作","構成とデザインの方向性をご提案"],
+  ["03","LP構築","高品質・高速なLPを構築します"],
+  ["04","修正対応","ご要望に応じて調整します"],
+  ["05","公開","最適な環境で安全に公開"],
+  ["06","保守・運用","公開後も月額でサポート"],
+];
+const FAQ = [
+  ["本当に初期費用は10,000円だけですか？","はい。LP制作の初期費用は10,000円のみです。公開後の運用は月額29,800円のサポートでお引き受けします。追加の隠れた費用はありません。"],
+  ["なぜそんなに安くできるのですか？","制作フローを効率化し、月額サポートで長くお付き合いする前提の価格設計にしているためです。品質を落として安くしているわけではありません。"],
+  ["修正は何回まで対応してもらえますか？","月額サポートの範囲内であれば、回数の制限なく対応します（文言変更・画像差し替え・軽微なデザイン修正など）。"],
+  ["どんな業種でも対応できますか？","はい。美容・教育・不動産・EC・BtoBなど幅広く対応可能です。まずは無料相談でご要望をお聞かせください。"],
+  ["公開までどれくらいかかりますか？","内容によりますが、最短で1週間ほどが目安です。ヒアリング後に具体的なスケジュールをご案内します。"],
 ];
 
-const HERO_DEMO = `${DEMO_BASE}/05-saas/`;
-const CONTACT_URL = `${DEMO_BASE}/05-saas/`;
+/* ---------- 描画 ---------- */
+const cmp = document.getElementById('cmp');
+CMP.forEach((r,i)=>{
+  const last = i===CMP.length-1;
+  cmp.insertAdjacentHTML('beforeend', `
+  <div class="grid grid-cols-3 ${last?'':'border-b border-slate-50'}">
+    <div class="p-4 sm:p-6 text-sm font-semibold text-navy-900">${r[0]}</div>
+    <div class="p-4 sm:p-6 text-sm text-slate-400 text-center">${r[1]}</div>
+    <div class="p-4 sm:p-6 text-center bg-brand-500/[0.04] ${r[3]?'text-navy-900 font-extrabold text-base sm:text-lg':'text-brand-600 font-bold text-sm'}">${r[2]}</div>
+  </div>`);
+});
 
-/* ============================================================
-   小物コンポーネント
-   ============================================================ */
-const ease = [0.22, 1, 0.36, 1];
-const fadeUp = {
-  hidden: { opacity:0, y:28 },
-  show:   { opacity:1, y:0, transition:{ duration:0.7, ease } },
+const wg = document.getElementById('works-grid');
+WORKS.forEach(w=>{
+  wg.insertAdjacentHTML('beforeend', `
+  <a href="${w.url}" target="_blank" rel="noopener noreferrer"
+     class="reveal group relative block aspect-[4/3] rounded-3xl overflow-hidden ring-1 ring-white/10 shadow-xl hover:-translate-y-1.5 transition-all duration-300">
+    <img src="${w.img}" alt="${w.title}" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
+    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-black/25"></div>
+    <div class="absolute top-4 right-4 inline-flex items-center gap-1.5 rounded-full bg-white/15 ring-1 ring-white/25 backdrop-blur text-white text-xs font-semibold px-3.5 py-1.5 group-hover:bg-white group-hover:text-navy-900 transition">View LP →</div>
+    <div class="absolute left-5 bottom-5 right-5">
+      <div class="text-[11px] font-semibold tracking-[0.18em] uppercase text-brand-300">${w.tag}</div>
+      <div class="mt-1 text-xl font-bold text-white drop-shadow">${w.title}</div>
+    </div>
+  </a>`);
+});
+
+const fl = document.getElementById('flow');
+FLOW.forEach(s=>{
+  fl.insertAdjacentHTML('beforeend', `
+  <div class="reveal rounded-3xl bg-white ring-1 ring-slate-100 shadow-soft p-7">
+    <div class="text-3xl font-black grad-text">${s[0]}</div>
+    <div class="mt-3 text-lg font-bold">${s[1]}</div>
+    <div class="mt-1.5 text-sm text-slate-500 leading-relaxed">${s[2]}</div>
+  </div>`);
+});
+
+const fq = document.getElementById('faq-list');
+FAQ.forEach(f=>{
+  fq.insertAdjacentHTML('beforeend', `
+  <details class="reveal group rounded-2xl bg-white ring-1 ring-slate-100 shadow-soft overflow-hidden">
+    <summary class="cursor-pointer list-none flex items-center justify-between gap-4 p-5 font-bold text-navy-900">
+      <span>${f[0]}</span>
+      <span class="shrink-0 h-7 w-7 grid place-items-center rounded-full bg-brand-100 text-brand-600 transition-transform group-open:rotate-45">+</span>
+    </summary>
+    <div class="px-5 pb-5 -mt-1 text-sm text-slate-500 leading-relaxed">${f[1]}</div>
+  </details>`);
+});
+
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+/* ---------- ヘッダー背景 & スクロール表示 ---------- */
+const hd = document.getElementById('hd');
+const onScroll = ()=>{
+  if(window.scrollY>20){ hd.classList.add('bg-white/85','backdrop-blur','shadow-sm'); }
+  else { hd.classList.remove('bg-white/85','backdrop-blur','shadow-sm'); }
 };
-function Reveal({ children, delay=0, className="" }) {
-  return (
-    <motion.div className={className} variants={fadeUp} initial="hidden"
-      whileInView="show" viewport={{ once:true, margin:"-80px" }}
-      transition={{ delay }}>
-      {children}
-    </motion.div>
-  );
-}
-function Eyebrow({ children, light }) {
-  return (
-    <div className={`inline-flex items-center gap-2 text-xs font-semibold tracking-[0.2em] uppercase ${light?'text-brand-300':'text-brand-500'}`}>
-      <span className={`h-px w-6 ${light?'bg-brand-300':'bg-brand-500'}`}></span>{children}
-    </div>
-  );
-}
+window.addEventListener('scroll', onScroll); onScroll();
 
-/* ============================================================
-   ナビ
-   ============================================================ */
-function Nav() {
-  const [scrolled, setScrolled] = useState(false);
-  useEffect(()=>{ const f=()=>setScrolled(window.scrollY>20); window.addEventListener("scroll",f); return ()=>window.removeEventListener("scroll",f); },[]);
-  return (
-    <motion.header initial={{ y:-80 }} animate={{ y:0 }} transition={{ duration:0.6, ease }}
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled?'glass bg-white/80 border-b border-slate-100 shadow-[0_1px_30px_rgba(13,23,55,0.06)]':'bg-transparent'}`}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
-        <div className="flex items-center gap-2 font-display font-extrabold text-navy-800 text-lg">
-          <span className="inline-block h-6 w-6 rounded-lg bg-gradient-to-br from-brand-500 to-brand-400"></span>
-          LP STUDIO
-        </div>
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-          <a href="#compare" className="hover:text-navy-800 transition">特長</a>
-          <a href="#pricing" className="hover:text-navy-800 transition">料金</a>
-          <a href="#works" className="hover:text-navy-800 transition">制作実績</a>
-          <a href="#flow" className="hover:text-navy-800 transition">制作の流れ</a>
-        </nav>
-        <a href="#contact" className="rounded-full bg-navy-800 text-white text-sm font-semibold px-5 py-2.5 hover:bg-navy-700 transition shadow-lg shadow-navy-900/10">無料相談</a>
-      </div>
-    </motion.header>
-  );
-}
-
-/* ============================================================
-   Section 1 — Hero
-   ============================================================ */
-function Hero() {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset:["start start","end start"] });
-  const y = useTransform(scrollYProgress, [0,1], [0, 80]);
-  return (
-    <section ref={ref} className="relative overflow-hidden pt-32 pb-24 lg:pt-44 lg:pb-32">
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="aurora1 absolute -top-40 -right-40 h-[560px] w-[560px] rounded-full bg-gradient-to-br from-brand-300/45 to-brand-500/20 blur-3xl"></div>
-        <div className="aurora2 absolute top-40 -left-44 h-[460px] w-[460px] rounded-full bg-gradient-to-br from-brand-400/25 to-transparent blur-3xl"></div>
-        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage:"radial-gradient(circle at 1px 1px, #0D1737 1px, transparent 0)", backgroundSize:"28px 28px" }}></div>
-      </div>
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-16 items-center">
-        <div>
-          <motion.div variants={fadeUp} initial="hidden" animate="show">
-            <Eyebrow>LP Production Service</Eyebrow>
-          </motion.div>
-          <motion.h1 variants={fadeUp} initial="hidden" animate="show" transition={{ delay:0.08, duration:0.7, ease }}
-            className="font-display mt-6 text-[2.7rem] leading-[1.15] sm:text-6xl font-extrabold text-navy-800 tracking-tight">
-            LP制作を、<br />
-            <span className="text-shimmer">もっと手軽に。</span>
-          </motion.h1>
-          <motion.p variants={fadeUp} initial="hidden" animate="show" transition={{ delay:0.16, duration:0.7, ease }}
-            className="mt-7 text-lg text-slate-600 leading-relaxed max-w-md">
-            初期費用を抑えながら、高品質なLP制作と公開後のサポートを提供します。
-          </motion.p>
-          <motion.div variants={fadeUp} initial="hidden" animate="show" transition={{ delay:0.24, duration:0.7, ease }}
-            className="mt-10 flex flex-wrap items-center gap-4">
-            <a href="#works" className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-500 to-brand-400 text-white font-semibold px-7 py-4 shadow-xl shadow-brand-500/25 hover:shadow-brand-500/40 hover:-translate-y-0.5 transition-all">
-              制作事例を見る
-              <span className="transition-transform group-hover:translate-x-1">→</span>
-            </a>
-            <a href="#pricing" className="inline-flex items-center gap-2 rounded-full border border-slate-200 text-navy-800 font-semibold px-7 py-4 hover:bg-slate-50 transition">料金を見る</a>
-          </motion.div>
-          <motion.div variants={fadeUp} initial="hidden" animate="show" transition={{ delay:0.32, duration:0.7, ease }}
-            className="mt-12 flex items-center gap-8 text-sm text-slate-500">
-            <div><span className="block text-2xl font-extrabold text-navy-800">10,000<span className="text-sm">円</span></span>初期制作費</div>
-            <div className="h-8 w-px bg-slate-200"></div>
-            <div><span className="block text-2xl font-extrabold text-navy-800">最短1週間</span>でLP公開</div>
-          </motion.div>
-          <motion.div variants={fadeUp} initial="hidden" animate="show" transition={{ delay:0.4, duration:0.7, ease }}
-            className="mt-10 flex items-center gap-5 text-xs font-medium text-slate-400">
-            <span className="uppercase tracking-widest">対応業種</span>
-            <div className="flex flex-wrap gap-x-4 gap-y-1.5 text-slate-500">
-              {["SaaS","美容","教育","不動産","EC","採用"].map(t=>(
-                <span key={t} className="inline-flex items-center gap-1.5"><span className="h-1 w-1 rounded-full bg-brand-400"></span>{t}</span>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-
-        {/* PCモックアップ：実際のデモLPをライブ表示 */}
-        <motion.div style={{ y }} variants={fadeUp} initial="hidden" animate="show" transition={{ delay:0.2, duration:0.9, ease }} className="relative">
-          <div className="relative mx-auto w-full max-w-[560px]">
-            <div className="rounded-[14px] bg-navy-800 p-2.5 shadow-2xl shadow-navy-900/30 ring-1 ring-white/10">
-              <div className="flex items-center gap-1.5 px-2 pb-2">
-                <span className="h-2.5 w-2.5 rounded-full bg-red-400/80"></span>
-                <span className="h-2.5 w-2.5 rounded-full bg-amber-400/80"></span>
-                <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/80"></span>
-              </div>
-              <div className="rounded-md overflow-hidden bg-white aspect-[16/10]">
-                <iframe src={HERO_DEMO} title="demo" loading="lazy" className="w-[200%] h-[200%] origin-top-left scale-50 border-0" />
-              </div>
-            </div>
-            <div className="mx-auto mt-1 h-3 w-1/3 rounded-b-xl bg-navy-700"></div>
-          </div>
-        </motion.div>
-      </div>
-    </section>
-  );
-}
-
-/* ============================================================
-   実績ストリップ（カウントアップ）
-   ============================================================ */
-function Counter({ to, suffix="", prefix="" }) {
-  const [v,setV] = useState(0);
-  const ref = useRef(null);
-  return (
-    <motion.span ref={ref} onViewportEnter={()=>{
-      const dur=1400, t0=performance.now();
-      const tick=(t)=>{ const p=Math.min(1,(t-t0)/dur); setV(Math.round(to*(1-Math.pow(1-p,3)))); if(p<1) requestAnimationFrame(tick); };
-      requestAnimationFrame(tick);
-    }} viewport={{ once:true }}>
-      {prefix}{v.toLocaleString()}{suffix}
-    </motion.span>
-  );
-}
-function StatBand() {
-  // 事実に基づく項目のみ（実績を装う数字は載せない）
-  const stats = [
-    { value:"¥10,000", label:"初期制作費" },
-    { value:"¥29,800", label:"月額サポート" },
-    { value:"月額内", label:"修正対応" },
-    { value:"ワンストップ", label:"制作〜運用まで" },
-  ];
-  return (
-    <section className="px-6 lg:px-10 -mt-6">
-      <Reveal>
-        <div className="max-w-6xl mx-auto rounded-3xl bg-white ring-1 ring-slate-100 shadow-[0_20px_60px_rgba(13,23,55,0.07)] grid grid-cols-2 lg:grid-cols-4 divide-y lg:divide-y-0 lg:divide-x divide-slate-100">
-          {stats.map((s,i)=>(
-            <div key={i} className="p-8 text-center">
-              <div className="font-display text-2xl sm:text-3xl font-extrabold text-navy-800">{s.value}</div>
-              <div className="mt-2 text-sm text-slate-500">{s.label}</div>
-            </div>
-          ))}
-        </div>
-      </Reveal>
-    </section>
-  );
-}
-
-/* ============================================================
-   Section 2 — 比較表
-   ============================================================ */
-function Compare() {
-  const rows = [
-    ["初期費用","30〜50万円","10,000円", true],
-    ["修正対応","別料金","月額内"],
-    ["保守管理","別契約","月額内"],
-    ["サーバー管理","別途必要","月額内"],
-    ["更新相談","別料金","月額内"],
-  ];
-  return (
-    <section id="compare" className="py-24 lg:py-32 bg-slate-50/60">
-      <div className="max-w-5xl mx-auto px-6 lg:px-10">
-        <Reveal className="text-center"><Eyebrow>Comparison</Eyebrow></Reveal>
-        <Reveal delay={0.05}><h2 className="font-display text-center mt-5 text-3xl sm:text-4xl font-extrabold text-navy-800">従来のLP制作との違い</h2></Reveal>
-        <Reveal delay={0.1}>
-          <div className="mt-14 overflow-hidden rounded-3xl bg-white ring-1 ring-slate-100 shadow-[0_20px_60px_rgba(13,23,55,0.06)]">
-            <div className="grid grid-cols-3 text-sm sm:text-base">
-              <div className="p-6 font-semibold text-slate-400 border-b border-slate-100"></div>
-              <div className="p-6 font-semibold text-slate-500 text-center border-b border-slate-100">一般的な制作会社</div>
-              <div className="p-6 font-bold text-white text-center bg-gradient-to-br from-navy-800 to-navy-600">当社</div>
-              {rows.map((r,i)=>(
-                <React.Fragment key={i}>
-                  <div className="p-5 sm:p-6 font-semibold text-navy-800 border-b border-slate-50">{r[0]}</div>
-                  <div className="p-5 sm:p-6 text-slate-400 text-center border-b border-slate-50">{r[1]}</div>
-                  <div className={`p-5 sm:p-6 text-center border-b border-slate-50 font-bold ${r[3]?'text-navy-800 text-lg':'text-brand-500'} bg-brand-500/[0.03]`}>{r[2]}</div>
-                </React.Fragment>
-              ))}
-            </div>
-          </div>
-        </Reveal>
-        <Reveal delay={0.15}><p className="text-center mt-10 text-lg text-slate-600">初期費用を大幅に抑えながら、<span className="font-semibold text-navy-800">継続的なサポート</span>を受けられます。</p></Reveal>
-      </div>
-    </section>
-  );
-}
-
-/* ============================================================
-   Section 3 — 料金プラン
-   ============================================================ */
-function Pricing() {
-  const support = ["ドメイン管理","サーバー管理","LP保守","テキスト修正","画像差し替え","軽微なデザイン修正","技術サポート"];
-  return (
-    <section id="pricing" className="py-24 lg:py-32">
-      <div className="max-w-6xl mx-auto px-6 lg:px-10">
-        <Reveal className="text-center"><Eyebrow>Pricing</Eyebrow></Reveal>
-        <Reveal delay={0.05}><h2 className="font-display text-center mt-5 text-3xl sm:text-4xl font-extrabold text-navy-800">料金プラン</h2></Reveal>
-        <div className="mt-16 grid lg:grid-cols-5 gap-6 items-stretch">
-          <Reveal delay={0.05} className="lg:col-span-2 flex">
-            <div className="flex-1 rounded-3xl p-9 bg-white ring-1 ring-slate-100 shadow-[0_20px_60px_rgba(13,23,55,0.06)] flex flex-col">
-              <span className="text-sm font-semibold text-brand-500">プラン①</span>
-              <h3 className="mt-2 text-slate-500 font-medium">初期制作費</h3>
-              <div className="mt-4 font-display font-extrabold text-navy-800 text-5xl">10,000<span className="text-xl">円</span></div>
-              <p className="mt-3 text-sm text-slate-500">LP制作にかかる初期費用はこれだけ。</p>
-              <div className="mt-auto pt-8">
-                <span className="inline-flex rounded-full bg-slate-50 text-slate-500 text-xs font-semibold px-4 py-2">一回のみのお支払い</span>
-              </div>
-            </div>
-          </Reveal>
-          <Reveal delay={0.12} className="lg:col-span-3 flex">
-            <div className="ring-gradient relative flex-1 rounded-3xl p-9 bg-gradient-to-br from-navy-800 to-navy-600 text-white shadow-[0_30px_80px_rgba(28,44,92,0.45)] overflow-hidden">
-              <div className="absolute -top-16 -right-16 h-48 w-48 rounded-full bg-brand-500/30 blur-2xl"></div>
-              <div className="absolute top-5 right-5 inline-flex items-center gap-1.5 rounded-full bg-brand-500/20 ring-1 ring-brand-300/40 text-brand-300 text-xs font-semibold px-3 py-1">★ おすすめ</div>
-              <span className="text-sm font-semibold text-brand-300">プラン②</span>
-              <h3 className="mt-2 text-white/70 font-medium">月額サポート</h3>
-              <div className="mt-4 font-display font-extrabold text-5xl">29,800<span className="text-xl font-bold">円/月</span></div>
-              <div className="mt-7 grid sm:grid-cols-2 gap-x-6 gap-y-3">
-                {support.map((s,i)=>(
-                  <div key={i} className="flex items-center gap-2.5 text-sm text-white/90">
-                    <span className="grid place-items-center h-5 w-5 rounded-full bg-brand-500/25 text-brand-300 text-[11px]">✓</span>{s}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ============================================================
-   Section 4 — 制作実績（ポートフォリオ）
-   ============================================================ */
-function WorkCard({ w, i }) {
-  const isExternal = !w.isContact;
-  return (
-    <motion.a
-      href={w.url}
-      target={isExternal ? "_blank" : undefined}
-      rel={isExternal ? "noopener noreferrer" : undefined}
-      variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once:true, margin:"-60px" }}
-      transition={{ delay:(i%3)*0.08, duration:0.7, ease }}
-      whileHover={{ y:-6 }}
-      className="group relative block aspect-[4/3] rounded-3xl overflow-hidden ring-1 ring-slate-200/70 shadow-[0_10px_40px_rgba(13,23,55,0.08)] hover:shadow-[0_30px_70px_rgba(13,23,55,0.18)] transition-shadow">
-      {/* 背景画像 / ポスター */}
-      {w.image
-        ? <img src={w.image} alt={w.title} className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
-        : <div className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-110" style={{ background:w.poster }}></div>}
-      {/* 黒グラデーション */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-black/20"></div>
-      {/* View LP */}
-      <div className="absolute top-4 right-4 inline-flex items-center gap-1.5 rounded-full glass bg-white/15 text-white text-xs font-semibold px-3.5 py-1.5 ring-1 ring-white/25 opacity-90 group-hover:bg-white group-hover:text-navy-800 transition">
-        {w.isContact ? "相談する" : "View LP"} <span className="transition-transform group-hover:translate-x-0.5">→</span>
-      </div>
-      {/* 業種名 */}
-      <div className="absolute left-5 bottom-5 right-5">
-        <div className="text-[11px] font-semibold tracking-[0.18em] uppercase text-brand-300">{w.industry}</div>
-        <div className="mt-1 font-display text-xl font-bold text-white drop-shadow">{w.title}</div>
-      </div>
-    </motion.a>
-  );
-}
-function Works() {
-  return (
-    <section id="works" className="py-24 lg:py-32 bg-navy-800 relative overflow-hidden">
-      <div className="absolute -top-32 left-1/2 -translate-x-1/2 h-[400px] w-[700px] rounded-full bg-brand-500/15 blur-3xl"></div>
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 relative">
-        <Reveal className="text-center"><Eyebrow light>Design Samples</Eyebrow></Reveal>
-        <Reveal delay={0.05}><h2 className="font-display text-center mt-5 text-3xl sm:text-4xl font-extrabold text-white">制作サンプル</h2></Reveal>
-        <Reveal delay={0.1}><p className="text-center mt-4 text-white/60 max-w-xl mx-auto">「こんなLPが作れます」をお見せするデモLPです。各カードをクリックすると実際の画面をご覧いただけます。</p></Reveal>
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {WORKS.map((w,i)=><WorkCard key={w.key} w={w} i={i} />)}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ============================================================
-   Section 5 — 制作の流れ
-   ============================================================ */
-function Flow() {
-  const steps = [
-    ["ヒアリング","目的・ターゲット・ご要望を伺います"],
-    ["デザイン制作","構成とデザインの方向性をご提案"],
-    ["LP構築","高品質・高速なLPを構築します"],
-    ["修正対応","ご要望に応じて調整します"],
-    ["公開","最適な環境で安全に公開"],
-    ["保守運用","公開後も継続してサポート"],
-  ];
-  return (
-    <section id="flow" className="py-24 lg:py-32">
-      <div className="max-w-5xl mx-auto px-6 lg:px-10">
-        <Reveal className="text-center"><Eyebrow>Process</Eyebrow></Reveal>
-        <Reveal delay={0.05}><h2 className="font-display text-center mt-5 text-3xl sm:text-4xl font-extrabold text-navy-800">制作の流れ</h2></Reveal>
-        <div className="mt-16 relative">
-          <div className="absolute left-[27px] top-2 bottom-2 w-px bg-gradient-to-b from-brand-400 via-brand-300 to-slate-100 md:left-1/2"></div>
-          <div className="space-y-3 md:space-y-0">
-            {steps.map((s,i)=>(
-              <Reveal key={i} delay={(i%2)*0.05}>
-                <div className={`relative flex items-start gap-6 md:gap-0 md:grid md:grid-cols-2 md:items-center ${i%2?'md:[direction:rtl]':''}`}>
-                  <div className={`md:[direction:ltr] ${i%2?'md:pl-14 md:text-left':'md:pr-14 md:text-right'} pl-16 md:pl-0`}>
-                    <div className="rounded-2xl bg-white ring-1 ring-slate-100 shadow-[0_10px_40px_rgba(13,23,55,0.05)] p-6 inline-block w-full md:w-auto">
-                      <div className="font-display text-lg font-bold text-navy-800">{s[0]}</div>
-                      <div className="mt-1 text-sm text-slate-500">{s[1]}</div>
-                    </div>
-                  </div>
-                  <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 top-5 md:top-1/2 md:-translate-y-1/2">
-                    <div className="grid place-items-center h-14 w-14 rounded-full bg-gradient-to-br from-brand-500 to-brand-400 text-white font-display font-extrabold ring-4 ring-white shadow-lg shadow-brand-500/30">
-                      {String(i+1).padStart(2,"0")}
-                    </div>
-                  </div>
-                  <div className="hidden md:block"></div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ============================================================
-   Section 6 — お問い合わせ
-   ============================================================ */
-function Contact() {
-  return (
-    <section id="contact" className="px-6 lg:px-10 pb-24 lg:pb-32">
-      <Reveal>
-        <div className="relative max-w-6xl mx-auto rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-navy-800 via-navy-700 to-navy-600 px-8 py-20 lg:py-28 text-center shadow-2xl shadow-navy-900/30">
-          <div className="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-brand-500/25 blur-3xl"></div>
-          <div className="absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-brand-400/20 blur-3xl"></div>
-          <div className="relative">
-            <Eyebrow light>Contact</Eyebrow>
-            <h2 className="font-display mt-6 text-3xl sm:text-5xl font-extrabold text-white leading-tight max-w-3xl mx-auto">
-              LP制作を検討中の方は<br className="hidden sm:block" />お気軽にご相談ください
-            </h2>
-            <p className="mt-6 text-white/60 max-w-lg mx-auto">無料相談・お見積もりは何度でも。ヒアリングから公開まで伴走します。</p>
-            <a href={CONTACT_URL} target="_blank" rel="noopener noreferrer"
-              className="group mt-10 inline-flex items-center gap-2 rounded-full bg-white text-navy-800 font-bold px-9 py-4.5 py-4 shadow-xl hover:-translate-y-0.5 hover:shadow-2xl transition-all">
-              無料相談はこちら <span className="transition-transform group-hover:translate-x-1">→</span>
-            </a>
-          </div>
-        </div>
-      </Reveal>
-      <footer className="max-w-6xl mx-auto mt-16 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-400">
-        <div className="flex items-center gap-2 font-display font-extrabold text-navy-800">
-          <span className="inline-block h-5 w-5 rounded-md bg-gradient-to-br from-brand-500 to-brand-400"></span>LP STUDIO
-        </div>
-        <div>© {new Date().getFullYear()} LP STUDIO. All rights reserved.</div>
-      </footer>
-    </section>
-  );
-}
-
-/* ============================================================
-   App
-   ============================================================ */
-function App() {
-  return (
-    <div className="grain bg-white text-navy-800 antialiased overflow-x-hidden">
-      <Nav />
-      <main>
-        <Hero />
-        <StatBand />
-        <Compare />
-        <Pricing />
-        <Works />
-        <Flow />
-        <Contact />
-      </main>
-    </div>
-  );
-}
-
-createRoot(document.getElementById("root")).render(<App />);
+const io = new IntersectionObserver((es)=>{
+  es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+},{ threshold:0.12 });
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
 </body>
 </html>
