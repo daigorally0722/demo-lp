@@ -141,6 +141,22 @@ section{padding:70px 0;}
 
 /* ヒーローのダッシュボード画像 */
 .hero-visual{position:relative;}
+.hero-photo{position:relative;border-radius:18px;overflow:hidden;box-shadow:var(--shadow-lg);border:1px solid var(--line);}
+.hero-photo img{width:100%;height:100%;object-fit:cover;aspect-ratio:16/11;object-position:72% center;display:block;}
+.hero-photo-chip{
+  position:absolute;left:14px;bottom:14px;display:flex;align-items:center;gap:10px;
+  background:rgba(255,255,255,.94);backdrop-filter:blur(6px);border-radius:12px;
+  padding:10px 14px;box-shadow:var(--shadow);
+}
+.hero-photo-chip .hpc-ic{width:32px;height:32px;border-radius:8px;background:#E9FBF1;display:flex;align-items:center;justify-content:center;}
+.hero-photo-chip .hpc-ic svg{width:18px;height:18px;}
+.hero-photo-chip .hpc-t{font-size:9.5px;color:var(--ink-soft);font-weight:700;}
+.hero-photo-chip .hpc-v{font-size:14px;font-weight:900;color:var(--green);}
+@media(min-width:900px){.hero-photo img{aspect-ratio:auto;height:440px;}}
+
+/* LINE連携セクションの2カラム(スマホ画面+通知カード) */
+.linesec-split{display:grid;gap:36px;}
+@media(min-width:900px){.linesec-split{grid-template-columns:300px 1fr;align-items:center;gap:52px;}}
 .dash{
   background:var(--white);border:1px solid var(--line);border-radius:16px;
   box-shadow:var(--shadow-lg);overflow:hidden;
@@ -192,7 +208,7 @@ section{padding:70px 0;}
 .ln-cta{display:block;margin-top:8px;background:#06C755;color:#fff;text-align:center;font-weight:800;font-size:11.5px;padding:7px;border-radius:9px;}
 .ln-row.sent{justify-content:flex-end;}
 .ln-row.sent .ln-bubble{background:#86E05B;border-radius:16px 4px 16px 16px;}
-.phone-chip{position:absolute;right:-10px;top:104px;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);padding:8px 12px;font-size:11px;font-weight:800;color:var(--blue-ink);display:flex;align-items:center;gap:7px;}
+.phone-chip{position:absolute;right:-8px;top:-14px;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);padding:8px 12px;font-size:11px;font-weight:800;color:var(--blue-ink);display:flex;align-items:center;gap:7px;z-index:2;}
 .phone-chip .pc-dot{width:8px;height:8px;border-radius:50%;background:#06C755;box-shadow:0 0 0 3px rgba(6,199,85,.18);}
 @media(min-width:900px){.phone{width:272px;}}
 
@@ -449,43 +465,17 @@ section{padding:70px 0;}
       </div>
     </div>
 
-    <!-- ▼▼ ヒーロー: 社員のLINE画面イメージ ▼▼ -->
-    <div class="hero-visual" data-image-slot="hero-line-phone">
-      <div class="phone">
-        <div class="phone-body">
-          <div class="phone-screen">
-            <div class="line-top">
-              <span class="lt-back">‹</span>
-              <span class="lt-ava">勤</span>
-              <span class="lt-name">KINTAI 勤怠</span>
-              <span class="lt-badge">公式</span>
-            </div>
-            <div class="line-chat">
-              <span class="ln-day">今日</span>
-              <div class="ln-row">
-                <span class="ln-ava">勤</span>
-                <div class="ln-bubble">おはようございます☀️<br>本日の出勤打刻はこちらから。
-                  <span class="ln-cta">▶ 出勤を打刻する</span>
-                </div>
-              </div>
-              <div class="ln-row sent"><div class="ln-bubble">打刻しました👍</div></div>
-              <div class="ln-row">
-                <span class="ln-ava">勤</span>
-                <div class="ln-bubble"><b>✅ 出勤を記録しました（9:00）</b><br>今日も一日がんばりましょう！</div>
-              </div>
-              <div class="ln-row">
-                <span class="ln-ava">勤</span>
-                <div class="ln-bubble">📅 来週のシフトが確定しました。
-                  <span class="ln-cta">シフトを確認する</span>
-                </div>
-              </div>
-            </div>
-          </div>
+    <!-- ▼▼ ヒーロー画像(実写: office.jpg) ▼▼ -->
+    <div class="hero-visual" data-image-slot="hero-office">
+      <div class="hero-photo">
+        <img src="office.jpg" alt="オフィスで勤怠データのダッシュボードを確認するビジネスチーム">
+        <div class="hero-photo-chip">
+          <span class="hpc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span>
+          <span><span class="hpc-t">月末の集計工数</span><br><span class="hpc-v">▲92% 削減</span></span>
         </div>
-        <div class="phone-chip"><span class="pc-dot"></span>アプリ不要</div>
       </div>
     </div>
-    <!-- ▲▲ ヒーロー LINE画面 ここまで ▲▲ -->
+    <!-- ▲▲ ヒーロー画像 ここまで ▲▲ -->
   </div>
 </section>
 
@@ -567,13 +557,50 @@ section{padding:70px 0;}
       <h2 class="sec-title fade">社員一人ひとりの<span class="blue">LINE</span>に、<br>自動で届く。</h2>
       <p class="sec-lead fade">新しいアプリも、社内ポータルへのログインも不要。みんなが毎日使うLINEが、そのまま勤怠の窓口になります。</p>
     </div>
-    <div class="noti-grid">
-      <div class="noti-card fade"><div class="nc-ic">🕘</div><h3>打刻リマインド</h3><p>出勤・退勤の打刻忘れを検知して、その人のLINEに自動でお知らせ。打刻漏れによる勤怠の抜けを防ぎます。</p></div>
-      <div class="noti-card fade"><div class="nc-ic">📅</div><h3>シフト確定通知</h3><p>シフトが確定・変更されたら、対象者のLINEへ即共有。「見ていなかった」によるすれ違いをなくします。</p></div>
-      <div class="noti-card fade"><div class="nc-ic">⚠️</div><h3>残業アラート</h3><p>残業が上限に近づいた社員と上長へ、早めにLINEで警告。36協定オーバーを未然に防ぎます。</p></div>
-      <div class="noti-card fade"><div class="nc-ic">✅</div><h3>承認結果のお知らせ</h3><p>休暇・残業・打刻修正の申請が承認／差戻しされると、申請者のLINEへ自動で結果を通知します。</p></div>
-      <div class="noti-card fade"><div class="nc-ic">💰</div><h3>給与明細の配信</h3><p>毎月の給与明細を、紙の配布なしで各自のLINEへ直接お届け。受け取りもLINE上で完結します。</p></div>
-      <div class="noti-card fade"><div class="nc-ic">📣</div><h3>お知らせ一斉配信</h3><p>全社・部署・雇用形態など、対象を絞ってLINEで一斉連絡。既読状況もダッシュボードで確認できます。</p></div>
+    <div class="linesec-split">
+      <div class="fade">
+        <div class="phone">
+          <div class="phone-body">
+            <div class="phone-screen">
+              <div class="line-top">
+                <span class="lt-back">‹</span>
+                <span class="lt-ava">勤</span>
+                <span class="lt-name">KINTAI 勤怠</span>
+                <span class="lt-badge">公式</span>
+              </div>
+              <div class="line-chat">
+                <span class="ln-day">今日</span>
+                <div class="ln-row">
+                  <span class="ln-ava">勤</span>
+                  <div class="ln-bubble">おはようございます☀️<br>本日の出勤打刻はこちらから。
+                    <span class="ln-cta">▶ 出勤を打刻する</span>
+                  </div>
+                </div>
+                <div class="ln-row sent"><div class="ln-bubble">打刻しました👍</div></div>
+                <div class="ln-row">
+                  <span class="ln-ava">勤</span>
+                  <div class="ln-bubble"><b>✅ 出勤を記録しました（9:00）</b><br>今日も一日がんばりましょう！</div>
+                </div>
+                <div class="ln-row">
+                  <span class="ln-ava">勤</span>
+                  <div class="ln-bubble">📅 来週のシフトが確定しました。
+                    <span class="ln-cta">シフトを確認する</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="phone-chip"><span class="pc-dot"></span>アプリ不要</div>
+        </div>
+      </div>
+      <div class="noti-grid">
+        <div class="noti-card fade"><div class="nc-ic">🕘</div><h3>打刻リマインド</h3><p>出勤・退勤の打刻忘れを検知して、その人のLINEに自動でお知らせ。打刻漏れによる勤怠の抜けを防ぎます。</p></div>
+        <div class="noti-card fade"><div class="nc-ic">📅</div><h3>シフト確定通知</h3><p>シフトが確定・変更されたら、対象者のLINEへ即共有。「見ていなかった」によるすれ違いをなくします。</p></div>
+        <div class="noti-card fade"><div class="nc-ic">⚠️</div><h3>残業アラート</h3><p>残業が上限に近づいた社員と上長へ、早めにLINEで警告。36協定オーバーを未然に防ぎます。</p></div>
+        <div class="noti-card fade"><div class="nc-ic">✅</div><h3>承認結果のお知らせ</h3><p>休暇・残業・打刻修正の申請が承認／差戻しされると、申請者のLINEへ自動で結果を通知します。</p></div>
+        <div class="noti-card fade"><div class="nc-ic">💰</div><h3>給与明細の配信</h3><p>毎月の給与明細を、紙の配布なしで各自のLINEへ直接お届け。受け取りもLINE上で完結します。</p></div>
+        <div class="noti-card fade"><div class="nc-ic">📣</div><h3>お知らせ一斉配信</h3><p>全社・部署・雇用形態など、対象を絞ってLINEで一斉連絡。既読状況もダッシュボードで確認できます。</p></div>
+      </div>
     </div>
   </div>
 </section>
@@ -590,99 +617,54 @@ section{padding:70px 0;}
     <div class="product-shot fade" data-image-slot="product-screenshot">
       <div class="ps-head"><i class="r"></i><i class="y"></i><i class="g"></i><span>app.kintai-cloud.example / 勤怠一覧</span></div>
       <div class="product-screen">
-        <svg viewBox="0 0 760 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="勤怠一覧画面のイメージ" font-family="sans-serif">
-  <rect width="760" height="470" fill="#FFFFFF"/>
+        <svg viewBox="0 0 820 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="勤怠管理ダッシュボードのイメージ" font-family="-apple-system,sans-serif">
+  <defs>
+    <linearGradient id="side" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#23478C"/><stop offset="1" stop-color="#15306A"/></linearGradient>
+    <linearGradient id="csv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3B82F6"/><stop offset="1" stop-color="#1D4ED8"/></linearGradient>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#60A5FA"/><stop offset="1" stop-color="#2563EB"/></linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22D3EE"/><stop offset="1" stop-color="#0891B2"/></linearGradient>
+    <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4ADE80"/><stop offset="1" stop-color="#16A34A"/></linearGradient>
+    <linearGradient id="g4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F472B6"/><stop offset="1" stop-color="#DB2777"/></linearGradient>
+    <linearGradient id="g5" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#818CF8"/><stop offset="1" stop-color="#4F46E5"/></linearGradient>
+    <linearGradient id="gad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#94A3B8"/><stop offset="1" stop-color="#475569"/></linearGradient>
+    <filter id="sh" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#1E3A8A" flood-opacity="0.08"/></filter>
+  </defs>
+  <rect width="820" height="520" fill="#F4F7FC"/>
   <!-- サイドバー -->
-  <rect x="0" y="0" width="180" height="470" fill="#1E3A8A"/>
-  <circle cx="28" cy="34" r="10" fill="none" stroke="#fff" stroke-width="2.4"/>
-  <path d="M28 29v5.4l3.4 2" stroke="#fff" stroke-width="2.4" stroke-linecap="round" fill="none"/>
-  <text x="46" y="39" fill="#fff" font-size="14" font-weight="bold">KINTAI Cloud</text>
-  <g font-size="12.5" fill="#fff">
-    <g opacity=".6"><rect x="20" y="82" width="14" height="14" rx="3" fill="#fff"/><text x="44" y="93">ダッシュボード</text></g>
-    <rect x="12" y="116" width="156" height="32" rx="8" fill="#2563EB"/>
-    <rect x="20" y="125" width="14" height="14" rx="3" fill="#fff"/><text x="44" y="136" font-weight="bold">勤怠一覧</text>
-    <g opacity=".6"><rect x="20" y="166" width="14" height="14" rx="3" fill="#fff"/><text x="44" y="177">シフト管理</text></g>
-    <g opacity=".6"><rect x="20" y="200" width="14" height="14" rx="3" fill="#fff"/><text x="44" y="211">申請・承認</text></g>
-    <g opacity=".6"><rect x="20" y="234" width="14" height="14" rx="3" fill="#fff"/><text x="44" y="245">レポート</text></g>
-    <g opacity=".6"><rect x="20" y="268" width="14" height="14" rx="3" fill="#fff"/><text x="44" y="279">設定</text></g>
-  </g>
+  <rect x="0" y="0" width="196" height="520" fill="url(#side)"/>
+  <circle cx="32" cy="40" r="12" fill="none" stroke="#fff" stroke-width="2.4"/>
+  <path d="M32 34v6.6l4 2.2" stroke="#fff" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+  <text x="54" y="45" fill="#fff" font-size="15" font-weight="bold">KINTAI Cloud</text>
+  <g transform="translate(26,95) scale(0.72)"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z" fill="none" stroke="#FFFFFF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></g><text x="56" y="109" font-size="13" fill="#FFFFFF" opacity=".72">ダッシュボード</text><rect x="12" y="128" width="172" height="36" rx="10" fill="#fff"/><g transform="translate(26,137) scale(0.72)"><path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01" fill="none" stroke="#1E3A8A" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></g><text x="56" y="151" font-size="13" font-weight="bold" fill="#1E3A8A">勤怠一覧</text><g transform="translate(26,179) scale(0.72)"><path d="M3 5h18v16H3zM3 10h18M8 3v4M16 3v4" fill="none" stroke="#FFFFFF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></g><text x="56" y="193" font-size="13" fill="#FFFFFF" opacity=".72">シフト管理</text><g transform="translate(26,221) scale(0.72)"><path d="M9 11l3 3 8-8M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" fill="none" stroke="#FFFFFF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></g><text x="56" y="235" font-size="13" fill="#FFFFFF" opacity=".72">申請・承認</text><g transform="translate(26,263) scale(0.72)"><path d="M4 20V10M10 20V4M16 20v-6M22 20H2" fill="none" stroke="#FFFFFF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></g><text x="56" y="277" font-size="13" fill="#FFFFFF" opacity=".72">レポート</text><g transform="translate(26,305) scale(0.72)"><path d="M4 21v-6M4 11V3M12 21v-8M12 9V3M20 21v-4M20 13V3M1 15h6M9 9h6M17 17h6" fill="none" stroke="#FFFFFF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></g><text x="56" y="319" font-size="13" fill="#FFFFFF" opacity=".72">設定</text>
+  <rect x="12" y="462" width="172" height="44" rx="12" fill="#FFFFFF" opacity="0.09"/>
+  <circle cx="38" cy="484" r="15" fill="url(#gad)"/>
+  <text x="38" y="489" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">管</text>
+  <text x="62" y="480" font-size="12" font-weight="bold" fill="#fff">管理者 さん</text>
+  <text x="62" y="496" font-size="10" fill="#fff" opacity=".6">総務部 ・ 管理者権限</text>
   <!-- ヘッダー -->
-  <rect x="180" y="0" width="580" height="64" fill="#FFFFFF"/>
-  <line x1="180" y1="64" x2="760" y2="64" stroke="#E4E9F0" stroke-width="1.5"/>
-  <text x="204" y="30" fill="#1F2937" font-size="17" font-weight="bold">勤怠一覧</text>
-  <text x="204" y="50" fill="#9AA6B5" font-size="11">2026年6月度 ・ 在籍 42名</text>
-  <rect x="558" y="18" width="106" height="28" rx="7" fill="#fff" stroke="#E4E9F0" stroke-width="1.5"/>
-  <text x="574" y="36" fill="#5B6676" font-size="11.5" font-weight="bold">2026年6月</text>
-  <path d="M646 30l4 4 4-4" stroke="#9AA6B5" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-  <rect x="672" y="18" width="64" height="28" rx="7" fill="#2563EB"/>
-  <text x="704" y="36" fill="#fff" font-size="11.5" font-weight="bold" text-anchor="middle">CSV出力</text>
-  <!-- 統計カード -->
-  <rect x="204" y="80" width="169" height="76" rx="10" fill="#EFF4FF"/>
-  <text x="220" y="106" fill="#5B6676" font-size="11">総労働時間</text>
-  <text x="220" y="137" fill="#2563EB" font-size="23" font-weight="bold">3,840<tspan font-size="13">h</tspan></text>
-  <rect x="385" y="80" width="169" height="76" rx="10" fill="#E9FBF1"/>
-  <text x="401" y="106" fill="#5B6676" font-size="11">残業合計</text>
-  <text x="401" y="137" fill="#16A34A" font-size="23" font-weight="bold">128<tspan font-size="13">h</tspan></text>
-  <rect x="566" y="80" width="170" height="76" rx="10" fill="#FFF6E9"/>
-  <text x="582" y="106" fill="#5B6676" font-size="11">要確認</text>
-  <text x="582" y="137" fill="#E08A1E" font-size="23" font-weight="bold">3<tspan font-size="13">件</tspan></text>
+  <rect x="196" y="0" width="624" height="72" fill="#FFFFFF"/>
+  <line x1="196" y1="72" x2="820" y2="72" stroke="#E9EEF5" stroke-width="1.5"/>
+  <text x="224" y="36" fill="#1F2937" font-size="19" font-weight="bold">勤怠一覧</text>
+  <text x="224" y="57" fill="#94A3B8" font-size="11.5">2026年6月度 ・ 在籍 42名</text>
+  <g transform="translate(520,22) scale(0.92)"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.7 21a2 2 0 0 1-3.4 0" fill="none" stroke="#94A3B8" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <circle cx="540" cy="26" r="3.4" fill="#EF4444" stroke="#fff" stroke-width="1.4"/>
+  <rect x="560" y="22" width="108" height="32" rx="8" fill="#fff" stroke="#E4E9F0" stroke-width="1.4"/>
+  <text x="576" y="42" fill="#475569" font-size="12" font-weight="bold">2026年6月</text>
+  <g transform="translate(634,30) scale(0.6)"><path d="M6 9l6 6 6-6" fill="none" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <rect x="680" y="22" width="104" height="32" rx="8" fill="url(#csv)" filter="url(#sh)"/>
+  <text x="732" y="42" text-anchor="middle" fill="#fff" font-size="12.5" font-weight="bold">CSV出力</text>
+  <!-- 統計 -->
+  <rect x="224" y="92" width="178" height="86" rx="14" fill="#fff" filter="url(#sh)"/><rect x="352" y="108" width="34" height="34" rx="9" fill="#EFF4FF"/><g transform="translate(358,114) scale(0.92)"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM12 7v5l3 2" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g><text x="242" y="120" font-size="11.5" fill="#64748B">総労働時間</text><text x="242" y="156" font-size="27" font-weight="bold" fill="#2563EB">3,840<tspan font-size="14">h</tspan></text><text x="242" y="172" font-size="10" font-weight="bold" fill="#16A34A">▲ 4.2% 前月比</text><rect x="416" y="92" width="178" height="86" rx="14" fill="#fff" filter="url(#sh)"/><rect x="544" y="108" width="34" height="34" rx="9" fill="#FFF4E6"/><g transform="translate(550,114) scale(0.92)"><path d="M12 21a8 8 0 1 0 0-16 8 8 0 0 0 0 16zM12 9v4l2.5 1.5M5 3 2 6M22 6l-3-3" fill="none" stroke="#E08A1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g><text x="434" y="120" font-size="11.5" fill="#64748B">残業合計</text><text x="434" y="156" font-size="27" font-weight="bold" fill="#E08A1E">128<tspan font-size="14">h</tspan></text><text x="434" y="172" font-size="10" font-weight="bold" fill="#16A34A">▼ 12% 前月比</text><rect x="608" y="92" width="180" height="86" rx="14" fill="#fff" filter="url(#sh)"/><rect x="738" y="108" width="34" height="34" rx="9" fill="#FDECEC"/><g transform="translate(744,114) scale(0.92)"><path d="M10.3 4 1.8 18a2 2 0 0 0 1.7 3h16.9a2 2 0 0 0 1.7-3L13.7 4a2 2 0 0 0-3.4 0zM12 9v4M12 17h.01" fill="none" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g><text x="626" y="120" font-size="11.5" fill="#64748B">要確認</text><text x="626" y="156" font-size="27" font-weight="bold" fill="#EF4444">3<tspan font-size="14">件</tspan></text><text x="626" y="172" font-size="10" font-weight="bold" fill="#94A3B8">前月 5件</text>
   <!-- テーブル -->
-  <rect x="204" y="176" width="532" height="280" rx="10" fill="#fff" stroke="#E4E9F0" stroke-width="1.5"/>
-  <rect x="205" y="177" width="530" height="30" fill="#F6F8FC"/>
-  <line x1="205" y1="207" x2="735" y2="207" stroke="#E4E9F0" stroke-width="1.5"/>
-  <g fill="#94A1B2" font-size="10.5" font-weight="bold">
-    <text x="246" y="197">従業員</text><text x="366" y="197">出勤</text><text x="438" y="197">退勤</text>
-    <text x="510" y="197">実働</text><text x="582" y="197">残業</text><text x="648" y="197">ステータス</text>
+  <rect x="224" y="192" width="560" height="306" rx="16" fill="#fff" filter="url(#sh)"/>
+  <rect x="225" y="193" width="558" height="36" rx="15" fill="#F8FAFD"/>
+  <rect x="225" y="210" width="558" height="19" fill="#F8FAFD"/>
+  <line x1="225" y1="228" x2="783" y2="228" stroke="#E9EEF5" stroke-width="1.5"/>
+  <g fill="#94A3B8" font-size="11" font-weight="bold">
+    <text x="278" y="216">従業員</text><text x="398" y="216">出勤</text><text x="472" y="216">退勤</text>
+    <text x="546" y="216">実働</text><text x="620" y="216">残業</text><text x="700" y="216">ステータス</text>
   </g>
-  <circle cx="226" cy="231" r="12" fill="#DBEAFE"/>
-  <text x="226" y="236" text-anchor="middle" font-size="11" font-weight="bold" fill="#2563EB">佐</text>
-  <text x="246" y="235" font-size="12.5" font-weight="600" fill="#374151">佐藤 美咲</text>
-  <text x="366" y="235" font-size="11.5" fill="#5B6676">09:00</text>
-  <text x="438" y="235" font-size="11.5" fill="#5B6676">18:00</text>
-  <text x="510" y="235" font-size="11.5" fill="#374151">8:00</text>
-  <text x="582" y="235" font-size="11.5" fill="#5B6676">0:00</text>
-  <rect x="636" y="219" width="84" height="24" rx="12" fill="#E9FBF1"/>
-  <text x="678" y="235" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#16A34A">承認済</text>
-  <line x1="205" y1="256" x2="735" y2="256" stroke="#EFF1F5" stroke-width="1"/>
-  <circle cx="226" cy="280" r="12" fill="#CFFAFE"/>
-  <text x="226" y="285" text-anchor="middle" font-size="11" font-weight="bold" fill="#0891B2">田</text>
-  <text x="246" y="284" font-size="12.5" font-weight="600" fill="#374151">田中 健太</text>
-  <text x="366" y="284" font-size="11.5" fill="#5B6676">08:45</text>
-  <text x="438" y="284" font-size="11.5" fill="#5B6676">19:30</text>
-  <text x="510" y="284" font-size="11.5" fill="#374151">9:45</text>
-  <text x="582" y="284" font-size="11.5" fill="#5B6676">1:30</text>
-  <rect x="636" y="268" width="84" height="24" rx="12" fill="#E9FBF1"/>
-  <text x="678" y="284" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#16A34A">承認済</text>
-  <line x1="205" y1="305" x2="735" y2="305" stroke="#EFF1F5" stroke-width="1"/>
-  <circle cx="226" cy="329" r="12" fill="#DCFCE7"/>
-  <text x="226" y="334" text-anchor="middle" font-size="11" font-weight="bold" fill="#16A34A">鈴</text>
-  <text x="246" y="333" font-size="12.5" font-weight="600" fill="#374151">鈴木 一郎</text>
-  <text x="366" y="333" font-size="11.5" fill="#5B6676">09:02</text>
-  <text x="438" y="333" font-size="11.5" fill="#5B6676">21:15</text>
-  <text x="510" y="333" font-size="11.5" fill="#374151">11:13</text>
-  <text x="582" y="333" font-size="11.5" font-weight="bold" fill="#EF4444">2:15</text>
-  <rect x="636" y="317" width="84" height="24" rx="12" fill="#FFF1F0"/>
-  <text x="678" y="333" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#EF4444">要確認</text>
-  <line x1="205" y1="354" x2="735" y2="354" stroke="#EFF1F5" stroke-width="1"/>
-  <circle cx="226" cy="378" r="12" fill="#FCE7F3"/>
-  <text x="226" y="383" text-anchor="middle" font-size="11" font-weight="bold" fill="#DB2777">高</text>
-  <text x="246" y="382" font-size="12.5" font-weight="600" fill="#374151">高橋 由香</text>
-  <text x="366" y="382" font-size="11.5" fill="#5B6676">09:00</text>
-  <text x="438" y="382" font-size="11.5" fill="#5B6676">17:30</text>
-  <text x="510" y="382" font-size="11.5" fill="#374151">7:30</text>
-  <text x="582" y="382" font-size="11.5" fill="#5B6676">0:00</text>
-  <rect x="636" y="366" width="84" height="24" rx="12" fill="#E9FBF1"/>
-  <text x="678" y="382" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#16A34A">承認済</text>
-  <line x1="205" y1="403" x2="735" y2="403" stroke="#EFF1F5" stroke-width="1"/>
-  <circle cx="226" cy="427" r="12" fill="#E0E7FF"/>
-  <text x="226" y="432" text-anchor="middle" font-size="11" font-weight="bold" fill="#4F46E5">渡</text>
-  <text x="246" y="431" font-size="12.5" font-weight="600" fill="#374151">渡辺 翔太</text>
-  <text x="366" y="431" font-size="11.5" fill="#5B6676">10:00</text>
-  <text x="438" y="431" font-size="11.5" fill="#5B6676">19:00</text>
-  <text x="510" y="431" font-size="11.5" fill="#374151">8:00</text>
-  <text x="582" y="431" font-size="11.5" fill="#5B6676">0:30</text>
-  <rect x="636" y="415" width="84" height="24" rx="12" fill="#FFF6E9"/>
-  <text x="678" y="431" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#E08A1E">申請中</text>
+  <circle cx="254" cy="255" r="15" fill="url(#g1)"/><text x="254" y="260" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">佐</text><text x="278" y="253" font-size="13" font-weight="bold" fill="#1F2937">佐藤 美咲</text><text x="278" y="268" font-size="10" fill="#94A3B8">営業部</text><text x="398" y="259" font-size="12.5" fill="#475569">09:00</text><text x="472" y="259" font-size="12.5" fill="#475569">18:00</text><text x="546" y="259" font-size="12.5" font-weight="600" fill="#1F2937">8:00</text><text x="620" y="259" font-size="12.5" font-weight="normal" fill="#475569">0:00</text><rect x="688" y="243" width="92" height="24" rx="12" fill="#E7F8EF"/><circle cx="704" cy="255" r="3.2" fill="#16A34A"/><text x="716" y="259" font-size="11" font-weight="bold" fill="#16A34A">承認済</text><line x1="240" y1="282" x2="780" y2="282" stroke="#EEF2F7" stroke-width="1"/><circle cx="254" cy="309" r="15" fill="url(#g2)"/><text x="254" y="314" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">田</text><text x="278" y="307" font-size="13" font-weight="bold" fill="#1F2937">田中 健太</text><text x="278" y="322" font-size="10" fill="#94A3B8">開発部</text><text x="398" y="313" font-size="12.5" fill="#475569">08:45</text><text x="472" y="313" font-size="12.5" fill="#475569">19:30</text><text x="546" y="313" font-size="12.5" font-weight="600" fill="#1F2937">9:45</text><text x="620" y="313" font-size="12.5" font-weight="normal" fill="#475569">1:30</text><rect x="688" y="297" width="92" height="24" rx="12" fill="#E7F8EF"/><circle cx="704" cy="309" r="3.2" fill="#16A34A"/><text x="716" y="313" font-size="11" font-weight="bold" fill="#16A34A">承認済</text><rect x="225" y="336" width="570" height="54" fill="#FFFBFB"/><line x1="240" y1="336" x2="780" y2="336" stroke="#EEF2F7" stroke-width="1"/><circle cx="254" cy="363" r="15" fill="url(#g3)"/><text x="254" y="368" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">鈴</text><text x="278" y="361" font-size="13" font-weight="bold" fill="#1F2937">鈴木 一郎</text><text x="278" y="376" font-size="10" fill="#94A3B8">製造部</text><text x="398" y="367" font-size="12.5" fill="#475569">09:02</text><text x="472" y="367" font-size="12.5" fill="#475569">21:15</text><text x="546" y="367" font-size="12.5" font-weight="600" fill="#1F2937">11:13</text><text x="620" y="367" font-size="12.5" font-weight="bold" fill="#EF4444">2:15</text><rect x="688" y="351" width="92" height="24" rx="12" fill="#FDECEC"/><circle cx="704" cy="363" r="3.2" fill="#EF4444"/><text x="716" y="367" font-size="11" font-weight="bold" fill="#EF4444">要確認</text><line x1="240" y1="390" x2="780" y2="390" stroke="#EEF2F7" stroke-width="1"/><circle cx="254" cy="417" r="15" fill="url(#g4)"/><text x="254" y="422" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">高</text><text x="278" y="415" font-size="13" font-weight="bold" fill="#1F2937">高橋 由香</text><text x="278" y="430" font-size="10" fill="#94A3B8">総務部</text><text x="398" y="421" font-size="12.5" fill="#475569">09:00</text><text x="472" y="421" font-size="12.5" fill="#475569">17:30</text><text x="546" y="421" font-size="12.5" font-weight="600" fill="#1F2937">7:30</text><text x="620" y="421" font-size="12.5" font-weight="normal" fill="#475569">0:00</text><rect x="688" y="405" width="92" height="24" rx="12" fill="#E7F8EF"/><circle cx="704" cy="417" r="3.2" fill="#16A34A"/><text x="716" y="421" font-size="11" font-weight="bold" fill="#16A34A">承認済</text><line x1="240" y1="444" x2="780" y2="444" stroke="#EEF2F7" stroke-width="1"/><circle cx="254" cy="471" r="15" fill="url(#g5)"/><text x="254" y="476" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">渡</text><text x="278" y="469" font-size="13" font-weight="bold" fill="#1F2937">渡辺 翔太</text><text x="278" y="484" font-size="10" fill="#94A3B8">営業部</text><text x="398" y="475" font-size="12.5" fill="#475569">10:00</text><text x="472" y="475" font-size="12.5" fill="#475569">19:00</text><text x="546" y="475" font-size="12.5" font-weight="600" fill="#1F2937">8:00</text><text x="620" y="475" font-size="12.5" font-weight="normal" fill="#475569">0:30</text><rect x="688" y="459" width="92" height="24" rx="12" fill="#FEF3E2"/><circle cx="704" cy="471" r="3.2" fill="#E08A1E"/><text x="716" y="475" font-size="11" font-weight="bold" fill="#E08A1E">申請中</text>
 </svg>
       </div>
     </div>
