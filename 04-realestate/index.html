@@ -161,6 +161,40 @@ section{padding:72px 0;}
 }
 @media(min-width:900px){.house-visual{max-width:720px;}}
 
+/* ---------- 内観ムービー ---------- */
+.movie{background:var(--white);}
+.movie-split{display:grid;gap:32px;justify-items:center;align-items:center;}
+@media(min-width:900px){.movie-split{grid-template-columns:360px 1fr;gap:56px;justify-items:stretch;}}
+.movie-frame{
+  position:relative;width:72%;max-width:300px;margin:0 auto;
+  border-radius:26px;overflow:hidden;border:5px solid #fff;
+  box-shadow:0 22px 50px rgba(30,58,95,.28);background:#0d1b2c;
+}
+@media(min-width:900px){.movie-frame{width:100%;max-width:360px;}}
+.movie-frame video{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;}
+.movie-frame .mv-tag{
+  position:absolute;left:12px;top:12px;z-index:2;display:flex;align-items:center;gap:7px;
+  background:rgba(15,27,44,.72);backdrop-filter:blur(4px);color:#fff;
+  font-size:11px;font-weight:800;letter-spacing:.04em;padding:6px 12px;border-radius:999px;
+}
+.movie-frame .mv-tag::before{content:"";width:0;height:0;border-left:8px solid #D9C28E;border-top:5px solid transparent;border-bottom:5px solid transparent;}
+.movie-body .m-eyebrow{margin-bottom:10px;}
+.movie-body h2{
+  font-family:var(--serif);font-size:clamp(21px,5.2vw,30px);font-weight:600;
+  line-height:1.7;letter-spacing:.06em;margin-bottom:18px;
+}
+.movie-body h2 .accent{color:var(--navy);border-bottom:2px solid var(--brass);padding-bottom:2px;}
+.movie-points{display:grid;gap:12px;margin-bottom:26px;}
+.movie-points li{display:flex;gap:12px;align-items:flex-start;font-size:14px;font-weight:600;line-height:1.7;}
+.movie-points li .mp-ic{
+  flex-shrink:0;width:34px;height:34px;border-radius:9px;background:var(--navy-pale);
+  display:flex;align-items:center;justify-content:center;
+}
+.movie-points li .mp-ic svg{width:19px;height:19px;}
+.movie-points li b{display:block;font-size:12.5px;color:var(--ink-soft);font-weight:600;margin-top:1px;}
+.movie-body .btn-cta{margin:0;}
+@media(max-width:899px){.movie-body{text-align:center;}.movie-points{max-width:460px;margin:0 auto 26px;text-align:left;}.movie-body .m-eyebrow{justify-content:center;}}
+
 /* ---------- 悩み共感 ---------- */
 .nayami{background:var(--white);}
 .nayami-list{display:grid;gap:12px;max-width:520px;margin:0 auto;}
@@ -448,7 +482,7 @@ section{padding:72px 0;}
   <!-- ▼▼ ヒーロー外観画像(実画像差し込み済み: exterior.jpg / AI生成) ▼▼ -->
   <div class="house-visual" data-image-slot="exterior-photo">
     <div class="hv-frame">
-      <img src="exterior.jpg" alt="完成見学会の会場となる新築戸建ての外観。白い塗り壁と木目アクセントの2階建て">
+      <img src="exterior.jpg" alt="完成見学会の会場となる新築戸建ての外観。木目とダークグレーを効かせたモダンな2階建て">
     </div>
   </div>
   <!-- ▲▲ ヒーロー外観画像 ここまで ▲▲ -->
@@ -525,6 +559,42 @@ section{padding:72px 0;}
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- ============ 内観ムービー ============ -->
+<section class="movie">
+  <div class="wrap">
+    <div class="movie-split">
+      <!-- ▼▼ 内観ウォークスルー動画(interior.mp4) ▼▼ -->
+      <div class="movie-frame fade">
+        <span class="mv-tag">内観ウォークスルー</span>
+        <video src="interior.mp4" autoplay muted loop playsinline aria-label="室内をゆっくり巡る内観ウォークスルー映像"></video>
+      </div>
+      <!-- ▲▲ 内観ムービー ここまで ▲▲ -->
+      <div class="movie-body">
+        <p class="eyebrow m-eyebrow fade">Movie</p>
+        <h2 class="fade">間取り図では伝わらない<br>“住み心地”を、<span class="accent">映像で歩く</span>。</h2>
+        <ul class="movie-points">
+          <li class="fade">
+            <span class="mp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#1E3A5F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M18.4 5.6L17 7M7 17l-1.4 1.4"/><circle cx="12" cy="12" r="4"/></svg></span>
+            <span>リビングに差し込む光の抜け<b>吹き抜けと大開口がつくる明るさを、そのまま体感。</b></span>
+          </li>
+          <li class="fade">
+            <span class="mp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#1E3A5F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16M6 20V9l6-5 6 5v11M9 20v-5h6v5"/></svg></span>
+            <span>キッチンから寝室までの生活動線<b>実際に歩く目線で、暮らしの回遊性を確認できます。</b></span>
+          </li>
+          <li class="fade">
+            <span class="mp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#1E3A5F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg></span>
+            <span>素材と質感のリアル<b>床・建具・タイルの色味まで、写真以上に伝わります。</b></span>
+          </li>
+        </ul>
+        <a class="btn-cta fade" href="#reserve">
+          <span class="b-small">実物はもっと、いい。</span>
+          <span class="b-main">見学会で実際に歩いてみる</span>
+        </a>
+      </div>
     </div>
   </div>
 </section>
